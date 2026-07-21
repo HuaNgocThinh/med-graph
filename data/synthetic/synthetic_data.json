@@ -1,0 +1,52 @@
+[
+  {
+    "id": "syn_001",
+    "template_type": "nội khoa",
+    "text": "Bệnh nhân nam 54 tuổi, có tiền sử Đái tháo đường týp 2 và Cao huyết áp 3 năm nay. Hiện tại ho kéo dài và khó thở. Khám không thấy dấu hiệu Viêm phổi. Bệnh nhân được kê Paracetamol 500mg và Metformin."
+  },
+  {
+    "id": "syn_002",
+    "template_type": "ngoại khoa",
+    "text": "Bệnh nhân nữ 42 tuổi, nhập viện vì Cơn đau thắt ngực cấp tính. Tiền sử chưa ghi nhận Bệnh Gút. Bác sĩ chỉ định Aspirin 81mg và Atorvastatin để điều trị."
+  },
+  {
+    "id": "syn_003",
+    "template_type": "kê đơn thuốc",
+    "text": "Bệnh nhân Viêm loét dạ dày kèm trào ngược dạ dày. Không phát hiện Tiêu chảy cấp. Chống chỉ định với Ibuprofen. Đã kê Omeprazole 20mg."
+  },
+  {
+    "id": "syn_004",
+    "template_type": "nội khoa",
+    "text": "Bệnh nhân nam 65 tuổi nhập viện với chẩn đoán xác định Đái tháo đường tuýp 2. Hiện tại, bệnh nhân không có triệu chứng đau ngực hay khó thở, các chỉ số sinh tồn ổn định. Tiền sử 5 năm điều trị bằng Metformin nhưng chưa ghi nhận biến chứng võng mạc."
+  },
+  {
+    "id": "syn_005",
+    "template_type": "ngoại khoa",
+    "text": "Bệnh nhân nữ 32 tuổi được chỉ định phẫu thuật nội soi do Viêm ruột thừa cấp. Sau 3 ngày trước khi nhập viện, bệnh nhân đau âm ỉ vùng hố chậu phải. Kết quả siêu âm loại trừ các bệnh lý phụ khoa, không thấy dấu hiệu thủng tạng rỗng."
+  },
+  {
+    "id": "syn_006",
+    "template_type": "kê đơn thuốc",
+    "text": "Chỉ định điều trị cho bệnh nhân Viêm phế quản cấp: Amoxicillin 500mg uống 2 lần/ngày trong 7 ngày, kết hợp với Bromhexine 8mg để long đờm. Bệnh nhân không có tiền sử dị ứng với nhóm Penicillin."
+  },
+  {
+    "id": "syn_007",
+    "template_type": "tiền sử bệnh lý",
+    "text": "Bệnh nhân có tiền sử 2 năm mắc Hen phế quản, hiện đang kiểm soát tốt bằng Salbutamol khi cần thiết. Chưa ghi nhận các đợt cấp tính trong 6 tháng gần đây, không thấy dấu hiệu suy hô hấp khi gắng sức."
+  },
+  {
+    "id": "syn_008",
+    "template_type": "nội khoa",
+    "text": "Thăm khám lâm sàng bệnh nhân Suy tim sung huyết cho thấy tình trạng phù hai chi dưới. Bác sĩ đã kê đơn Furosemide 40mg và Lisinopril 10mg. Hiện tại, bệnh nhân không có dấu hiệu khó thở khi nằm đầu thấp."
+  },
+  {
+    "id": "syn_009",
+    "template_type": "ngoại khoa",
+    "text": "Bệnh nhân nam 45 tuổi nhập viện vì Thoát vị đĩa đệm cột sống thắt lưng. Tiền sử 1 năm đau thần kinh tọa, đã điều trị bảo tồn bằng Diclofenac nhưng không thuyên giảm. Hiện tại, bác sĩ loại trừ các tổn thương chèn ép tủy cấp tính."
+  },
+  {
+    "id": "syn_010",
+    "template_type": "kê đơn thuốc",
+    "text": "Đơn thuốc ngoại trú cho bệnh nhân Rối loạn lipid máu: Atorvastatin 20mg uống vào buổi tối. Bệnh nhân cần tái khám sau 1 tháng để kiểm tra chỉ số men gan, hiện tại không thấy tác dụng phụ đau cơ hay mệt mỏi."
+  }
+]

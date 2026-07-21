@@ -1,0 +1,10 @@
+{"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "Aspirin 81mg", "tail": "Cơn đau thắt ngực cấp tính", "relation": "PRESCRIBED_FOR", "details": "Triple involves a negated medical entity from source text."}
+{"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "Đái tháo đường tuýp 2", "tail": "biến chứng võng mạc", "relation": "CAUSES", "details": "Triple involves a negated medical entity from source text."}
+{"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "bệnh", "tail": "đau ngực", "relation": "HAS_SYMPTOM", "details": "Triple involves a negated medical entity from source text."}
+{"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "bệnh", "tail": "khó thở", "relation": "HAS_SYMPTOM", "details": "Triple involves a negated medical entity from source text."}
+{"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "bệnh", "tail": "khó thở", "relation": "HAS_SYMPTOM", "details": "Triple involves a negated medical entity from source text."}
+{"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "Aspirin 81mg", "tail": "Cơn đau thắt ngực cấp tính", "relation": "PRESCRIBED_FOR", "details": "Triple involves a negated medical entity from source text."}
+{"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "Đái tháo đường tuýp 2", "tail": "biến chứng võng mạc", "relation": "CAUSES", "details": "Triple involves a negated medical entity from source text."}
+{"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "bệnh", "tail": "đau ngực", "relation": "HAS_SYMPTOM", "details": "Triple involves a negated medical entity from source text."}
+{"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "bệnh", "tail": "khó thở", "relation": "HAS_SYMPTOM", "details": "Triple involves a negated medical entity from source text."}
+{"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "bệnh", "tail": "khó thở", "relation": "HAS_SYMPTOM", "details": "Triple involves a negated medical entity from source text."}
