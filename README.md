@@ -8,8 +8,7 @@
 
 Dự án **MedGraph-VI** là một giải pháp Proof-of-Concept (POC) phục vụ bảo vệ luận văn Thạc sĩ với mục tiêu tự động trích xuất thực thể, quan hệ y tế từ văn bản tiếng Việt và xây dựng cơ sở dữ liệu đồ thị tri thức (Knowledge Graph) trên Neo4j.
 
-### Ràng buộc Phần cứng & Chiến lược Hybrid
-- **Cấu hình thử nghiệm**: CPU Intel i7, RAM 16GB, **Không GPU rời**.
+### Chiến lược Hybrid
 - **Chiến lược Hybrid**:
   - **Local CPU Execution**: Chạy các tác vụ NLP nhỏ/pretrained nhẹ (PhoBERT-CRF NER sequence tagger, ConText Negation rule engine, RapidFuzz string matcher, Local ICD-10 & RxNorm dictionary mapping).
   - **LLM API Layer**: Sử dụng LLM (Gemini / OpenAI / Anthropic) thông qua lớp trừu tượng `LLMClient` cho các tác vụ cần lập luận phức tạp (Synthetic Data Generation, Few-shot Relation Extraction, Text-to-Cypher QA).
