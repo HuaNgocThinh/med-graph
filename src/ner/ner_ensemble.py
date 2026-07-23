@@ -55,6 +55,10 @@ class NEREnsemble:
 
         all_candidates = dict_preds + phobert_preds + llm_preds
 
+        # Guard: Filter out standalone generic entity stop words to prevent downstream noise
+        generic_stopwords = {"bệnh", "chứng", "triệu chứng", "tình trạng", "hội chứng", "thuốc"}
+        all_candidates = [c for c in all_candidates if c["entity"].strip().lower() not in generic_stopwords]
+
         if not all_candidates:
             return []
 

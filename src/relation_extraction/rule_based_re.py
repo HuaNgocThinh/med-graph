@@ -6,6 +6,8 @@ Uses regex pattern matching and token proximity between entity pairs to establis
 import re
 import logging
 from typing import List, Dict, Any
+from src.entity_linking.entity_normalizer import get_canonical_name
+from src.relation_extraction.re_validator import validate_triple_sentence_distance
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("RuleBasedRE")
@@ -70,14 +72,18 @@ class RuleBasedRelationExtractor:
                         if not head or not tail:
                             continue
                         
+                        val_res = validate_triple_sentence_distance(text, head["entity"], tail["entity"])
+
                         # Add unique triple
                         triple = {
-                            "head": head["entity"],
+                            "head": get_canonical_name(head["entity"]),
                             "relation": canonical_rel,
-                            "tail": tail["entity"],
+                            "tail": get_canonical_name(tail["entity"]),
                             "confidence": 0.70,
                             "evidence_span": between_text.strip(),
-                            "low_confidence": False,
+                            "low_confidence": val_res["review_required"],
+                            "validation_status": val_res["status"],
+                            "sentence_distance": val_res["sentence_distance"],
                             "source": "rule_based"
                         }
                         if triple not in triples:
@@ -127,11 +133,10 @@ class RuleBasedRelationExtractor:
 
 if __name__ == "__main__":
     extractor = RuleBasedRelationExtractor()
-    text = "Aspirin 81mg được kê cho bệnh nhân Nhồi máu não."
+    text = "Aspirin 81mg được kê cho bệnh nhân Nhồi máu brain."
     ents = [
         {"entity": "Aspirin 81mg", "type": "DRUG", "start": 0, "end": 12},
-        {"entity": "Nhồi máu não", "type": "DISEASE", "start": 35, "end": 47}
+        {"entity": "Nhồi máu brain", "type": "DISEASE", "start": 35, "end": 47}
     ]
     res = extractor.extract_relations(text, ents)
-    import json
     print("Rule-based RE Results:", json.dumps(res, ensure_ascii=False, indent=2))

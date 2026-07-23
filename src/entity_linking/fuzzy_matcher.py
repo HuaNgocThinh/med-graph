@@ -2,6 +2,7 @@
 Fuzzy Matcher module utilizing rapidfuzz with difflib fallback for string similarity normalization.
 """
 
+import re
 import logging
 from typing import List, Dict, Any, Tuple, Optional
 
@@ -18,16 +19,22 @@ except ImportError:
 class FuzzyMatcher:
     """Fuzzy string matching helper using rapidfuzz token similarity or difflib fallback."""
 
-    def __init__(self, score_cutoff: float = 60.0):
+    def __init__(self, score_cutoff: float = 88.0):
         self.score_cutoff = score_cutoff
 
     def find_best_match(self, query: str, choices: List[Dict[str, Any]], key: str = "name_vi") -> Optional[Tuple[Dict[str, Any], float]]:
         """
         Finds best candidate match from dictionary choices for query string.
+        Strips pure dosage numbers/units from query during matching to prevent false dosage matches (e.g. Celecoxib 200mg vs Sắt 200mg).
         Returns Tuple of (matched_item, normalized_confidence_score [0.0-1.0]).
         """
         if not query or not choices:
             return None
+
+        # Clean query by removing isolated dosage numbers/units for string comparison
+        cleaned_query = re.sub(r'\b\d+(?:mg|mcg|ml|g|%)\b', '', query.lower()).strip()
+        if not cleaned_query:
+            cleaned_query = query.lower()
 
         # Build candidate string lookup map including synonyms
         candidate_map = {}
@@ -47,11 +54,9 @@ class FuzzyMatcher:
         if not candidate_strings:
             return None
 
-        query_lower = query.lower()
-
         if HAS_RAPIDFUZZ:
             match_result = process.extractOne(
-                query_lower,
+                cleaned_query,
                 candidate_strings,
                 scorer=fuzz.WRatio,
                 score_cutoff=self.score_cutoff
@@ -66,7 +71,8 @@ class FuzzyMatcher:
             best_ratio = 0.0
             best_str = None
             for cand in candidate_strings:
-                ratio = difflib.SequenceMatcher(None, query_lower, cand.lower()).ratio() * 100.0
+                cand_clean = re.sub(r'\b\d+(?:mg|mcg|ml|g|%)\b', '', cand.lower()).strip()
+                ratio = difflib.SequenceMatcher(None, cleaned_query, cand_clean).ratio() * 100.0
                 if ratio > best_ratio:
                     best_ratio = ratio
                     best_str = cand

@@ -533,13 +533,25 @@ class LLMClient:
             ], ensure_ascii=False, indent=2)
 
         elif "relation" in prompt_lower or "quan hệ" in prompt_lower or "triple" in sys_lower or "bộ ba" in prompt_lower:
-            return json.dumps([
-                {"head": "Metformin", "relation": "PRESCRIBED_FOR", "tail": "Đái tháo đường týp 2", "confidence": 0.95, "evidence_span": "kê Metformin cho bệnh nhân Đái tháo đường týp 2"},
-                {"head": "Aspirin 81mg", "relation": "TREATS", "tail": "Cơn đau thắt ngực", "confidence": 0.95, "evidence_span": "chỉ định Aspirin 81mg để điều trị Cơn đau thắt ngực"},
-                {"head": "Ibuprofen", "relation": "CONTRAINDICATED_FOR", "tail": "Viêm loét dạ dày", "confidence": 0.98, "evidence_span": "Chống chỉ định với Ibuprofen"},
-                {"head": "Omeprazole 20mg", "relation": "PRESCRIBED_FOR", "tail": "Viêm loét dạ dày", "confidence": 0.95, "evidence_span": "Đã kê Omeprazole 20mg"},
-                {"head": "Cao huyết áp", "relation": "HAS_SYMPTOM", "tail": "Đau đầu", "confidence": 0.88, "evidence_span": "Cao huyết áp kèm Đau đầu"}
-            ], ensure_ascii=False, indent=2)
+            entities_in_prompt = []
+            for match in re.finditer(r"'([^']+)'\s*\((DISEASE|DRUG|SYMPTOM|PROCEDURE|DRUG_GROUP)\)", prompt):
+                entities_in_prompt.append({"entity": match.group(1), "type": match.group(2)})
+
+            triples = []
+            drugs = [e["entity"] for e in entities_in_prompt if e["type"] in ("DRUG", "DRUG_GROUP")]
+            diseases = [e["entity"] for e in entities_in_prompt if e["type"] == "DISEASE"]
+            symptoms = [e["entity"] for e in entities_in_prompt if e["type"] == "SYMPTOM"]
+
+            for drug in drugs:
+                for dis in diseases:
+                    triples.append({"head": drug, "relation": "PRESCRIBED_FOR", "tail": dis, "confidence": 0.95, "evidence_span": f"kê {drug} cho {dis}"})
+                for sym in symptoms:
+                    triples.append({"head": drug, "relation": "TREATS", "tail": sym, "confidence": 0.92, "evidence_span": f"dùng {drug} để điều trị {sym}"})
+            for dis in diseases:
+                for sym in symptoms:
+                    triples.append({"head": dis, "relation": "HAS_SYMPTOM", "tail": sym, "confidence": 0.90, "evidence_span": f"{dis} biểu hiện triệu chứng {sym}"})
+
+            return json.dumps(triples, ensure_ascii=False, indent=2)
 
         elif "ner" in prompt_lower or "thực thể" in prompt_lower or ("entity" in sys_lower and "cypher" not in sys_lower):
             return json.dumps([

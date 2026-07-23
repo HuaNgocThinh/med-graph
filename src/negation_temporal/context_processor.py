@@ -91,19 +91,53 @@ class ConTextProcessor:
             post_window = text[end:min(len(text), end + self.window_chars)]
             full_window = text[max(0, start - self.window_chars):min(len(text), end + self.window_chars)]
 
-            # 1. Negation assertion check
+            # 1. Negation assertion check (Must not cross sentence boundaries)
             is_negated = False
-            if self.pre_neg_regex.search(pre_window):
-                is_negated = True
-            elif self.post_neg_regex.search(post_window):
-                is_negated = True
+            pre_matches = list(self.pre_neg_regex.finditer(pre_window))
+            if pre_matches:
+                last_match = pre_matches[-1]
+                between_text = pre_window[last_match.end():]
+                if not any(delim in between_text for delim in (".", ";", "?", "!", "\n")):
+                    is_negated = True
 
-            # 2. Temporal context determination
+            if not is_negated:
+                post_matches = list(self.post_neg_regex.finditer(post_window))
+                if post_matches:
+                    first_match = post_matches[0]
+                    between_text = post_window[:first_match.start()]
+                    if not any(delim in between_text for delim in (".", ";", "?", "!", "\n")):
+                        is_negated = True
+
+            # 2. Temporal context determination (Must not cross sentence boundaries)
             temporal = "unknown"
-            if self.past_regex.search(full_window):
+            past_found = False
+            past_pre = list(self.past_regex.finditer(pre_window))
+            past_post = list(self.past_regex.finditer(post_window))
+            if past_pre:
+                last_match = past_pre[-1]
+                if not any(delim in pre_window[last_match.end():] for delim in (".", ";", "?", "!", "\n")):
+                    past_found = True
+            if not past_found and past_post:
+                first_match = past_post[0]
+                if not any(delim in post_window[:first_match.start()] for delim in (".", ";", "?", "!", "\n")):
+                    past_found = True
+
+            if past_found:
                 temporal = "past"
-            elif self.present_regex.search(full_window):
-                temporal = "present"
+            else:
+                pres_found = False
+                pres_pre = list(self.present_regex.finditer(pre_window))
+                pres_post = list(self.present_regex.finditer(post_window))
+                if pres_pre:
+                    last_match = pres_pre[-1]
+                    if not any(delim in pre_window[last_match.end():] for delim in (".", ";", "?", "!", "\n")):
+                        pres_found = True
+                if not pres_found and pres_post:
+                    first_match = pres_post[0]
+                    if not any(delim in post_window[:first_match.start()] for delim in (".", ";", "?", "!", "\n")):
+                        pres_found = True
+                if pres_found:
+                    temporal = "present"
 
             ent_copy["negated"] = is_negated
             ent_copy["temporal_context"] = temporal

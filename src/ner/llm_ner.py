@@ -14,7 +14,7 @@ logger = logging.getLogger("LLMNER")
 
 SYSTEM_PROMPT = """Bạn là chuyên gia trích xuất thực thể y tế tiếng Việt (Medical Named Entity Recognition).
 Nhiệm vụ: Tìm tất cả các thực thể y tế thuộc các loại:
-- DISEASE: Tên bệnh, hội chứng, tình trạng bệnh lý (VD: Cao huyết áp, Đái tháo đường týp 2, Viêm họng cấp)
+- DISEASE: Tên bệnh, hội chứng, tình trạng bệnh lý (VD: Cao huyết áp, Đái tháo đường týp 2, Viêm họng cấp). Không trích xuất các từ chung chung như 'Bệnh', 'Chứng', 'Triệu chứng', 'Tình trạng', 'Hội chứng' làm entity DISEASE độc lập nếu không đi kèm tên bệnh cụ thể.
 - DRUG: Tên thuốc, hoạt chất, biệt dược (VD: Paracetamol 500mg, Metformin, Aspirin)
 - SYMPTOM: Triệu chứng lâm sàng (VD: khó thở, ho kéo dài, đau ngực)
 - PROCEDURE: Thủ thuật, phẫu thuật, xét nghiệm y tế (VD: Chụp X-quang, Xét nghiệm máu)
