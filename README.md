@@ -1,7 +1,5 @@
 # MedGraph-VI: Tự động Xây dựng Knowledge Graph Y Tế Tiếng Việt bằng LLM
 
-> **Luận văn Thạc sĩ**: Hợp nhất LLM API Layer, PhoBERT-CRF NER, ConText Negation/Temporal Processing, Entity Linking (RxNav & ICD-10) và Neo4j Graph Database.
-
 ---
 
 ## 📌 1. Giới thiệu Kiến trúc & Thiết kế Pipeline
@@ -140,15 +138,3 @@ streamlit run app/streamlit_app.py
 
 ---
 
-## 💡 5. Assumptions & Design Decisions (Phục vụ Bảo vệ Luận văn)
-
-1. **Lý do chọn `requirements.txt` thay vì `poetry`**:
-   - Đảm bảo tính gọn nhẹ, tương thích trực tiếp trên môi trường Windows CPU mà không gặp xung đột bản quyền hay kho khóa package.
-2. **Logic Giải quyết Mâu thuẫn NER Ensemble (`ner_ensemble.py`)**:
-   - Tính toán độ đè span (IoU / Overlap ratio > 50%).
-   - Áp dụng thứ tự ưu tiên: `LLM NER (Ưu tiên 3) > PhoBERT+CRF (Ưu tiên 2) > Dictionary (Ưu tiên 1)`.
-   - Nếu cùng nguồn, ưu tiên giữ lại cụm từ y tế dài hơn (VD: "Đái tháo đường týp 2" thay vì "Đái tháo đường").
-3. **Quy tắc Phủ định tiếng Việt (ConText Algorithm)**:
-   - Liệt kê 20+ mẫu từ khóa phủ định ngữ cảnh chuyên biệt trong hồ sơ y tế tiếng Việt (`"không có"`, `"chưa ghi nhận"`, `"loại trừ"`, `"âm tính với"`, `"bình thường"`, v.v.).
-4. **Graph Cleaning & Conflict Handling (`graph_cleaner.py`)**:
-   - Khi phát hiện mâu thuẫn trực tiếp (VD: Cùng một cặp thực thể vừa có quan hệ `TREATS` vừa có `CONTRAINDICATED_FOR`), hệ thống ghi log ra file `data/graph_conflicts.log` để chuyên gia y tế đánh giá thủ công, **KHÔNG tự động xóa dữ liệu**.
