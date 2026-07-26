@@ -1,7 +1,5 @@
 # MedGraph-VI: Tự động Xây dựng Knowledge Graph Y Tế Tiếng Việt bằng LLM
 
-> **Luận văn Thạc sĩ**: Hợp nhất LLM API Layer, PhoBERT-CRF NER, ConText Negation/Temporal Processing, Entity Linking (RxNav & ICD-10) và Neo4j Graph Database.
-
 ---
 
 ## 📌 1. Giới thiệu Kiến trúc & Thiết kế Pipeline
