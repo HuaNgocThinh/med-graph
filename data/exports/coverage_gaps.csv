@@ -1,3 +1,2 @@
 ﻿entity_name,entity_type,missing_relation_type
-đau,DISEASE,HAS_SYMPTOM
 Viêm ruột thừa cấp,DISEASE,PRESCRIBED_FOR/TREATS

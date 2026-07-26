@@ -1,0 +1,42 @@
+﻿kind,file,line,exception_type,behaviour
+SWALLOW,app/streamlit_app.py,70,Exception,logs = []
+SWALLOW,app/streamlit_app.py,103,Exception,"return {'total': 0, 'correct': 0, 'incorrect': 0, '"
+SWALLOW,run_pipeline.py,50,Exception,pass
+SWALLOW,run_pipeline.py,125,Exception,all_samples = []
+SWALLOW,scripts/clean_all_relationships.py,128,Exception,pass
+SWALLOW,scripts/clean_all_relationships.py,143,Exception,pass
+SWALLOW,scripts/expand_coverage_loop.py,46,Exception,return 1
+SWALLOW,scripts/rebuild_rxnorm_dict.py,47,urllib.error.HTTPError,"if e.code == 404:
+    return None"
+SWALLOW,scripts/rebuild_rxnorm_dict.py,52,Exception,"if attempt == tries - 1:
+    return {'__error_"
+SWALLOW,src/config.py,15,ImportError,pass
+SWALLOW,src/entity_linking/fuzzy_matcher.py,15,ImportError,import difflib
+SWALLOW,src/graph/neo4j_client.py,42,Exception,return False
+SWALLOW,src/llm_client.py,339,Exception,usage_data = {}
+SWALLOW,src/llm_client.py,452,Exception,if 'google.genai' in sys.modules or 'genai' in
+SWALLOW,src/llm_client.py,585,json.JSONDecodeError,pass
+LOG_ONLY,app/streamlit_app.py,56,Exception,"logs, no return"
+LOG_ONLY,run_pipeline.py,59,Exception,"logs, no return"
+LOG_ONLY,scripts/clean_all_relationships.py,86,Exception,"logs, no return"
+LOG_ONLY,scripts/clean_all_relationships.py,105,Exception,"logs, no return"
+LOG_ONLY,scripts/expand_coverage_loop.py,151,Exception,"logs, no return"
+LOG_ONLY,scripts/expand_coverage_loop.py,173,subprocess.CalledProcessError,"logs, no return"
+LOG_ONLY,scripts/scan_swallowed_exceptions.py,63,SyntaxError,"logs, no return"
+LOG_ONLY,src/entity_linking/entity_normalizer.py,356,Exception,"logs, no return"
+LOG_ONLY,src/entity_linking/entity_normalizer.py,386,Exception,"logs, no return"
+LOG_ONLY,src/entity_linking/entity_normalizer.py,481,Exception,"logs, no return"
+LOG_ONLY,src/entity_linking/rxnorm_linker.py,123,Exception,"logs, no return"
+LOG_ONLY,src/graph/neo4j_client.py,30,Exception,"logs, returns False"
+LOG_ONLY,src/graph/neo4j_client.py,63,Exception,"logs, returns []"
+LOG_ONLY,src/llm_client.py,100,Exception,"logs, no return"
+LOG_ONLY,src/llm_client.py,158,Exception,"logs, no return"
+LOG_ONLY,src/llm_client.py,253,Exception,"logs, no return"
+LOG_ONLY,src/llm_client.py,288,FatalQuotaZeroError,"logs, no return"
+LOG_ONLY,src/llm_client.py,292,Exception,"logs, no return"
+LOG_ONLY,src/llm_client.py,317,Exception,"logs, returns self._call_mock(prompt, system_pro"
+LOG_ONLY,src/llm_client.py,355,Exception,"logs, no return"
+LOG_ONLY,src/llm_client.py,386,Exception,"logs, no return"
+LOG_ONLY,src/llm_client.py,580,json.JSONDecodeError,"logs, returns []"
+OK,src/llm_client.py,168,Exception,re-raises
+OK,src/llm_client.py,468,Exception,re-raises

@@ -1,0 +1,10 @@
+{
+  "_comment": "DIRECTIONAL folk -> medical-standard map. ONE direction only. Used to pick the single canonical surface form for a concept, at BOTH graph-write time and query time. Distinct from medical_synonyms_vi.json, which is BIDIRECTIONAL and used only to EXPAND a term into all its variants (get_term_synonyms). Spelling variants live in spelling_variants_vi.json, a separate mechanism. Invariant enforced by tests/test_synonym_canonicalization.py: no value may also appear as a key, otherwise canonicalization would ping-pong and stop being idempotent.",
+  "_rules": "An entry belongs here ONLY if both sides name the SAME concept at the SAME level of clinical commitment. Rejected on review, do not re-add: (1) narrowing a category to one member -- 'loạn nhịp tim' -> 'rung nhĩ' (atrial fibrillation is one arrhythmia among many); (2) promoting a SYMPTOM to a DIAGNOSIS -- 'đau dạ dày' -> 'viêm loét dạ dày' (epigastric pain can be gastritis, GERD, gallstones, even inferior MI), same shape as the rejected 'viêm họng'/'đau họng' pair; (3) over-committing to an acute diagnosis -- 'đau tim' -> 'nhồi máu cơ tim'; (4) entries already handled by ALIAS_MAP or ICD10Linker, which add substring-collision risk for nothing -- 'tăng huyết áp', 'mỡ máu'.",
+  "map": {
+    "tiểu đường": "đái tháo đường",
+    "đau bao tử": "đau dạ dày",
+    "mỡ máu cao": "rối loạn lipid máu",
+    "tan máu bẩm sinh": "thalassemia"
+  }
+}

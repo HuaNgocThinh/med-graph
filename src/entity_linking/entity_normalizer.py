@@ -34,6 +34,110 @@ DRUG_GROUPS: Set[str] = {
     "vitamin"
 }
 
+# ---------------------------------------------------------------------------
+# SINGLE AUTHORITY for "is this string too generic to be a clinical entity?"
+#
+# This is the ONLY place the question is answered. Every entry point -- ICD10Linker,
+# GraphBuilder, any future linker -- must call is_generic_term(). It exists because the
+# same family of bug has now recurred three times, each time through a different bypass:
+#   1. "Bệnh" leaked in as a DISEASE entity.
+#   2. "đau" survived the linker's stop-word check because the check returned an
+#      "unlinked" dict that STILL carried a usable standard_name, and ALIAS_MAP["đau"]="đau"
+#      (a self-map) handed the term straight back. A node named 'đau' was created.
+#   3. "viêm" (from "giảm viêm"/"kháng viêm") was never in the stop list at all, so it
+#      fuzzy-matched to "Viêm phổi" at 0.90 and produced 3 false PRESCRIBED_FOR edges.
+# A local stop-list per module cannot fix this; the gate has to be one function, and the
+# graph write path has to enforce it, because that is the only choke point every write
+# passes through.
+# ---------------------------------------------------------------------------
+
+# Never a clinical entity under ANY label: meta/discourse words, and findings so generic
+# they carry no clinical content on their own.
+NEVER_AN_ENTITY: Set[str] = {
+    # discourse / meta
+    "bệnh", "bệnh nhân", "bệnh nhi", "thuốc", "khám", "chẩn đoán", "tiền sử",
+    "hiện tại", "triệu chứng", "lâm sàng", "chứng", "tình trạng", "hội chứng",
+    "bị", "trẻ", "người bệnh", "điều trị", "chỉ định", "xét nghiệm", "kết quả",
+    # generic pathological process -- the "viêm" family that caused bug #3
+    "viêm", "nhiễm", "nhiễm trùng", "nhiễm khuẩn", "viêm nhiễm", "rối loạn",
+    "biến chứng", "tổn thương", "suy", "cấp", "cấp tính", "mạn", "mạn tính",
+    # therapeutic-intent phrases that NER mistakes for diagnoses
+    "giảm đau", "giảm viêm", "kháng viêm", "giảm sốt", "hạ sốt", "kháng sinh",
+}
+
+# Valid as a SYMPTOM, never as a DISEASE. 'sốt' and 'ho' are legitimate symptom nodes
+# in the graph; 'đau' as a DISEASE is not. Keeping this tier separate is what lets the
+# gate kill the bogus :DISEASE 'đau' node without destroying the real :SYMPTOM nodes.
+NOT_A_DISEASE: Set[str] = {
+    "đau", "sốt", "ho", "khó thở", "ngứa", "mệt", "mệt mỏi", "buồn nôn", "nôn",
+    "chóng mặt", "hoa mắt", "phù", "sưng", "tê", "run", "ợ nóng", "ợ chua",
+    "táo bón", "tiêu chảy", "chán ăn", "sụt cân", "hồi hộp", "đau đầu", "đau bụng",
+    "đau khớp", "đau họng", "khát nước",
+}
+
+# A 2-character string is too short to fuzzy-match safely against a disease name, but it can
+# still be a real symptom -- 'ho' (cough) is a legitimate SYMPTOM node. So the length rule is
+# a DISEASE-only rule here; the fuzzy matcher applies its own separate length guard.
+MIN_DISEASE_NAME_LENGTH = 3
+
+# --- Unlinked codes (item 3) ---------------------------------------------------------------
+# "not linked" used to be written as a STRING sentinel ('ICD-UNKNOWN', 'RXCUI-UNKNOWN', and in
+# two other places 'UNKNOWN' / 'N/A'). Three separate costs:
+#   1. Neo4j ignores null in a uniqueness constraint but treats equal strings as duplicates, so
+#      'REQUIRE d.code IS UNIQUE' could never be created while 15 drugs all held
+#      'RXCUI-UNKNOWN'. The constraint was declared, failed silently, and enforced nothing.
+#   2. Four different spellings meant every consumer needed its own ad-hoc test.
+#   3. A sentinel reads as a value, so an unlinked node can be miscounted as linked.
+# The canonical representation is now None (-> a Neo4j node with no `code` property at all).
+LEGACY_CODE_SENTINELS = frozenset({"ICD-UNKNOWN", "RXCUI-UNKNOWN", "UNKNOWN", "N/A", ""})
+
+
+def normalize_code(code) -> Optional[str]:
+    """Map any legacy sentinel (or blank) to None. Real codes pass through unchanged."""
+    if code is None:
+        return None
+    text = str(code).strip()
+    if text.upper() in LEGACY_CODE_SENTINELS:
+        return None
+    return text or None
+
+
+def is_unlinked_code(code) -> bool:
+    """True when `code` carries no real identifier, whatever spelling it arrived in."""
+    return normalize_code(code) is None
+
+
+def is_generic_term(name: str, entity_type: str = "DISEASE") -> bool:
+    """
+    THE gate. True means: refuse to link this string, and refuse to create a node for it.
+
+    entity_type matters -- 'sốt' is a perfectly good SYMPTOM but never a DISEASE, and 'ho'
+    is a valid 2-character symptom. Callers that do not know the type get the strict DISEASE
+    reading, which fails safe.
+
+    Checks both the lowercased form and the form with the 'Bệnh/Hội chứng/Chứng/Tình trạng'
+    prefixes removed, so 'Bệnh viêm' cannot sneak past a check that only knew about 'viêm'.
+    """
+    if not name or not name.strip():
+        return True
+
+    clean = name.strip().lower()
+    forms = {clean}
+    # prefix-stripped form, so 'chứng đau' / 'tình trạng viêm' are caught too
+    stripped = re.sub(r"^(bệnh|hội\s+chứng|chứng|tình\s+trạng)\s+", "", clean).strip()
+    if stripped:
+        forms.add(stripped)
+
+    is_disease = bool(entity_type) and entity_type.upper() == "DISEASE"
+
+    for f in forms:
+        if f in NEVER_AN_ENTITY:
+            return True
+        if is_disease and (f in NOT_A_DISEASE or len(f) < MIN_DISEASE_NAME_LENGTH):
+            return True
+    return False
+
+
 # Alias mapping dictionary: variant (lowercased) -> canonical representation
 ALIAS_MAP: Dict[str, str] = {
     # Diseases & Symptoms
@@ -85,7 +189,12 @@ ALIAS_MAP: Dict[str, str] = {
     "cơn đau thắt ngực cấp tính": "Cơn đau thắt ngực",
     "đau thắt ngực": "Cơn đau thắt ngực",
     "nhồi máu não": "Nhồi máu não",
-    "tai biến mạch máu não": "Nhồi máu não",
+    # REMOVED (approved 5c): "tai biến mạch máu não" -> "Nhồi máu não".
+    # Tai biến mạch máu não (stroke) includes the haemorrhagic forms I60/I61, roughly 15-20%
+    # of cases, whose management is the OPPOSITE of infarction (reverse anticoagulation vs
+    # thrombolysis). Collapsing it onto I63 is a serious clinical error. Removed from
+    # icd10_vi.json in the same pass; kept out of here so the mapping cannot come back via
+    # the alias layer.
     "nhồi máu cơ tim cấp": "Nhồi máu cơ tim cấp",
     "nhồi máu cơ tim": "Nhồi máu cơ tim cấp",
     "bệnh migraine": "Bệnh Migraine",
@@ -259,41 +368,133 @@ def is_drug_group(name: str) -> bool:
 
     return False
 
+# --- Orthographic (spelling) normalization ---
+# Deliberately a SEPARATE mechanism from the synonym map below. These keys are spellings of
+# the same word ('tuýp'/'type' -> 'týp'), not different words for the same concept. Keeping
+# them apart matters: they are short, generic, often-English tokens, which is exactly the
+# class that bleeds into unrelated words ('prototype'). Different risk profile, different step.
+SPELLING_MAP: Dict[str, str] = {}
+_SPELL_PATH = Path(__file__).resolve().parent / "spelling_variants_vi.json"
+if _SPELL_PATH.exists():
+    try:
+        with open(_SPELL_PATH, "r", encoding="utf-8") as _f:
+            SPELLING_MAP = json.load(_f).get("map", {})
+    except Exception as _e:
+        print(f"Error loading spelling_variants_vi.json: {_e}")
+
+_SPELL_PATTERN = (
+    re.compile(r"\b(?:" + "|".join(re.escape(k) for k in
+                                   sorted(SPELLING_MAP, key=len, reverse=True)) + r")\b",
+               re.IGNORECASE)
+    if SPELLING_MAP else None
+)
+
+def normalize_spelling(text: str) -> str:
+    """
+    Normalizes orthographic variants of the same Vietnamese medical word
+    (e.g. 'tuýp'/'type' -> 'týp'). Whole-word anchored, single pass, idempotent.
+    """
+    if not text or _SPELL_PATTERN is None:
+        return text or ""
+    return _SPELL_PATTERN.sub(lambda m: SPELLING_MAP[m.group(0).lower()], text)
+
+
+# --- Directional folk -> medical-standard canonicalization ---
+# Distinct from SYNONYM_MAP below: that one is BIDIRECTIONAL and only used to expand a
+# term into every variant. Canonicalization needs a single preferred direction, otherwise
+# "tiểu đường" -> "đái tháo đường" -> "tiểu đường" ping-pongs and never settles.
+CANONICAL_SYNONYM_MAP: Dict[str, str] = {}
+_CANON_SYN_PATH = Path(__file__).resolve().parent / "canonical_synonyms_vi.json"
+if _CANON_SYN_PATH.exists():
+    try:
+        with open(_CANON_SYN_PATH, "r", encoding="utf-8") as _f:
+            CANONICAL_SYNONYM_MAP = json.load(_f).get("map", {})
+    except Exception as _e:
+        print(f"Error loading canonical_synonyms_vi.json: {_e}")
+
+# Longest key first, so "mỡ máu cao" wins over "mỡ máu" and we never leave a mangled
+# half-replaced phrase like "rối loạn lipid máu cao".
+#
+# \b...\b anchors each key to whole words. Without it a short key eats the inside of an
+# unrelated word: the key "type" turned "prototype" into "prototýp" and "Genotype" into
+# "Genotýp". \b is Unicode-aware in Python 3, so Vietnamese letters (đ, ă, ê...) count as
+# word characters and anchor correctly.
+_CANON_KEYS_BY_LEN = sorted(CANONICAL_SYNONYM_MAP.keys(), key=len, reverse=True)
+_CANON_PATTERN = (
+    re.compile(r"\b(?:" + "|".join(re.escape(k) for k in _CANON_KEYS_BY_LEN) + r")\b",
+               re.IGNORECASE)
+    if _CANON_KEYS_BY_LEN else None
+)
+
+def canonicalize_synonyms(text: str) -> str:
+    """
+    Rewrites folk/variant Vietnamese medical phrases to their single medical-standard form
+    (e.g. 'Tiểu đường' -> 'Đái tháo đường', 'tuýp' -> 'týp').
+
+    Single-pass: replacements are applied simultaneously so one substitution can never be
+    re-matched by another key. Idempotent, because no value in CANONICAL_SYNONYM_MAP is
+    also a key (enforced by tests/test_synonym_canonicalization.py).
+    """
+    if not text or _CANON_PATTERN is None:
+        return text or ""
+
+    return _CANON_PATTERN.sub(
+        lambda m: CANONICAL_SYNONYM_MAP[m.group(0).lower()],
+        text
+    )
+
 def normalize_disease_name(name: str) -> str:
     """
     Standardizes disease/symptom names:
     - Strips leading/trailing whitespace.
     - Removes common Vietnamese prefixes like: 'Bệnh ', 'Hội chứng ', 'Chứng ', 'Tình trạng '.
+    - Rewrites folk synonyms to the medical standard form via CANONICAL_SYNONYM_MAP.
     - Converts back to Sentence Case (first letter capitalized).
     - Resolves to canonical form via ALIAS_MAP if matched.
+
+    Order matters and is deliberate: spelling normalization -> exact ALIAS_MAP hit ->
+    prefix strip -> synonym canonicalization -> ALIAS_MAP re-check. Spelling runs first
+    because it is orthographic and should settle before any lookup. Prefix stripping must
+    run BEFORE synonym canonicalization so that 'Bệnh tiểu đường' reaches 'Đái tháo đường'.
     """
     if not name:
         return ""
-    
-    clean = name.strip()
-    
+
+    # Step 0: orthographic variants ('tuýp' -> 'týp'), a separate mechanism from synonyms.
+    clean = normalize_spelling(name.strip())
+
     # Try resolving alias first
     lower_name = clean.lower()
     if lower_name in ALIAS_MAP:
-        clean = ALIAS_MAP[lower_name]
-    
+        return ALIAS_MAP[lower_name]
+
     # Remove common prefixes (case-insensitive)
     prefixes = [r"^bệnh\s+", r"^hội\s+chứng\s+", r"^chứng\s+", r"^tình\s+trạng\s+"]
     for prefix in prefixes:
         clean = re.sub(prefix, "", clean, flags=re.IGNORECASE)
-    
+
     clean = clean.strip()
     if not clean:
         return name.strip()
-    
+
+    # Alias re-check after prefix stripping, BEFORE synonym rewriting, so an exact
+    # alias entry always wins over a generic folk-term substitution.
+    if clean.lower() in ALIAS_MAP:
+        return ALIAS_MAP[clean.lower()]
+
+    # Folk -> medical standard (the mechanism prefix-stripping cannot provide)
+    clean = canonicalize_synonyms(clean).strip()
+    if not clean:
+        return name.strip()
+
     # Sentence Case
     clean = clean[0].upper() + clean[1:]
-    
+
     # Re-check alias map with clean normalized name
     lower_clean = clean.lower()
     if lower_clean in ALIAS_MAP:
         return ALIAS_MAP[lower_clean]
-        
+
     return clean
 
 # --- Vietnamese Medical Synonyms Mapping ---
@@ -305,6 +506,48 @@ if _SYN_PATH.exists():
             SYNONYM_MAP = json.load(_f)
     except Exception as _e:
         print(f"Error loading medical_synonyms_vi.json: {_e}")
+
+
+def _build_synonym_classes(pair_map: Dict[str, str]) -> Dict[str, Set[str]]:
+    """
+    Builds equivalence classes from the pairwise SYNONYM_MAP using union-find.
+
+    The JSON declares synonyms as one-to-one pairs (e.g. 'đau bao tử' -> 'viêm loét dạ dày',
+    'đau dạ dày' -> 'viêm loét dạ dày'). Pairwise links alone leave sibling folk terms
+    ('đau bao tử' and 'đau dạ dày') mutually unreachable. Computing the transitive closure
+    here groups every term that shares a canonical concept into one class, so expanding any
+    member yields ALL its equivalents. Returns term(lowercased) -> full set of class members.
+    """
+    parent: Dict[str, str] = {}
+
+    def find(x: str) -> str:
+        parent.setdefault(x, x)
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    def union(a: str, b: str) -> None:
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[ra] = rb
+
+    for _k, _v in pair_map.items():
+        union(_k.lower(), _v.lower())
+
+    classes: Dict[str, Set[str]] = {}
+    for term in list(parent):
+        classes.setdefault(find(term), set()).add(term)
+
+    term_to_class: Dict[str, Set[str]] = {}
+    for members in classes.values():
+        for m in members:
+            term_to_class[m] = members
+    return term_to_class
+
+
+# term(lowercased) -> set of all equivalent terms (transitive closure of SYNONYM_MAP)
+SYNONYM_CLASSES: Dict[str, Set[str]] = _build_synonym_classes(SYNONYM_MAP)
 
 def get_term_synonyms(term: str) -> Set[str]:
     """
@@ -327,15 +570,20 @@ def get_term_synonyms(term: str) -> Set[str]:
         for t in current:
             t_lower = t.lower()
             
-            # 1. Apply folk/standard synonym map replacements
-            for key, val in SYNONYM_MAP.items():
+            # 1. Apply folk/standard synonym replacements across the FULL equivalence class,
+            #    so every sibling term (e.g. 'đau bao tử' <-> 'đau dạ dày') is reachable,
+            #    not just the single pairwise target declared in the JSON.
+            for key, members in SYNONYM_CLASSES.items():
                 if key in t_lower:
                     pattern = re.compile(re.escape(key), re.IGNORECASE)
-                    replaced = pattern.sub(val, t).strip()
-                    results.add(replaced)
-                    results.add(replaced.lower())
-                    if replaced:
-                        results.add(replaced[0].upper() + replaced[1:])
+                    for val in members:
+                        if val == key:
+                            continue
+                        replaced = pattern.sub(val, t).strip()
+                        if replaced:
+                            results.add(replaced)
+                            results.add(replaced.lower())
+                            results.add(replaced[0].upper() + replaced[1:])
             
             # 2. Apply standard alias map lookups
             if t_lower in ALIAS_MAP:

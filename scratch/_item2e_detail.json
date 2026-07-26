@@ -1,0 +1,910 @@
+[
+ {
+  "code": "E11",
+  "syn": "bệnh tiểu đường",
+  "expected": "Đái tháo đường týp 2",
+  "before": "E11|Đái tháo đường týp 2|fuzzy",
+  "after": "E11|Đái tháo đường týp 2|fuzzy",
+  "changed": false,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "J18.9",
+  "syn": "viêm phế quản phổi",
+  "expected": "Viêm phổi",
+  "before": "J18.9|Viêm phổi|exact",
+  "after": "J20.9|Viêm phế quản cấp|fuzzy",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "J18.9",
+  "syn": "viêm đường hô hấp dưới",
+  "expected": "Viêm phổi",
+  "before": "J18.9|Viêm phổi|exact",
+  "after": "ICD-UNKNOWN|viêm đường hô hấp dưới|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "J20.9",
+  "syn": "viêm phế quản",
+  "expected": "Viêm phế quản cấp",
+  "before": "J20.9|Viêm phế quản cấp|exact",
+  "after": "J18.9|Viêm phổi|fuzzy",
+  "changed": true,
+  "raw": [
+   "syn_006",
+   "syn_018"
+  ],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "M51.2",
+  "syn": "thoát vị đĩa đệm",
+  "expected": "Thoát vị đĩa đệm cột sống thắt lưng",
+  "before": "M51.2|Thoát vị đĩa đệm cột sống thắt lưng|exact",
+  "after": "ICD-UNKNOWN|thoát vị đĩa đệm|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_009",
+   "syn_063"
+  ],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "E78.5",
+  "syn": "tăng cholesterol máu",
+  "expected": "Rối loạn lipid máu",
+  "before": "E78.5|Rối loạn lipid máu|exact",
+  "after": "ICD-UNKNOWN|tăng cholesterol máu|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "H36.0",
+  "syn": "bệnh võng mạc đái tháo đường",
+  "expected": "Biến chứng võng mạc",
+  "before": "H36.0|Biến chứng võng mạc|fuzzy",
+  "after": "ICD-UNKNOWN|Võng mạc đái tháo đường|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "K29.7",
+  "syn": "đau dạ dày",
+  "expected": "Viêm loét dạ dày",
+  "before": "K29.7|Viêm loét dạ dày|exact",
+  "after": "ICD-UNKNOWN|đau dạ dày|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "K29.7",
+  "syn": "viêm loét dạ dày",
+  "expected": "Viêm loét dạ dày",
+  "before": "K29.7|Viêm loét dạ dày|exact",
+  "after": "ICD-UNKNOWN|Viêm loét dạ dày|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_003",
+   "syn_012",
+   "syn_087"
+  ],
+  "mx": [
+   "syn_003",
+   "syn_012",
+   "syn_087"
+  ],
+  "aff_nodes": [
+   [
+    6,
+    "Viêm loét dạ dày",
+    "K29.7"
+   ]
+  ],
+  "sole": [
+   [
+    6,
+    "Viêm loét dạ dày"
+   ]
+  ],
+  "aff_rels": [
+   "(Amoxicillin 500mg)-[:PRESCRIBED_FOR]->(Viêm loét dạ dày) [rid=5]",
+   "(Ibuprofen)-[:CONTRAINDICATED_FOR]->(Viêm loét dạ dày) [rid=66]",
+   "(Omeprazole 20mg)-[:PRESCRIBED_FOR]->(Viêm loét dạ dày) [rid=79]",
+   "(Viêm loét dạ dày)-[:CAUSES]->(Đau thượng vị) [rid=179]",
+   "(Viêm loét dạ dày)-[:HAS_SYMPTOM]->(Đau thượng vị) [rid=4]",
+   "(Viêm loét dạ dày)-[:HAS_SYMPTOM]->(Ợ chua) [rid=178]"
+  ],
+  "rel_samples": {
+   "(Viêm loét dạ dày)-[:HAS_SYMPTOM]->(Đau thượng vị) [rid=4]": [
+    "syn_012",
+    "syn_087"
+   ],
+   "(Amoxicillin 500mg)-[:PRESCRIBED_FOR]->(Viêm loét dạ dày) [rid=5]": [
+    "syn_012"
+   ],
+   "(Ibuprofen)-[:CONTRAINDICATED_FOR]->(Viêm loét dạ dày) [rid=66]": [
+    "syn_003"
+   ],
+   "(Omeprazole 20mg)-[:PRESCRIBED_FOR]->(Viêm loét dạ dày) [rid=79]": [
+    "syn_003",
+    "syn_012",
+    "syn_087"
+   ],
+   "(Viêm loét dạ dày)-[:HAS_SYMPTOM]->(Ợ chua) [rid=178]": [
+    "syn_087"
+   ],
+   "(Viêm loét dạ dày)-[:CAUSES]->(Đau thượng vị) [rid=179]": [
+    "syn_087"
+   ]
+  }
+ },
+ {
+  "code": "K25",
+  "syn": "loét dạ dày tá tràng",
+  "expected": "Viêm loét dạ dày",
+  "before": "K25|Viêm loét dạ dày|exact",
+  "after": "ICD-UNKNOWN|Viêm loét dạ dày|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_012"
+  ],
+  "mx": [
+   "syn_012"
+  ],
+  "aff_nodes": [
+   [
+    6,
+    "Viêm loét dạ dày",
+    "K29.7"
+   ]
+  ],
+  "sole": [
+   [
+    6,
+    "Viêm loét dạ dày"
+   ]
+  ],
+  "aff_rels": [
+   "(Amoxicillin 500mg)-[:PRESCRIBED_FOR]->(Viêm loét dạ dày) [rid=5]",
+   "(Omeprazole 20mg)-[:PRESCRIBED_FOR]->(Viêm loét dạ dày) [rid=79]",
+   "(Viêm loét dạ dày)-[:HAS_SYMPTOM]->(Đau thượng vị) [rid=4]"
+  ],
+  "rel_samples": {
+   "(Viêm loét dạ dày)-[:HAS_SYMPTOM]->(Đau thượng vị) [rid=4]": [
+    "syn_012",
+    "syn_087"
+   ],
+   "(Amoxicillin 500mg)-[:PRESCRIBED_FOR]->(Viêm loét dạ dày) [rid=5]": [
+    "syn_012"
+   ],
+   "(Omeprazole 20mg)-[:PRESCRIBED_FOR]->(Viêm loét dạ dày) [rid=79]": [
+    "syn_003",
+    "syn_012",
+    "syn_087"
+   ]
+  }
+ },
+ {
+  "code": "I21",
+  "syn": "đột quỵ tim",
+  "expected": "Nhồi máu cơ tim cấp",
+  "before": "I21|Nhồi máu cơ tim cấp|exact",
+  "after": "ICD-UNKNOWN|đột quỵ tim|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "I63",
+  "syn": "đột quỵ não",
+  "expected": "Nhồi máu não",
+  "before": "I63|Nhồi máu não|exact",
+  "after": "ICD-UNKNOWN|đột quỵ não|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "I63",
+  "syn": "tai biến mạch máu não",
+  "expected": "Nhồi máu não",
+  "before": "I63|Nhồi máu não|exact",
+  "after": "ICD-UNKNOWN|Nhồi máu não|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_038"
+  ],
+  "mx": [
+   "syn_038"
+  ],
+  "aff_nodes": [
+   [
+    82,
+    "Nhồi máu não",
+    "I63"
+   ]
+  ],
+  "sole": [],
+  "aff_rels": [
+   "(Nhồi máu não)-[:HAS_SYMPTOM]->(Liệt nhẹ nửa người trái) [rid=51]"
+  ],
+  "rel_samples": {
+   "(Nhồi máu não)-[:HAS_SYMPTOM]->(Liệt nhẹ nửa người trái) [rid=51]": [
+    "syn_038"
+   ]
+  }
+ },
+ {
+  "code": "I63",
+  "syn": "thiếu máu não cục bộ",
+  "expected": "Nhồi máu não",
+  "before": "I63|Nhồi máu não|exact",
+  "after": "ICD-UNKNOWN|thiếu máu não cục bộ|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "J00",
+  "syn": "viêm họng cấp",
+  "expected": "Viêm mũi họng cấp",
+  "before": "J00|Viêm mũi họng cấp|exact",
+  "after": "ICD-UNKNOWN|viêm họng cấp|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_029"
+  ],
+  "mx": [
+   "syn_029"
+  ],
+  "aff_nodes": [
+   [
+    62,
+    "Viêm mũi họng cấp",
+    "J00"
+   ]
+  ],
+  "sole": [],
+  "aff_rels": [
+   "(Viêm mũi họng cấp)-[:HAS_SYMPTOM]->(Nuốt khó) [rid=37]",
+   "(Viêm mũi họng cấp)-[:HAS_SYMPTOM]->(Đau họng) [rid=36]"
+  ],
+  "rel_samples": {
+   "(Viêm mũi họng cấp)-[:HAS_SYMPTOM]->(Đau họng) [rid=36]": [
+    "syn_029"
+   ],
+   "(Viêm mũi họng cấp)-[:HAS_SYMPTOM]->(Nuốt khó) [rid=37]": [
+    "syn_029"
+   ]
+  }
+ },
+ {
+  "code": "J00",
+  "syn": "nhiễm siêu vi hô hấp",
+  "expected": "Viêm mũi họng cấp",
+  "before": "J00|Viêm mũi họng cấp|exact",
+  "after": "ICD-UNKNOWN|nhiễm siêu vi hô hấp|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "J02.9",
+  "syn": "đau họng",
+  "expected": "Viêm họng",
+  "before": "ICD-UNKNOWN|None|rejected_generic",
+  "after": "ICD-UNKNOWN|None|rejected_generic",
+  "changed": false,
+  "raw": [
+   "syn_029"
+  ],
+  "mx": [
+   "syn_029"
+  ],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "J02.9",
+  "syn": "viêm họng hạt",
+  "expected": "Viêm họng",
+  "before": "J02.9|Viêm họng|exact",
+  "after": "ICD-UNKNOWN|viêm họng hạt|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "J30.4",
+  "syn": "dị ứng thời tiết",
+  "expected": "Viêm mũi dị ứng",
+  "before": "J30.4|Viêm mũi dị ứng|exact",
+  "after": "ICD-UNKNOWN|dị ứng thời tiết|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "A09",
+  "syn": "tiêu chảy cấp",
+  "expected": "Viêm dạ dày ruột nhiễm khuẩn",
+  "before": "A09|Viêm dạ dày ruột nhiễm khuẩn|exact",
+  "after": "ICD-UNKNOWN|Tiêu chảy cấp|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_003",
+   "syn_040",
+   "syn_082"
+  ],
+  "mx": [
+   "syn_003",
+   "syn_040",
+   "syn_082"
+  ],
+  "aff_nodes": [
+   [
+    86,
+    "Viêm dạ dày ruột nhiễm khuẩn",
+    "A09"
+   ]
+  ],
+  "sole": [],
+  "aff_rels": [
+   "(Oresol)-[:PRESCRIBED_FOR]->(Viêm dạ dày ruột nhiễm khuẩn) [rid=54]",
+   "(Viêm dạ dày ruột nhiễm khuẩn)-[:HAS_SYMPTOM]->(Tiêu chảy cấp) [rid=165]",
+   "(Viêm dạ dày ruột nhiễm khuẩn)-[:HAS_SYMPTOM]->(Đau quặn bụng vùng quanh rốn) [rid=166]",
+   "(Viêm dạ dày ruột nhiễm khuẩn)-[:HAS_SYMPTOM]->(Đi ngoài 5 lần/ngày) [rid=53]"
+  ],
+  "rel_samples": {
+   "(Viêm dạ dày ruột nhiễm khuẩn)-[:HAS_SYMPTOM]->(Đi ngoài 5 lần/ngày) [rid=53]": [
+    "syn_040"
+   ],
+   "(Oresol)-[:PRESCRIBED_FOR]->(Viêm dạ dày ruột nhiễm khuẩn) [rid=54]": [
+    "syn_040",
+    "syn_082"
+   ],
+   "(Viêm dạ dày ruột nhiễm khuẩn)-[:HAS_SYMPTOM]->(Tiêu chảy cấp) [rid=165]": [
+    "syn_082"
+   ],
+   "(Viêm dạ dày ruột nhiễm khuẩn)-[:HAS_SYMPTOM]->(Đau quặn bụng vùng quanh rốn) [rid=166]": [
+    "syn_082"
+   ]
+  }
+ },
+ {
+  "code": "A09",
+  "syn": "rối loạn tiêu hóa",
+  "expected": "Viêm dạ dày ruột nhiễm khuẩn",
+  "before": "A09|Viêm dạ dày ruột nhiễm khuẩn|exact",
+  "after": "ICD-UNKNOWN|rối loạn tiêu hóa|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "M19.9",
+  "syn": "thoái hóa khớp gối",
+  "expected": "Thoái hóa khớp",
+  "before": "M19.9|Thoái hóa khớp|exact",
+  "after": "ICD-UNKNOWN|Thoái hóa khớp|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_014",
+   "syn_080"
+  ],
+  "mx": [
+   "syn_014",
+   "syn_080"
+  ],
+  "aff_nodes": [
+   [
+    28,
+    "Thoái hóa khớp",
+    "M19.9"
+   ]
+  ],
+  "sole": [
+   [
+    28,
+    "Thoái hóa khớp"
+   ]
+  ],
+  "aff_rels": [
+   "(Celecoxib 200mg)-[:PRESCRIBED_FOR]->(Thoái hóa khớp) [rid=7]",
+   "(Meloxicam 15mg)-[:PRESCRIBED_FOR]->(Thoái hóa khớp) [rid=163]",
+   "(Thoái hóa khớp)-[:HAS_SYMPTOM]->(Cứng khớp buổi sáng) [rid=162]",
+   "(Thoái hóa khớp)-[:HAS_SYMPTOM]->(Đau khớp) [rid=161]",
+   "(Thoái hóa khớp)-[:HAS_SYMPTOM]->(Đau tăng khi vận động) [rid=8]"
+  ],
+  "rel_samples": {
+   "(Celecoxib 200mg)-[:PRESCRIBED_FOR]->(Thoái hóa khớp) [rid=7]": [
+    "syn_014"
+   ],
+   "(Thoái hóa khớp)-[:HAS_SYMPTOM]->(Đau tăng khi vận động) [rid=8]": [
+    "syn_014"
+   ],
+   "(Thoái hóa khớp)-[:HAS_SYMPTOM]->(Đau khớp) [rid=161]": [
+    "syn_080"
+   ],
+   "(Thoái hóa khớp)-[:HAS_SYMPTOM]->(Cứng khớp buổi sáng) [rid=162]": [
+    "syn_080"
+   ],
+   "(Meloxicam 15mg)-[:PRESCRIBED_FOR]->(Thoái hóa khớp) [rid=163]": [
+    "syn_080"
+   ]
+  }
+ },
+ {
+  "code": "M19.9",
+  "syn": "thoái hóa cột sống",
+  "expected": "Thoái hóa khớp",
+  "before": "M19.9|Thoái hóa khớp|exact",
+  "after": "ICD-UNKNOWN|thoái hóa cột sống|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "M19.9",
+  "syn": "đau khớp mạn tính",
+  "expected": "Thoái hóa khớp",
+  "before": "M19.9|Thoái hóa khớp|exact",
+  "after": "ICD-UNKNOWN|đau khớp mạn tính|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "G40.9",
+  "syn": "cơn co giật",
+  "expected": "Động kinh",
+  "before": "G40.9|Động kinh|exact",
+  "after": "ICD-UNKNOWN|cơn co giật|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_027",
+   "syn_073"
+  ],
+  "mx": [
+   "syn_027",
+   "syn_073"
+  ],
+  "aff_nodes": [
+   [
+    59,
+    "Động kinh",
+    "G40.9"
+   ]
+  ],
+  "sole": [],
+  "aff_rels": [
+   "(Carbamazepine 200mg)-[:PRESCRIBED_FOR]->(Động kinh) [rid=34]",
+   "(Depakine Chrono 500mg)-[:PRESCRIBED_FOR]->(Động kinh) [rid=140]",
+   "(Động kinh)-[:HAS_SYMPTOM]->(Co giật toàn thể cứng - gi clon) [rid=137]",
+   "(Động kinh)-[:HAS_SYMPTOM]->(Mất ý thức đột ngột) [rid=138]",
+   "(Động kinh)-[:HAS_SYMPTOM]->(Sủi bọt mép) [rid=139]"
+  ],
+  "rel_samples": {
+   "(Carbamazepine 200mg)-[:PRESCRIBED_FOR]->(Động kinh) [rid=34]": [
+    "syn_027"
+   ],
+   "(Động kinh)-[:HAS_SYMPTOM]->(Co giật toàn thể cứng - gi clon) [rid=137]": [
+    "syn_073"
+   ],
+   "(Động kinh)-[:HAS_SYMPTOM]->(Mất ý thức đột ngột) [rid=138]": [
+    "syn_073"
+   ],
+   "(Động kinh)-[:HAS_SYMPTOM]->(Sủi bọt mép) [rid=139]": [
+    "syn_073"
+   ],
+   "(Depakine Chrono 500mg)-[:PRESCRIBED_FOR]->(Động kinh) [rid=140]": [
+    "syn_073"
+   ]
+  }
+ },
+ {
+  "code": "F41.1",
+  "syn": "rối loạn lo âu",
+  "expected": "Rối loạn lo âu lan tỏa",
+  "before": "F41.1|Rối loạn lo âu lan tỏa|exact",
+  "after": "ICD-UNKNOWN|Rối loạn lo âu lan tỏa|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_049",
+   "syn_059"
+  ],
+  "mx": [
+   "syn_049"
+  ],
+  "aff_nodes": [
+   [
+    105,
+    "Rối loạn lo âu lan tỏa",
+    "F41.1"
+   ]
+  ],
+  "sole": [],
+  "aff_rels": [
+   "(Sertraline 50mg)-[:PRESCRIBED_FOR]->(Rối loạn lo âu lan tỏa) [rid=68]"
+  ],
+  "rel_samples": {
+   "(Sertraline 50mg)-[:PRESCRIBED_FOR]->(Rối loạn lo âu lan tỏa) [rid=68]": [
+    "syn_049"
+   ]
+  }
+ },
+ {
+  "code": "F41.1",
+  "syn": "lo âu mạn tính",
+  "expected": "Rối loạn lo âu lan tỏa",
+  "before": "F41.1|Rối loạn lo âu lan tỏa|exact",
+  "after": "ICD-UNKNOWN|lo âu mạn tính|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "E05.9",
+  "syn": "Basedow",
+  "expected": "Cường giáp",
+  "before": "E05.9|Cường giáp|exact",
+  "after": "ICD-UNKNOWN|Basedow|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "N20.0",
+  "syn": "sỏi đường tiết niệu",
+  "expected": "Sỏi thận",
+  "before": "N20.0|Sỏi thận|exact",
+  "after": "ICD-UNKNOWN|sỏi đường tiết niệu|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "N20.0",
+  "syn": "sỏi niệu quản",
+  "expected": "Sỏi thận",
+  "before": "N20.0|Sỏi thận|exact",
+  "after": "ICD-UNKNOWN|sỏi niệu quản|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "K80.2",
+  "syn": "sỏi mật",
+  "expected": "Sỏi túi mật",
+  "before": "K80.2|Sỏi túi mật|exact",
+  "after": "ICD-UNKNOWN|sỏi mật|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "A15.0",
+  "syn": "bệnh lao",
+  "expected": "Lao phổi",
+  "before": "A15.0|Lao phổi|exact",
+  "after": "ICD-UNKNOWN|bệnh lao|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "A15.0",
+  "syn": "lao phế quản",
+  "expected": "Lao phổi",
+  "before": "A15.0|Lao phổi|exact",
+  "after": "ICD-UNKNOWN|lao phế quản|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "L20.9",
+  "syn": "eczema",
+  "expected": "Viêm da cơ địa",
+  "before": "L20.9|Viêm da cơ địa|exact",
+  "after": "ICD-UNKNOWN|eczema|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "L70.0",
+  "syn": "mụn trứng cá mức độ trung bình",
+  "expected": "Mụn trứng cá",
+  "before": "L70.0|Mụn trứng cá|exact",
+  "after": "ICD-UNKNOWN|mụn trứng cá mức độ trung bình|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_030"
+  ],
+  "mx": [
+   "syn_030"
+  ],
+  "aff_nodes": [
+   [
+    66,
+    "Mụn trứng cá",
+    "L70.0"
+   ]
+  ],
+  "sole": [],
+  "aff_rels": [
+   "(Isotretinoin 10mg)-[:PRESCRIBED_FOR]->(Mụn trứng cá) [rid=38]"
+  ],
+  "rel_samples": {
+   "(Isotretinoin 10mg)-[:PRESCRIBED_FOR]->(Mụn trứng cá) [rid=38]": [
+    "syn_030"
+   ]
+  }
+ },
+ {
+  "code": "N76.0",
+  "syn": "viêm âm đạo do nấm",
+  "expected": "Viêm âm đạo do nấm",
+  "before": "N76.0|Viêm âm đạo do nấm|exact",
+  "after": "ICD-UNKNOWN|Viêm âm đạo do nấm|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_028",
+   "syn_070"
+  ],
+  "mx": [
+   "syn_028",
+   "syn_070"
+  ],
+  "aff_nodes": [
+   [
+    61,
+    "Viêm âm đạo do nấm",
+    "N76.0"
+   ]
+  ],
+  "sole": [
+   [
+    61,
+    "Viêm âm đạo do nấm"
+   ]
+  ],
+  "aff_rels": [
+   "(Clotrimazole)-[:PRESCRIBED_FOR]->(Viêm âm đạo do nấm) [rid=127]",
+   "(Fluconazole 150mg)-[:PRESCRIBED_FOR]->(Viêm âm đạo do nấm) [rid=35]",
+   "(Viêm âm đạo do nấm)-[:HAS_SYMPTOM]->(Ngứa rát vùng kín) [rid=125]",
+   "(Viêm âm đạo do nấm)-[:HAS_SYMPTOM]->(Ra khí hư đặc dính màu trắng đục như váng sữa) [rid=126]"
+  ],
+  "rel_samples": {
+   "(Fluconazole 150mg)-[:PRESCRIBED_FOR]->(Viêm âm đạo do nấm) [rid=35]": [
+    "syn_028"
+   ],
+   "(Viêm âm đạo do nấm)-[:HAS_SYMPTOM]->(Ngứa rát vùng kín) [rid=125]": [
+    "syn_070"
+   ],
+   "(Viêm âm đạo do nấm)-[:HAS_SYMPTOM]->(Ra khí hư đặc dính màu trắng đục như váng sữa) [rid=126]": [
+    "syn_070"
+   ],
+   "(Clotrimazole)-[:PRESCRIBED_FOR]->(Viêm âm đạo do nấm) [rid=127]": [
+    "syn_070"
+   ]
+  }
+ },
+ {
+  "code": "N76.0",
+  "syn": "nhiễm nấm âm đạo",
+  "expected": "Viêm âm đạo do nấm",
+  "before": "N76.0|Viêm âm đạo do nấm|exact",
+  "after": "ICD-UNKNOWN|nhiễm nấm âm đạo|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "B35.9",
+  "syn": "nấm bẹn",
+  "expected": "Nấm da",
+  "before": "B35.9|Nấm da|exact",
+  "after": "ICD-UNKNOWN|nấm bẹn|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "D69.3",
+  "syn": "giảm tiểu cầu",
+  "expected": "Xuất huyết giảm tiểu cầu vô căn",
+  "before": "D69.3|Xuất huyết giảm tiểu cầu vô căn|exact",
+  "after": "ICD-UNKNOWN|giảm tiểu cầu|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_032"
+  ],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "I48.9",
+  "syn": "loạn nhịp tim",
+  "expected": "Rung nhĩ",
+  "before": "I48.9|Rung nhĩ|exact",
+  "after": "ICD-UNKNOWN|loạn nhịp tim|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "M75.2",
+  "syn": "viêm quanh khớp vai",
+  "expected": "Viêm gân vai",
+  "before": "M75.2|Viêm gân vai|exact",
+  "after": "ICD-UNKNOWN|viêm quanh khớp vai|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "M75.2",
+  "syn": "đau vai",
+  "expected": "Viêm gân vai",
+  "before": "M75.2|Viêm gân vai|exact",
+  "after": "ICD-UNKNOWN|đau vai|unlinked",
+  "changed": true,
+  "raw": [],
+  "mx": [],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ },
+ {
+  "code": "D50.9",
+  "syn": "thiếu máu nặng",
+  "expected": "Thiếu máu thiếu sắt",
+  "before": "D50.9|Thiếu máu thiếu sắt|exact",
+  "after": "ICD-UNKNOWN|thiếu máu nặng|unlinked",
+  "changed": true,
+  "raw": [
+   "syn_039"
+  ],
+  "mx": [
+   "syn_039"
+  ],
+  "aff_nodes": [],
+  "sole": [],
+  "aff_rels": [],
+  "rel_samples": {}
+ }
+]

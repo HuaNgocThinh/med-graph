@@ -1,0 +1,10 @@
+[
+  {
+    "timestamp": "2026-07-23T21:37:47.506154",
+    "question": "Bệnh nhân Đái tháo đường týp 2 được kê thuốc gì?",
+    "method": "KG-QA",
+    "answer": "Bệnh nhân mắc bệnh đái tháo đường týp 2 thường được bác sĩ kê đơn sử dụng thuốc Metformin.",
+    "feedback": "correct",
+    "cypher_query": "MATCH (d:DRUG)-[r:PRESCRIBED_FOR|TREATS]->(b:DISEASE) WHERE toLower(b.name) CONTAINS 'đái tháo đường týp 2' RETURN d.name AS Thuoc, b.name AS Benh, r.source_sample_id AS source_sample_id"
+  }
+]

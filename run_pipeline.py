@@ -206,7 +206,7 @@ def run_end_to_end_pipeline(batch_size: int = 10, total_samples: int = 50, reset
             elif head_type in ("DRUG", "DRUG_GROUP"):
                 head_link = rx_linker.link_drug(head_str)
             else:
-                head_link = {"standard_name": get_canonical_name(head_str), "code": "UNKNOWN", "method": "unlinked"}
+                head_link = {"standard_name": get_canonical_name(head_str), "code": None, "method": "unlinked"}
 
             head_link["type"] = head_type
 
@@ -216,7 +216,7 @@ def run_end_to_end_pipeline(batch_size: int = 10, total_samples: int = 50, reset
             elif tail_type in ("DRUG", "DRUG_GROUP"):
                 tail_link = rx_linker.link_drug(tail_str)
             else:
-                tail_link = {"standard_name": get_canonical_name(tail_str), "code": "UNKNOWN", "method": "unlinked"}
+                tail_link = {"standard_name": get_canonical_name(tail_str), "code": None, "method": "unlinked"}
 
             tail_link["type"] = tail_type
 

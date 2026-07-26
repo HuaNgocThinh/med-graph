@@ -1,0 +1,13 @@
+﻿source_sample_id,role,entity,requested_label,existing_labels,relation,head,tail
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp

@@ -19,8 +19,34 @@ except ImportError:
 class FuzzyMatcher:
     """Fuzzy string matching helper using rapidfuzz token similarity or difflib fallback."""
 
-    def __init__(self, score_cutoff: float = 88.0):
+    # Minimum len(query)/len(matched_candidate). Measured, not guessed: across every term in
+    # the system (302 of them, scratch/probe_scorers.py), the ONLY legitimate term that reaches
+    # the fuzzy path rather than the exact map is 'tiểu đường' at ratio 0.62, while every bogus
+    # fragment sits at 0.56 or below ('kháng viêm' 0.56, 'giảm viêm' 0.50, 'viêm' 0.31,
+    # 'đau' 0.18, 'ho' 0.12). 0.6 is the separating value.
+    #
+    # This targets the actual mechanism rather than the symptom: fuzz.WRatio switches to
+    # partial_ratio when the two strings differ a lot in length, which scores ANY substring at
+    # ~90 regardless of meaning -- that is why 'viêm' matched 'Viêm phổi' at 0.90 and produced
+    # three false PRESCRIBED_FOR edges. Requiring a length ratio disables exactly that path.
+    MIN_LENGTH_RATIO = 0.6
+
+    def __init__(self, score_cutoff: float = 88.0, min_length_ratio: float = MIN_LENGTH_RATIO):
         self.score_cutoff = score_cutoff
+        self.min_length_ratio = min_length_ratio
+
+    def _passes_length_guard(self, query: str, matched: str) -> bool:
+        """Rejects a match where the query is far shorter than the candidate it matched."""
+        if not matched:
+            return False
+        ratio = len(query) / len(matched)
+        if ratio < self.min_length_ratio:
+            logger.info(
+                f"🚫 Fuzzy match rejected by length guard: query={query!r} vs candidate={matched!r} "
+                f"(ratio {ratio:.2f} < {self.min_length_ratio})"
+            )
+            return False
+        return True
 
     def find_best_match(self, query: str, choices: List[Dict[str, Any]], key: str = "name_vi") -> Optional[Tuple[Dict[str, Any], float]]:
         """
@@ -64,6 +90,8 @@ class FuzzyMatcher:
 
             if match_result:
                 matched_str, score, _ = match_result
+                if not self._passes_length_guard(cleaned_query, matched_str.lower()):
+                    return None
                 item = candidate_map[matched_str.lower()]
                 normalized_score = round(score / 100.0, 3)
                 return item, normalized_score
@@ -78,6 +106,8 @@ class FuzzyMatcher:
                     best_str = cand
 
             if best_str and best_ratio >= self.score_cutoff:
+                if not self._passes_length_guard(cleaned_query, best_str.lower()):
+                    return None
                 item = candidate_map[best_str.lower()]
                 return item, round(best_ratio / 100.0, 3)
 

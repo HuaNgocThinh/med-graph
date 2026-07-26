@@ -1,0 +1,16 @@
+﻿source_sample_id,action,head,relation,tail,reason,status
+syn_014,VERIFY_CORRECT_EDGE,Celecoxib 200mg,PRESCRIBED_FOR,Thoái hóa khớp,van ban chan doan 'Thoái hóa khớp gối',DA CO
+syn_063,VERIFY_CORRECT_EDGE,Meloxicam 15mg,PRESCRIBED_FOR,Thoát vị đĩa đệm cột sống thắt lưng,van ban chan doan 'Thoát vị đĩa đệm cột sống thắt lưng',DA CO
+syn_067,VERIFY_CORRECT_EDGE,Meloxicam 15mg,PRESCRIBED_FOR,Viêm gân vai,van ban chan doan 'Viêm gân vai',DA CO
+syn_078,VERIFY_CORRECT_EDGE,Trimebutin 200mg,PRESCRIBED_FOR,Ruột kích thích,van ban chan doan 'Ruột kích thích',DA CO
+syn_080,VERIFY_CORRECT_EDGE,Meloxicam 15mg,PRESCRIBED_FOR,Thoái hóa khớp,van ban chan doan 'Thoái hóa khớp gối hai bên',DA CO
+syn_091,VERIFY_CORRECT_EDGE,Meloxicam 7.5mg,PRESCRIBED_FOR,Đau lưng dưới,van ban chan doan 'đau thắt lưng cấp',DA CO
+syn_096,VERIFY_CORRECT_EDGE,Meloxicam 15mg,PRESCRIBED_FOR,Đau lưng dưới,van ban chan doan 'đau thắt lưng cấp',DA CO
+syn_089,NO_REPOINT,Meloxicam 15mg,PRESCRIBED_FOR,(khong xac dinh),van ban goc khong chua chan doan hop le ('chan doan xac dinh dau'),BO NGO - cho nguoi dung quyet
+"syn_080,syn_089",DELETE_RELATIONSHIP,Meloxicam 15mg,PRESCRIBED_FOR,Viêm phổi,'viem' tach ra tu 'giam viem'/'khang viem' bi fuzzy-match sang 'Viem phoi' J18.9 @0.90,SAI
+syn_091,DELETE_RELATIONSHIP,Meloxicam 7.5mg,PRESCRIBED_FOR,Viêm phổi,'viem' tach ra tu 'giam viem'/'khang viem' bi fuzzy-match sang 'Viem phoi' J18.9 @0.90,SAI
+"syn_063,syn_067,syn_080,syn_089,syn_096",DELETE_RELATIONSHIP,Meloxicam 15mg,PRESCRIBED_FOR,đau,"'dau' tach ra tu 'giam dau', khong phai chan doan; node DISEASE 'dau' la rac",SAI
+syn_091,DELETE_RELATIONSHIP,Meloxicam 7.5mg,PRESCRIBED_FOR,đau,"'dau' tach ra tu 'giam dau', khong phai chan doan; node DISEASE 'dau' la rac",SAI
+syn_078,DELETE_RELATIONSHIP,Trimebutin 200mg,PRESCRIBED_FOR,đau,"'dau' tach ra tu 'giam dau', khong phai chan doan; node DISEASE 'dau' la rac",SAI
+syn_014,DELETE_RELATIONSHIP,Celecoxib 200mg,PRESCRIBED_FOR,đau,"'dau' tach ra tu 'giam dau', khong phai chan doan; node DISEASE 'dau' la rac",SAI
+-,DELETE_NODE,đau,-,-,node DISEASE rac sinh tu 'giam dau'; da co lap sau khi xoa canh,SAI

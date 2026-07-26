@@ -5,6 +5,7 @@ Calls NIH RxNav REST API with local dictionary and rapidfuzz fallbacks.
 
 import json
 import logging
+import re
 from pathlib import Path
 from typing import Dict, Any, Optional
 from src.config import RXNORM_DICT_PATH, RXNAV_API_BASE
@@ -13,6 +14,9 @@ from src.entity_linking.entity_normalizer import normalize_entity_name, get_cano
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("RxNormLinker")
+
+# Shared with scripts/rebuild_rxnorm_dict.py: RxNorm indexes ingredients, not dosage strings.
+DOSAGE_RE = re.compile(r"\s*\d+(?:[.,]\d+)?\s*(?:mg|mcg|g|ml|%|iu|ui)(?:\s*/\s*\S+)?\s*", re.IGNORECASE)
 
 GENERIC_STOP_WORDS = {
     "thuốc", "kháng sinh", "dùng thuốc", "đau", "sốt", "ho", "bệnh",
@@ -45,7 +49,7 @@ class RxNormLinker:
         if clean_lower in GENERIC_STOP_WORDS or len(clean_lower) < 3:
             return {
                 "standard_name": canonical_fallback,
-                "code": "RXCUI-UNKNOWN",
+                "code": None,   # item 3: null, not a sentinel string
                 "confidence": 0.0,
                 "method": "unlinked",
                 "type": group_type
@@ -83,18 +87,26 @@ class RxNormLinker:
         # 4. Unlinked fallback - PRESERVES ORIGINAL CANONICAL NAME, DOES NOT OVERWRITE WITH WRONG MATCH
         return {
             "standard_name": canonical_fallback,
-            "code": "RXCUI-UNKNOWN",
+            "code": None,   # item 3: null, not a sentinel string
             "confidence": 0.0,
             "method": "unlinked",
             "type": group_type
         }
 
     def _call_rxnav_api(self, drug_name: str) -> Optional[Dict[str, Any]]:
-        """Invokes NIH RxNav REST API for concept normalization."""
+        """
+        Invokes NIH RxNav REST API for concept normalization.
+
+        The dosage suffix is stripped first. RxNorm indexes ingredients, not Vietnamese
+        product strings, so it answered with an empty idGroup for every dosage-bearing name --
+        'Meloxicam 15mg' -> {} while 'Meloxicam' -> 41493. That alone accounted for 15 of the
+        unlinked drug nodes.
+        """
+        query = DOSAGE_RE.sub(" ", drug_name or "").strip(" ,/-") or drug_name
         try:
             import requests
             url = f"{RXNAV_API_BASE}/rxcui.json"
-            params = {"name": drug_name}
+            params = {"name": query}
             resp = requests.get(url, params=params, timeout=3.0)
             if resp.status_code == 200:
                 data = resp.json()
@@ -113,21 +125,56 @@ class RxNormLinker:
         return None
 
     def _load_records(self):
+        """
+        Accepts both the legacy flat list and the rebuilt provenance-bearing shape
+        {"_provenance": {...}, "drugs": [...], "needs_manual_review": [...]}.
+        """
         if not self.dict_path.exists():
             logger.warning(f"RxNorm dictionary missing at {self.dict_path}")
             return []
         with open(self.dict_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+        if isinstance(data, dict):
+            prov = data.get("_provenance", {})
+            logger.info(
+                f"RxNorm cache: {len(data.get('drugs', []))} record da xac minh nguoc, "
+                f"nguon={prov.get('source', '?')}, fetch_date={prov.get('fetch_date', '?')}"
+            )
+            return data.get("drugs", [])
+        logger.warning(
+            "⚠️ RxNorm dictionary is in the legacy un-provenanced format. Its RxCUIs have no "
+            "recorded source and must not be trusted. Run scripts/rebuild_rxnorm_dict.py."
+        )
+        return data
 
     def _build_exact_map(self) -> Dict[str, Dict[str, Any]]:
+        """
+        Only REVERSE-VERIFIED, API-sourced records may serve as cache hits.
+
+        This is what makes cache-first safe. The old file was a hand/LLM-authored list with no
+        provenance -- 27 of its 49 RxCUIs named a different drug (Omeprazole -> morphine,
+        Amlodipine -> fentanyl) -- and because local-exact ran before the API, those poisoned
+        entries permanently beat the correct RxNav answer. Records lacking
+        reverse_verified/source are now skipped entirely, so they fall through to the live API
+        instead of overriding it. A poisoned cache can no longer win.
+        """
         lookup = {}
+        skipped = 0
         for item in self.records:
+            if not (item.get("reverse_verified") and item.get("source") == "rxnav_api"):
+                skipped += 1
+                continue
             if "name_vi" in item:
                 lookup[item["name_vi"].lower()] = item
             if "name_en" in item:
                 lookup[item["name_en"].lower()] = item
             for syn in item.get("synonyms", []):
                 lookup[syn.lower()] = item
+        if skipped:
+            logger.warning(
+                f"⚠️ {skipped} RxNorm record bi BO QUA khoi cache vi thieu provenance "
+                f"(reverse_verified/source). Chung se duoc tra cuu lai qua RxNav API."
+            )
         return lookup
 
 if __name__ == "__main__":

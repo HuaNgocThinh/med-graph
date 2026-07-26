@@ -9,14 +9,17 @@ from pathlib import Path
 from typing import Dict, Any, Optional
 from src.config import ICD10_DICT_PATH
 from src.entity_linking.fuzzy_matcher import FuzzyMatcher
-from src.entity_linking.entity_normalizer import normalize_entity_name, get_canonical_name
+from src.entity_linking.entity_normalizer import (
+    normalize_entity_name, get_canonical_name, is_generic_term,
+)
 
 logging.basicConfig(level=logging.INFO)
-GENERIC_STOP_WORDS = {
-    "bệnh", "bệnh nhân", "đau", "sốt", "ho", "bị", "trẻ", "bệnh nhi",
-    "thuốc", "khám", "chẩn đoán", "tiền sử", "hiện tại", "triệu chứng", "lâm sàng",
-    "chứng", "tình trạng", "hội chứng"
-}
+logger = logging.getLogger("ICD10Linker")
+
+# The stop-word list that used to live here has moved to entity_normalizer.is_generic_term(),
+# which is now the single authority. A per-module copy is precisely how this bug family kept
+# recurring: the local list was missing 'viêm', so 'viêm' fuzzy-matched to Viêm phổi (J18.9).
+# Import the gate, never re-declare it.
 
 class ICD10Linker:
     """Links disease entity names to standardized ICD-10 codes."""
@@ -36,13 +39,20 @@ class ICD10Linker:
         clean_lower = clean_text.lower()
         canonical_fallback = get_canonical_name(clean_text)
 
-        # Guard check: Ignore generic non-disease stop words from fuzzy matching
-        if clean_lower in GENERIC_STOP_WORDS or len(clean_lower) < 3:
+        # THE gate. Single authority, shared with GraphBuilder.
+        # standard_name is deliberately None and rejected=True is set: the old code returned
+        # the canonical_fallback here, which meant a caller doing
+        #   head_info.get("standard_name") or item.get("head")
+        # got a perfectly usable name back and built a node anyway. That is how the bogus
+        # :DISEASE 'đau' node was created despite 'đau' already being in the stop list.
+        if is_generic_term(entity_text, "DISEASE") or is_generic_term(clean_text, "DISEASE"):
+            logger.info(f"🚫 Rejected generic term as DISEASE entity: {entity_text!r}")
             return {
-                "standard_name": canonical_fallback,
-                "code": "ICD-UNKNOWN",
+                "standard_name": None,
+                "code": None,   # item 3: null, not a sentinel string
                 "confidence": 0.0,
-                "method": "unlinked",
+                "method": "rejected_generic",
+                "rejected": True,
                 "type": "DISEASE"
             }
 
@@ -72,7 +82,7 @@ class ICD10Linker:
         # 3. Unlinked fallback - PRESERVES ORIGINAL CANONICAL NAME, DOES NOT OVERWRITE WITH WRONG MATCH
         return {
             "standard_name": canonical_fallback,
-            "code": "ICD-UNKNOWN",
+            "code": None,   # item 3: null, not a sentinel string
             "confidence": 0.0,
             "method": "unlinked",
             "type": "DISEASE"

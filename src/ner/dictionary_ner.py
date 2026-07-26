@@ -64,6 +64,12 @@ class DictionaryNER:
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
+        # rxnorm_vi.json was rebuilt into a provenance-bearing shape
+        # {"_provenance": {...}, "drugs": [...], "needs_manual_review": [...]};
+        # icd10_vi.json is still a flat list. Support both.
+        if isinstance(data, dict):
+            data = data.get("drugs", [])
+
         for entry in data:
             names = []
             if "name_vi" in entry:

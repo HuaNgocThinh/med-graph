@@ -1,0 +1,1365 @@
+[
+ {
+  "row": {
+   "icd_code": "E11",
+   "name_vi": "Đái tháo đường týp 2",
+   "synonym": "bệnh tiểu đường",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "'Đái tháo đường' là nhóm bệnh (týp 1 E10, thai kỳ O24, thứ phát); gán cứng vào E11 bỏ sót týp 1 vốn có trong chính từ điển này",
+   "violates_rule": "YES"
+  },
+  "code": "E11",
+  "synonym": "bệnh tiểu đường",
+  "before": {
+   "standard_name": "Đái tháo đường týp 2",
+   "code": "E11",
+   "confidence": 0.9,
+   "method": "fuzzy",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "Đái tháo đường týp 2",
+   "code": "E11",
+   "confidence": 0.9,
+   "method": "fuzzy",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Đái tháo đường týp 2",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "J18.9",
+   "name_vi": "Viêm phổi",
+   "synonym": "viêm phế quản phổi",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Bronchopneumonia là thể giải phẫu riêng, mã J18.0 khác J18.9; là một thành viên chứ không đồng nhất với viêm phổi nói chung",
+   "violates_rule": "YES"
+  },
+  "code": "J18.9",
+  "synonym": "viêm phế quản phổi",
+  "before": {
+   "standard_name": "Viêm phổi",
+   "code": "J18.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "Viêm phế quản cấp",
+   "code": "J20.9",
+   "confidence": 0.95,
+   "method": "fuzzy",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm phổi",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "J18.9",
+   "name_vi": "Viêm phổi",
+   "synonym": "viêm đường hô hấp dưới",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "LRTI là nhóm rộng gồm viêm phế quản, viêm tiểu phế quản, viêm phổi; thu hẹp thành viêm phổi là gán chẩn đoán",
+   "violates_rule": "YES"
+  },
+  "code": "J18.9",
+  "synonym": "viêm đường hô hấp dưới",
+  "before": {
+   "standard_name": "Viêm phổi",
+   "code": "J18.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "viêm đường hô hấp dưới",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm phổi",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "J20.9",
+   "name_vi": "Viêm phế quản cấp",
+   "synonym": "viêm phế quản",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "'Viêm phế quản' không định tính bao cả viêm phế quản mạn (J42) và COPD (J44); ép về thể cấp là thu hẹp nhóm và cam kết tính cấp",
+   "violates_rule": "YES"
+  },
+  "code": "J20.9",
+  "synonym": "viêm phế quản",
+  "before": {
+   "standard_name": "Viêm phế quản cấp",
+   "code": "J20.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "Viêm phổi",
+   "code": "J18.9",
+   "confidence": 0.95,
+   "method": "fuzzy",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm phế quản cấp",
+  "raw": [
+   "syn_006",
+   "syn_018"
+  ],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "M51.2",
+   "name_vi": "Thoát vị đĩa đệm cột sống thắt lưng",
+   "synonym": "thoát vị đĩa đệm",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Thoát vị đĩa đệm có thể ở cổ (M50.2) hay ngực; ép về thắt lưng là thu hẹp nhóm về một vị trí",
+   "violates_rule": "YES"
+  },
+  "code": "M51.2",
+  "synonym": "thoát vị đĩa đệm",
+  "before": {
+   "standard_name": "Thoát vị đĩa đệm cột sống thắt lưng",
+   "code": "M51.2",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "thoát vị đĩa đệm",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Thoát vị đĩa đệm cột sống thắt lưng",
+  "raw": [
+   "syn_009",
+   "syn_063"
+  ],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "E78.5",
+   "name_vi": "Rối loạn lipid máu",
+   "synonym": "tăng cholesterol máu",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Tăng cholesterol đơn thuần là E78.0, một thành viên; rối loạn lipid máu còn gồm tăng triglyceride, giảm HDL, thể hỗn hợp",
+   "violates_rule": "YES"
+  },
+  "code": "E78.5",
+  "synonym": "tăng cholesterol máu",
+  "before": {
+   "standard_name": "Rối loạn lipid máu",
+   "code": "E78.5",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "tăng cholesterol máu",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Rối loạn lipid máu",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "H36.0",
+   "name_vi": "Biến chứng võng mạc",
+   "synonym": "bệnh võng mạc đái tháo đường",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "H36.0 đúng ra chính là bệnh võng mạc ĐTĐ, còn name_vi 'biến chứng võng mạc' là nhóm rộng (còn gồm võng mạc do THA, bong võng mạc); hai vế lệch mức đặc hiệu",
+   "violates_rule": "YES"
+  },
+  "code": "H36.0",
+  "synonym": "bệnh võng mạc đái tháo đường",
+  "before": {
+   "standard_name": "Biến chứng võng mạc",
+   "code": "H36.0",
+   "confidence": 0.95,
+   "method": "fuzzy",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "Võng mạc đái tháo đường",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Biến chứng võng mạc",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "K29.7",
+   "name_vi": "Viêm dạ dày",
+   "synonym": "đau dạ dày",
+   "classification": "SYMPTOM_AS_DISEASE",
+   "reason": "Đau thượng vị là TRIỆU CHỨNG, không phải chẩn đoán: có thể do viêm dạ dày, GERD, sỏi mật, tụy, thậm chí NMCT thành dưới",
+   "violates_rule": "YES"
+  },
+  "code": "K29.7",
+  "synonym": "đau dạ dày",
+  "before": {
+   "standard_name": "Viêm loét dạ dày",
+   "code": "K29.7",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "đau dạ dày",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm loét dạ dày",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "K29.7",
+   "name_vi": "Viêm dạ dày",
+   "synonym": "viêm loét dạ dày",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Loét là tổn thương mất niêm mạc, thực thể riêng (K25 cũng có trong chính từ điển này) với nguy cơ chảy máu/thủng và phác đồ khác viêm dạ dày đơn thuần",
+   "violates_rule": "YES"
+  },
+  "code": "K29.7",
+  "synonym": "viêm loét dạ dày",
+  "before": {
+   "standard_name": "Viêm loét dạ dày",
+   "code": "K29.7",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "Viêm loét dạ dày",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm loét dạ dày",
+  "raw": [
+   "syn_003",
+   "syn_012",
+   "syn_087"
+  ],
+  "mx": [
+   "syn_003",
+   "syn_012",
+   "syn_087"
+  ]
+ },
+ {
+  "row": {
+   "icd_code": "K25",
+   "name_vi": "Loét dạ dày",
+   "synonym": "loét dạ dày tá tràng",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Loét dạ dày-tá tràng là nhóm gồm loét tá tràng (K26, thực tế còn hay gặp hơn); ép về K25 bỏ mất vị trí tá tràng",
+   "violates_rule": "YES"
+  },
+  "code": "K25",
+  "synonym": "loét dạ dày tá tràng",
+  "before": {
+   "standard_name": "Viêm loét dạ dày",
+   "code": "K25",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "Viêm loét dạ dày",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm loét dạ dày",
+  "raw": [
+   "syn_012"
+  ],
+  "mx": [
+   "syn_012"
+  ]
+ },
+ {
+  "row": {
+   "icd_code": "I21",
+   "name_vi": "Nhồi máu cơ tim cấp",
+   "synonym": "đột quỵ tim",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Từ báo chí mơ hồ, được dùng cho cả ngừng tim đột ngột/đột tử tim lẫn NMCT; ép về I21 là cam kết quá mức vào một chẩn đoán cấp cứu (rule 3)",
+   "violates_rule": "YES"
+  },
+  "code": "I21",
+  "synonym": "đột quỵ tim",
+  "before": {
+   "standard_name": "Nhồi máu cơ tim cấp",
+   "code": "I21",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "đột quỵ tim",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Nhồi máu cơ tim cấp",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "I63",
+   "name_vi": "Nhồi máu não",
+   "synonym": "đột quỵ não",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Đột quỵ là nhóm gồm cả xuất huyết não (I61) ~15-20% ca, xử trí ngược nhau (tiêu sợi huyết vs đảo đông); thu hẹp về nhồi máu là nguy hiểm",
+   "violates_rule": "YES"
+  },
+  "code": "I63",
+  "synonym": "đột quỵ não",
+  "before": {
+   "standard_name": "Nhồi máu não",
+   "code": "I63",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "đột quỵ não",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Nhồi máu não",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "I63",
+   "name_vi": "Nhồi máu não",
+   "synonym": "tai biến mạch máu não",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "TBMMN bao gồm cả thể xuất huyết (I60/I61); không đồng nhất với nhồi máu não",
+   "violates_rule": "YES"
+  },
+  "code": "I63",
+  "synonym": "tai biến mạch máu não",
+  "before": {
+   "standard_name": "Nhồi máu não",
+   "code": "I63",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "Nhồi máu não",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Nhồi máu não",
+  "raw": [
+   "syn_038"
+  ],
+  "mx": [
+   "syn_038"
+  ]
+ },
+ {
+  "row": {
+   "icd_code": "I63",
+   "name_vi": "Nhồi máu não",
+   "synonym": "thiếu máu não cục bộ",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Bao gồm cả cơn thiếu máu não thoáng qua (G45) vốn không có nhồi máu; ép về I63 là cam kết quá mức",
+   "violates_rule": "YES"
+  },
+  "code": "I63",
+  "synonym": "thiếu máu não cục bộ",
+  "before": {
+   "standard_name": "Nhồi máu não",
+   "code": "I63",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "thiếu máu não cục bộ",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Nhồi máu não",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "J00",
+   "name_vi": "Viêm mũi họng cấp",
+   "synonym": "viêm họng cấp",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Viêm họng cấp là J02 - thực thể riêng, có thể do liên cầu cần kháng sinh; đồng nhất với viêm mũi họng do virus gây xung đột với chính entry J02.9 trong từ điển",
+   "violates_rule": "YES"
+  },
+  "code": "J00",
+  "synonym": "viêm họng cấp",
+  "before": {
+   "standard_name": "Viêm mũi họng cấp",
+   "code": "J00",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "viêm họng cấp",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm mũi họng cấp",
+  "raw": [
+   "syn_029"
+  ],
+  "mx": [
+   "syn_029"
+  ]
+ },
+ {
+  "row": {
+   "icd_code": "J00",
+   "name_vi": "Viêm mũi họng cấp",
+   "synonym": "nhiễm siêu vi hô hấp",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Nhóm rất rộng (cúm, COVID, RSV, viêm tiểu phế quản, viêm phổi virus); thu hẹp về cảm lạnh thông thường là gán chẩn đoán",
+   "violates_rule": "YES"
+  },
+  "code": "J00",
+  "synonym": "nhiễm siêu vi hô hấp",
+  "before": {
+   "standard_name": "Viêm mũi họng cấp",
+   "code": "J00",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "nhiễm siêu vi hô hấp",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm mũi họng cấp",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "J02.9",
+   "name_vi": "Viêm họng",
+   "synonym": "đau họng",
+   "classification": "SYMPTOM_AS_DISEASE",
+   "reason": "Đau họng là TRIỆU CHỨNG: có thể do viêm họng, viêm amidan, trào ngược, viêm nắp thanh môn, áp xe thành sau họng, viêm giáp",
+   "violates_rule": "YES"
+  },
+  "code": "J02.9",
+  "synonym": "đau họng",
+  "before": {
+   "standard_name": null,
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "rejected_generic",
+   "rejected": true,
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": null,
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "rejected_generic",
+   "rejected": true,
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm họng",
+  "raw": [
+   "syn_029"
+  ],
+  "mx": [
+   "syn_029"
+  ]
+ },
+ {
+  "row": {
+   "icd_code": "J02.9",
+   "name_vi": "Viêm họng",
+   "synonym": "viêm họng hạt",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Viêm họng hạt là viêm họng MẠN thể hạt (J31.2), không dùng kháng sinh; khác thực thể cấp J02.9",
+   "violates_rule": "YES"
+  },
+  "code": "J02.9",
+  "synonym": "viêm họng hạt",
+  "before": {
+   "standard_name": "Viêm họng",
+   "code": "J02.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "viêm họng hạt",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm họng",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "J30.4",
+   "name_vi": "Viêm mũi dị ứng",
+   "synonym": "dị ứng thời tiết",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Cụm từ dân gian bao cả biểu hiện da (mề đay L50, chàm) lẫn hô hấp; ép riêng về viêm mũi dị ứng là thu hẹp",
+   "violates_rule": "YES"
+  },
+  "code": "J30.4",
+  "synonym": "dị ứng thời tiết",
+  "before": {
+   "standard_name": "Viêm mũi dị ứng",
+   "code": "J30.4",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "dị ứng thời tiết",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm mũi dị ứng",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "A09",
+   "name_vi": "Viêm dạ dày ruột nhiễm khuẩn",
+   "synonym": "tiêu chảy cấp",
+   "classification": "SYMPTOM_AS_DISEASE",
+   "reason": "Tiêu chảy cấp là TRIỆU CHỨNG: còn do virus, thẩm thấu, thuốc, kháng sinh/C.difficile, cường giáp, IBS; name_vi cam kết nguyên nhân nhiễm khuẩn",
+   "violates_rule": "YES"
+  },
+  "code": "A09",
+  "synonym": "tiêu chảy cấp",
+  "before": {
+   "standard_name": "Viêm dạ dày ruột nhiễm khuẩn",
+   "code": "A09",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "Tiêu chảy cấp",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm dạ dày ruột nhiễm khuẩn",
+  "raw": [
+   "syn_003",
+   "syn_040",
+   "syn_082"
+  ],
+  "mx": [
+   "syn_003",
+   "syn_040",
+   "syn_082"
+  ]
+ },
+ {
+  "row": {
+   "icd_code": "A09",
+   "name_vi": "Viêm dạ dày ruột nhiễm khuẩn",
+   "synonym": "rối loạn tiêu hóa",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Cụm từ ô rất rộng trong tiếng Việt (đầy bụng, khó tiêu, IBS, táo bón); quy về viêm dạ dày ruột nhiễm khuẩn là gán nguyên nhân",
+   "violates_rule": "YES"
+  },
+  "code": "A09",
+  "synonym": "rối loạn tiêu hóa",
+  "before": {
+   "standard_name": "Viêm dạ dày ruột nhiễm khuẩn",
+   "code": "A09",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "rối loạn tiêu hóa",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm dạ dày ruột nhiễm khuẩn",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "M19.9",
+   "name_vi": "Thoái hóa khớp",
+   "synonym": "thoái hóa khớp gối",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Thoái hóa khớp gối có mã riêng M17 và là MỘT vị trí khớp; name_vi là thoái hóa khớp không đặc hiệu vị trí",
+   "violates_rule": "YES"
+  },
+  "code": "M19.9",
+  "synonym": "thoái hóa khớp gối",
+  "before": {
+   "standard_name": "Thoái hóa khớp",
+   "code": "M19.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "Thoái hóa khớp",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Thoái hóa khớp",
+  "raw": [
+   "syn_014",
+   "syn_080"
+  ],
+  "mx": [
+   "syn_014",
+   "syn_080"
+  ]
+ },
+ {
+  "row": {
+   "icd_code": "M19.9",
+   "name_vi": "Thoái hóa khớp",
+   "synonym": "thoái hóa cột sống",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Thoái hóa cột sống là spondylosis M47 - thực thể riêng ở cột sống, không phải thoái hóa khớp ngoại vi",
+   "violates_rule": "YES"
+  },
+  "code": "M19.9",
+  "synonym": "thoái hóa cột sống",
+  "before": {
+   "standard_name": "Thoái hóa khớp",
+   "code": "M19.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "thoái hóa cột sống",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Thoái hóa khớp",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "M19.9",
+   "name_vi": "Thoái hóa khớp",
+   "synonym": "đau khớp mạn tính",
+   "classification": "SYMPTOM_AS_DISEASE",
+   "reason": "Đau khớp mạn là TRIỆU CHỨNG: còn do viêm khớp dạng thấp, gút, lupus, viêm khớp vảy nến, đau xơ cơ",
+   "violates_rule": "YES"
+  },
+  "code": "M19.9",
+  "synonym": "đau khớp mạn tính",
+  "before": {
+   "standard_name": "Thoái hóa khớp",
+   "code": "M19.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "đau khớp mạn tính",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Thoái hóa khớp",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "G40.9",
+   "name_vi": "Động kinh",
+   "synonym": "cơn co giật",
+   "classification": "SYMPTOM_AS_DISEASE",
+   "reason": "Co giật là TRIỆU CHỨNG/biến cố (R56): động kinh đòi hỏi co giật tái diễn không do kích gợi; co giật còn do sốt cao, hạ đường huyết, sản giật, ngất, cai rượu, co giật tâm lý",
+   "violates_rule": "YES"
+  },
+  "code": "G40.9",
+  "synonym": "cơn co giật",
+  "before": {
+   "standard_name": "Động kinh",
+   "code": "G40.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "cơn co giật",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Động kinh",
+  "raw": [
+   "syn_027",
+   "syn_073"
+  ],
+  "mx": [
+   "syn_027",
+   "syn_073"
+  ]
+ },
+ {
+  "row": {
+   "icd_code": "F41.1",
+   "name_vi": "Rối loạn lo âu lan tỏa",
+   "synonym": "rối loạn lo âu",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Rối loạn lo âu là NHÓM (hoảng sợ F41.0, ám ảnh sợ F40, hỗn hợp lo âu-trầm cảm F41.2); lo âu lan tỏa chỉ là một thành viên",
+   "violates_rule": "YES"
+  },
+  "code": "F41.1",
+  "synonym": "rối loạn lo âu",
+  "before": {
+   "standard_name": "Rối loạn lo âu lan tỏa",
+   "code": "F41.1",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "Rối loạn lo âu lan tỏa",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Rối loạn lo âu lan tỏa",
+  "raw": [
+   "syn_049",
+   "syn_059"
+  ],
+  "mx": [
+   "syn_049"
+  ]
+ },
+ {
+  "row": {
+   "icd_code": "F41.1",
+   "name_vi": "Rối loạn lo âu lan tỏa",
+   "synonym": "lo âu mạn tính",
+   "classification": "SYMPTOM_AS_DISEASE",
+   "reason": "Lo âu là TRIỆU CHỨNG cảm xúc; lo âu kéo dài đơn thuần chưa đủ tiêu chuẩn GAD và còn gặp trong trầm cảm, PTSD, lạm dụng chất",
+   "violates_rule": "YES"
+  },
+  "code": "F41.1",
+  "synonym": "lo âu mạn tính",
+  "before": {
+   "standard_name": "Rối loạn lo âu lan tỏa",
+   "code": "F41.1",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "lo âu mạn tính",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Rối loạn lo âu lan tỏa",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "E05.9",
+   "name_vi": "Cường giáp",
+   "synonym": "Basedow",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Basedow/Graves là MỘT nguyên nhân tự miễn của cường giáp, có mã riêng E05.0; cường giáp còn do bướu nhân độc, viêm giáp, amiodarone",
+   "violates_rule": "YES"
+  },
+  "code": "E05.9",
+  "synonym": "Basedow",
+  "before": {
+   "standard_name": "Cường giáp",
+   "code": "E05.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "Basedow",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Cường giáp",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "N20.0",
+   "name_vi": "Sỏi thận",
+   "synonym": "sỏi đường tiết niệu",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Sỏi tiết niệu là nhóm gồm sỏi niệu quản (N20.1) và sỏi bàng quang (N21.0); thu hẹp về sỏi thận bỏ sót thể tắc nghẽn cấp",
+   "violates_rule": "YES"
+  },
+  "code": "N20.0",
+  "synonym": "sỏi đường tiết niệu",
+  "before": {
+   "standard_name": "Sỏi thận",
+   "code": "N20.0",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "sỏi đường tiết niệu",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Sỏi thận",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "N20.0",
+   "name_vi": "Sỏi thận",
+   "synonym": "sỏi niệu quản",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Sỏi niệu quản là N20.1 - thực thể riêng gây cơn đau quặn thận và tắc nghẽn, có thể cần can thiệp cấp",
+   "violates_rule": "YES"
+  },
+  "code": "N20.0",
+  "synonym": "sỏi niệu quản",
+  "before": {
+   "standard_name": "Sỏi thận",
+   "code": "N20.0",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "sỏi niệu quản",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Sỏi thận",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "K80.2",
+   "name_vi": "Sỏi túi mật",
+   "synonym": "sỏi mật",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "'Sỏi mật' bao cả sỏi ống mật chủ (K80.5) gây vàng da, nhiễm trùng đường mật, viêm tụy; thu hẹp về sỏi túi mật bỏ sót thể nguy hiểm",
+   "violates_rule": "YES"
+  },
+  "code": "K80.2",
+  "synonym": "sỏi mật",
+  "before": {
+   "standard_name": "Sỏi túi mật",
+   "code": "K80.2",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "sỏi mật",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Sỏi túi mật",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "A15.0",
+   "name_vi": "Lao phổi",
+   "synonym": "bệnh lao",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Lao là nhóm bệnh gồm lao ngoài phổi: lao màng não (A17), lao cột sống (A18.0), lao hạch (A18.2), lao kê (A19); thu hẹp về lao phổi rất nguy hiểm",
+   "violates_rule": "YES"
+  },
+  "code": "A15.0",
+  "synonym": "bệnh lao",
+  "before": {
+   "standard_name": "Lao phổi",
+   "code": "A15.0",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "bệnh lao",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Lao phổi",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "A15.0",
+   "name_vi": "Lao phổi",
+   "synonym": "lao phế quản",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Lao nội phế quản là A15.5 - thể riêng của lao đường hô hấp, không đồng nhất với lao nhu mô phổi A15.0",
+   "violates_rule": "YES"
+  },
+  "code": "A15.0",
+  "synonym": "lao phế quản",
+  "before": {
+   "standard_name": "Lao phổi",
+   "code": "A15.0",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "lao phế quản",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Lao phổi",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "L20.9",
+   "name_vi": "Viêm da cơ địa",
+   "synonym": "eczema",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Eczema là thuật ngữ ô của cả khối L20-L30 gồm viêm da tiếp xúc (L23/L24), chàm đồng tiền, tổ đỉa - xử trí khác (tránh dị nguyên)",
+   "violates_rule": "YES"
+  },
+  "code": "L20.9",
+  "synonym": "eczema",
+  "before": {
+   "standard_name": "Viêm da cơ địa",
+   "code": "L20.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "eczema",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm da cơ địa",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "L70.0",
+   "name_vi": "Mụn trứng cá",
+   "synonym": "mụn trứng cá mức độ trung bình",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Đây là MỘT bậc mức độ nặng, không phải từ đồng nghĩa; gán nó bằng 'mụn trứng cá' nói chung là cam kết mức độ không có căn cứ",
+   "violates_rule": "YES"
+  },
+  "code": "L70.0",
+  "synonym": "mụn trứng cá mức độ trung bình",
+  "before": {
+   "standard_name": "Mụn trứng cá",
+   "code": "L70.0",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "mụn trứng cá mức độ trung bình",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Mụn trứng cá",
+  "raw": [
+   "syn_030"
+  ],
+  "mx": [
+   "syn_030"
+  ]
+ },
+ {
+  "row": {
+   "icd_code": "N76.0",
+   "name_vi": "Viêm âm đạo",
+   "synonym": "viêm âm đạo do nấm",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Viêm âm đạo do nấm Candida là B37.3 - MỘT nguyên nhân; viêm âm đạo còn do vi khuẩn (BV), Trichomonas, teo niêm mạc, điều trị khác hẳn",
+   "violates_rule": "YES"
+  },
+  "code": "N76.0",
+  "synonym": "viêm âm đạo do nấm",
+  "before": {
+   "standard_name": "Viêm âm đạo do nấm",
+   "code": "N76.0",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "Viêm âm đạo do nấm",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm âm đạo do nấm",
+  "raw": [
+   "syn_028",
+   "syn_070"
+  ],
+  "mx": [
+   "syn_028",
+   "syn_070"
+  ]
+ },
+ {
+  "row": {
+   "icd_code": "N76.0",
+   "name_vi": "Viêm âm đạo",
+   "synonym": "nhiễm nấm âm đạo",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Cùng vấn đề: nhiễm nấm âm đạo (B37.3) chỉ là một căn nguyên của viêm âm đạo",
+   "violates_rule": "YES"
+  },
+  "code": "N76.0",
+  "synonym": "nhiễm nấm âm đạo",
+  "before": {
+   "standard_name": "Viêm âm đạo do nấm",
+   "code": "N76.0",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "nhiễm nấm âm đạo",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm âm đạo do nấm",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "B35.9",
+   "name_vi": "Nấm da",
+   "synonym": "nấm bẹn",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Nấm bẹn (tinea cruris) là B35.6 - MỘT vị trí; nấm da còn có nấm chân B35.3, nấm da đầu B35.0",
+   "violates_rule": "YES"
+  },
+  "code": "B35.9",
+  "synonym": "nấm bẹn",
+  "before": {
+   "standard_name": "Nấm da",
+   "code": "B35.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "nấm bẹn",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Nấm da",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "D69.3",
+   "name_vi": "Xuất huyết giảm tiểu cầu vô căn",
+   "synonym": "giảm tiểu cầu",
+   "classification": "SYMPTOM_AS_DISEASE",
+   "reason": "Giảm tiểu cầu là KẾT QUẢ XÉT NGHIỆM: ở Việt Nam nguyên nhân hàng đầu là sốt xuất huyết Dengue, ngoài ra nhiễm khuẩn huyết, thuốc, xơ gan, lơ xê mi, TTP",
+   "violates_rule": "YES"
+  },
+  "code": "D69.3",
+  "synonym": "giảm tiểu cầu",
+  "before": {
+   "standard_name": "Xuất huyết giảm tiểu cầu vô căn",
+   "code": "D69.3",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "giảm tiểu cầu",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Xuất huyết giảm tiểu cầu vô căn",
+  "raw": [
+   "syn_032"
+  ],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "I48.9",
+   "name_vi": "Rung nhĩ",
+   "synonym": "loạn nhịp tim",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Loạn nhịp tim là NHÓM (nhịp nhanh thất, block, nhịp nhanh trên thất, ngoại tâm thu); rung nhĩ chỉ là một thành viên - đúng ví dụ rule 1 đã bị bác",
+   "violates_rule": "YES"
+  },
+  "code": "I48.9",
+  "synonym": "loạn nhịp tim",
+  "before": {
+   "standard_name": "Rung nhĩ",
+   "code": "I48.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "loạn nhịp tim",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Rung nhĩ",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "M75.2",
+   "name_vi": "Viêm gân vai",
+   "synonym": "viêm quanh khớp vai",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "Viêm quanh khớp vai là cụm hội chứng rộng gồm đông cứng khớp vai (M75.0), rách chóp xoay (M75.1); viêm gân nhị đầu M75.2 chỉ là một thể",
+   "violates_rule": "YES"
+  },
+  "code": "M75.2",
+  "synonym": "viêm quanh khớp vai",
+  "before": {
+   "standard_name": "Viêm gân vai",
+   "code": "M75.2",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "viêm quanh khớp vai",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm gân vai",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "M75.2",
+   "name_vi": "Viêm gân vai",
+   "synonym": "đau vai",
+   "classification": "SYMPTOM_AS_DISEASE",
+   "reason": "Đau vai là TRIỆU CHỨNG: còn do bệnh lý rễ cổ, chóp xoay, và đau lan từ cơ hoành/túi mật/NMCT",
+   "violates_rule": "YES"
+  },
+  "code": "M75.2",
+  "synonym": "đau vai",
+  "before": {
+   "standard_name": "Viêm gân vai",
+   "code": "M75.2",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "đau vai",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Viêm gân vai",
+  "raw": [],
+  "mx": []
+ },
+ {
+  "row": {
+   "icd_code": "D50.9",
+   "name_vi": "Thiếu máu thiếu sắt",
+   "synonym": "thiếu máu nặng",
+   "classification": "CATEGORY_NARROWING",
+   "reason": "'Nặng' là MỨC ĐỘ chứ không phải căn nguyên; thiếu máu nặng còn do thalassemia (D56.9 trong chính từ điển này), thiếu B12/folate, tan máu, suy tủy, mất máu cấp, ác tính",
+   "violates_rule": "YES"
+  },
+  "code": "D50.9",
+  "synonym": "thiếu máu nặng",
+  "before": {
+   "standard_name": "Thiếu máu thiếu sắt",
+   "code": "D50.9",
+   "confidence": 1.0,
+   "method": "exact",
+   "type": "DISEASE"
+  },
+  "after": {
+   "standard_name": "thiếu máu nặng",
+   "code": "ICD-UNKNOWN",
+   "confidence": 0.0,
+   "method": "unlinked",
+   "type": "DISEASE"
+  },
+  "removed_ok": true,
+  "expected_name": "Thiếu máu thiếu sắt",
+  "raw": [
+   "syn_039"
+  ],
+  "mx": [
+   "syn_039"
+  ]
+ }
+]
