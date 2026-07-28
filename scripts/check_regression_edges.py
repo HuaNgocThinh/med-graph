@@ -52,7 +52,7 @@ for drug, rel, disease in FORBIDDEN_EDGES:
           + ("" if ok else f"   <-- TON TAI: {rows}"))
 
 print("\n" + "=" * 92)
-print("MA ICD CUA CAC NODE DUOC NEO (quyet dinh 3 chua duyet)")
+print("MA ICD CUA CAC NODE DUOC NEO (quyet dinh 3/4 DA DUYET VA DA AP DUNG)")
 print("=" * 92)
 for name, (current, expected, why) in DISEASE_CODES.items():
     rows = c.execute_query("MATCH (n:DISEASE {name:$n}) RETURN n.code AS code", {"n": name})

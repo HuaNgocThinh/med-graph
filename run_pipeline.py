@@ -122,14 +122,21 @@ def run_end_to_end_pipeline(batch_size: int = 10, total_samples: int = 50, reset
             with open(synthetic_file, "r", encoding="utf-8") as f:
                 all_samples = json.load(f)
             logger.info(f"Loaded {len(all_samples)} existing synthetic samples from '{synthetic_file}'")
-        except Exception:
-            all_samples = []
+        except Exception as e:
+            logger.error(f"❌ Failed to load synthetic dataset from '{synthetic_file}': {e}")
+            raise RuntimeError(f"Failed to load synthetic dataset from '{synthetic_file}': {e}")
+    else:
+        all_samples = []
 
     if len(all_samples) < total_samples:
         needed = total_samples - len(all_samples)
         logger.info(f"Existing dataset has {len(all_samples)} samples. Generating {needed} new samples to reach {total_samples}...")
         new_samples = generator.generate_batch(num_samples=needed)
         all_samples.extend(new_samples)
+
+    if not all_samples:
+        logger.error("❌ Pipeline failed: all_samples is empty after dataset loading stage!")
+        raise RuntimeError("No valid samples loaded or generated in pipeline!")
 
     # Re-index all samples sequentially to guarantee 100% unique IDs across entire dataset
     for idx, sample in enumerate(all_samples):

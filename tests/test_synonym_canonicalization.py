@@ -219,8 +219,17 @@ def test_rejected_entries_are_not_in_the_canonical_map():
       - 'loạn nhịp tim' -> 'rung nhĩ'          narrows a category to one of its members
       - 'đau dạ dày'    -> 'viêm loét dạ dày'  promotes a SYMPTOM to a DIAGNOSIS
       - 'đau tim'       -> 'nhồi máu cơ tim'   over-commits to an acute diagnosis
-      - 'mỡ máu', 'tăng huyết áp'              redundant (ALIAS_MAP/ICD10Linker already do it)
-                                                and the sole remaining substring-collision risk
+      - 'mỡ máu', 'tăng huyết áp'              already handled one layer down, and the sole
+                                                remaining substring-collision risk
+
+    On 'tăng huyết áp' specifically -- the earlier note called it "redundant". That word was
+    wrong and worth correcting, because it invites deletion of the thing doing the work.
+    It is kept OUT of the canonical synonym map because ALIAS_MAP already handles it, and
+    ALIAS_MAP["tăng huyết áp"] = "Cao huyết áp" is LOAD-BEARING, not redundant: ICD10Linker
+    names a node `get_canonical_name(rec["name_vi"])`, and I10's name_vi is now the standard
+    term "Tăng huyết áp". Remove that ALIAS entry and the node silently renames itself away
+    from the corpus form -- exactly how 'Viêm dạ dày' became 'Viêm loét dạ dày' while keeping
+    the wrong K29.7 code. See test_i10_alias_entry_is_load_bearing in test_entity_linking.py.
     """
     for rejected in ("loạn nhịp tim", "đau dạ dày", "đau tim", "mỡ máu", "tăng huyết áp"):
         assert rejected not in CANONICAL_SYNONYM_MAP, (

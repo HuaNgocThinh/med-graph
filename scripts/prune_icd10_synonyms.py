@@ -50,7 +50,9 @@ print(f"So synonym se bo: {len(targets)}  "
       f"(SAFE_TO_REMOVE {sum(1 for v in targets.values() if v['verdict']=='SAFE_TO_REMOVE')}, "
       f"duyet tay {sum(1 for v in targets.values() if v['verdict']!='SAFE_TO_REMOVE')})\n")
 
-records = json.load(open(DICT, encoding="utf-8"))
+sys.path.insert(0, str(BASE))
+from src.entity_linking.dict_loader import load_dict, save_dict  # noqa: E402
+records, dict_meta = load_dict(DICT)
 before_total = sum(len(r.get("synonyms", [])) for r in records)
 
 log_rows, removed = [], 0
@@ -93,9 +95,8 @@ print(f"Log: {LOG}")
 if APPLY:
     backup = DICT.with_suffix(".json.pre_prune_backup")
     if not backup.exists():
-        backup.write_text(json.dumps(json.load(open(DICT, encoding="utf-8")),
-                                     ensure_ascii=False, indent=2), encoding="utf-8")
-    DICT.write_text(json.dumps(records, ensure_ascii=False, indent=2), encoding="utf-8")
+        backup.write_text(DICT.read_text(encoding="utf-8"), encoding="utf-8")
+    save_dict(DICT, records, dict_meta)
     print(f"DA GHI {DICT.name}. Backup: {backup.name}")
 else:
     print("[DRY RUN] Chua ghi gi. Chay lai voi --apply.")

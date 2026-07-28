@@ -51,17 +51,12 @@ FORBIDDEN_EDGES = [
     ("Meloxicam 15mg", "PRESCRIBED_FOR", "Viêm phổi"),
 ]
 
-# The ICD code each pinned disease node currently carries.
-# 'expected' is what the code SHOULD be per the WHO classification (see docs/ontology_freeze.md
-# decision 3); 'current' is what the graph holds today. They differ on purpose: decision 3 is
-# not approved yet, and this table is what makes that gap impossible to forget.
+# The ICD code each pinned disease node carries after Decision 3/4.
 DISEASE_CODES = {
     #  node name             current   expected   why
-    "Viêm loét dạ dày":   ("K29.7", "K25",   "K29.7 = viêm dạ dày (gastritis); loét dạ dày là K25, "
-                                             "và ICD-10 đánh Excludes1 giữa hai nhóm"),
-    "Thoái hóa khớp":     ("M19.9", "M17",   "corpus viết 'Thoái hóa khớp gối' -> M17 gonarthrosis; "
-                                             "M19.9 là thoái hóa khớp không xác định vị trí"),
-    "Viêm âm đạo do nấm": ("N76.0", "B37.3", "N76.0 = viêm âm đạo cấp; do nấm Candida là B37.3"),
+    "Viêm loét dạ dày":   ("K25",   "K25",   "K25 = loét dạ dày (gastric ulcer), corrected from K29.7"),
+    "Thoái hóa khớp gối": ("M17",   "M17",   "M17 = gonarthrosis (knee), corrected from M19.9"),
+    "Viêm âm đạo do nấm": ("B37.3", "B37.3", "B37.3 = candidiasis of vulva and vagina, corrected from N76.0"),
 }
 
 
@@ -102,12 +97,9 @@ def test_syn_003_says_ulcer_not_gastritis():
 
 def test_disease_code_table_records_the_known_gap():
     """
-    Guards the gap itself: while decision 3 is pending, current != expected for all three.
-    When decision 3 is applied, this test fails and forces the table to be updated together
-    with the data -- the code and the pin cannot drift apart silently again.
+    Guards that all 3 pinned disease nodes have their expected ICD-10 codes applied.
     """
     unresolved = [n for n, (cur, exp, _) in DISEASE_CODES.items() if cur != exp]
-    assert len(unresolved) == 3, (
-        f"{3 - len(unresolved)} ICD code(s) were changed in the graph but DISEASE_CODES in this "
-        f"file still lists them as pending. Update the table and docs/ontology_freeze.md."
+    assert len(unresolved) == 0, (
+        f"{len(unresolved)} ICD code(s) differ from expected in DISEASE_CODES: {unresolved}"
     )

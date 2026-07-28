@@ -9,6 +9,7 @@ import logging
 from pathlib import Path
 from typing import List, Dict, Any
 from src.config import ICD10_DICT_PATH, RXNORM_DICT_PATH
+from src.entity_linking.dict_loader import load_records
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("DictionaryNER")
@@ -61,14 +62,12 @@ class DictionaryNER:
             logger.warning(f"Dictionary file missing at {path}")
             return terms
 
-        with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-
-        # rxnorm_vi.json was rebuilt into a provenance-bearing shape
-        # {"_provenance": {...}, "drugs": [...], "needs_manual_review": [...]};
-        # icd10_vi.json is still a flat list. Support both.
-        if isinstance(data, dict):
-            data = data.get("drugs", [])
+        # Both dictionaries now carry a metadata block alongside their records
+        # (rxnorm_vi.json: _provenance/drugs; icd10_vi.json: _rules/diseases). The hand-written
+        # isinstance() branch that used to live here only knew about "drugs", so it silently
+        # returned an EMPTY gazetteer for icd10_vi.json the moment that file grew a metadata
+        # key. One shared loader instead of a per-consumer branch.
+        data = load_records(path)
 
         for entry in data:
             names = []

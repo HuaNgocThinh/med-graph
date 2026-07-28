@@ -10,6 +10,8 @@ from typing import Dict, Any, List
 from src.config import ERROR_ANALYSIS_DIR
 from src.qa.qa_engine import QAEngine
 
+from evaluation.benchmark_guard import require_validated_benchmark
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("EvaluateQA")
 
@@ -104,4 +106,6 @@ def evaluate_qa():
     print(f"Error log written to: '{error_log_path}'\n")
 
 if __name__ == "__main__":
+    # Item B3: this benchmark is quarantined (see docs/benchmark_quarantine.md).
+    require_validated_benchmark("QA_TEST_BENCHMARK", "evaluate_qa")
     evaluate_qa()

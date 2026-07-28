@@ -67,7 +67,8 @@ def save_user_feedback(question: str, method: str, answer: str, feedback: str, c
         try:
             with open(log_path, "r", encoding="utf-8") as f:
                 logs = json.load(f)
-        except Exception:
+        except Exception as e:
+            logger.warning(f"Error loading user feedback log from '{log_path}': {e}")
             logs = []
 
     entry = {
@@ -100,7 +101,8 @@ def get_feedback_stats() -> Dict[str, Any]:
                 "incorrect": incorrect,
                 "accuracy_pct": acc
             }
-    except Exception:
+    except Exception as e:
+        logger.warning(f"Error reading feedback stats from '{log_path}': {e}")
         return {"total": 0, "correct": 0, "incorrect": 0, "accuracy_pct": 0.0}
 
 @st.cache_data(ttl=600)

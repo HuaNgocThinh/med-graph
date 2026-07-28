@@ -11,6 +11,8 @@ from src.config import ERROR_ANALYSIS_DIR
 from src.entity_linking.icd10_linker import ICD10Linker
 from src.entity_linking.rxnorm_linker import RxNormLinker
 
+from evaluation.benchmark_guard import require_validated_benchmark
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("EvaluateEL")
 
@@ -82,4 +84,6 @@ def evaluate_entity_linking():
     print(f"Error log written to: '{error_log_path}'\n")
 
 if __name__ == "__main__":
+    # Item B3: this benchmark is quarantined (see docs/benchmark_quarantine.md).
+    require_validated_benchmark("TEST_EL_BENCHMARK", "evaluate_entity_linking")
     evaluate_entity_linking()

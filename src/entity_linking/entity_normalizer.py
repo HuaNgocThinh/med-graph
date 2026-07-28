@@ -161,9 +161,6 @@ ALIAS_MAP: Dict[str, str] = {
     "viêm ruột thừa cấp": "Viêm ruột thừa cấp",
     "viêm ruột thừa cấp tính": "Viêm ruột thừa cấp",
     "viêm loét dạ dày": "Viêm loét dạ dày",
-    "viêm dạ dày": "Viêm loét dạ dày",
-    "viêm dạ dày tá tràng": "Viêm loét dạ dày",
-    "loét dạ dày tá tràng": "Viêm loét dạ dày",
     "loét dạ dày": "Viêm loét dạ dày",
     "trào ngược dạ dày thực quản": "Trào ngược dạ dày thực quản",
     "trào ngược dạ dày": "Trào ngược dạ dày thực quản",
@@ -178,8 +175,13 @@ ALIAS_MAP: Dict[str, str] = {
     "bệnh phổi tắc nghẽn mãn tính": "Bệnh phổi tắc nghẽn mạn tính",
     "copd": "Bệnh phổi tắc nghẽn mạn tính",
     "phổi tắc nghẽn mạn tính": "Bệnh phổi tắc nghẽn mạn tính",
-    "thoái hóa khớp gối": "Thoái hóa khớp",
-    "thoái hóa khớp": "Thoái hóa khớp",
+    "thoái hóa khớp gối": "Thoái hóa khớp gối",
+    "thoái hóa khớp": "Thoái hóa khớp gối",
+    "đau lưng dưới": "Đau thắt lưng",
+    "đau thắt lưng": "Đau thắt lưng",
+    "đau thắt lưng cấp": "Đau thắt lưng",
+    "đau thắt lưng mạn": "Đau thắt lưng",
+    "đau nhói vùng thắt lưng": "Đau thắt lưng",
     "đau thần kinh tọa": "Đau thần kinh tọa",
     "đau dây thần kinh tọa": "Đau thần kinh tọa",
     "rối loạn lipid máu": "Rối loạn lipid máu",
@@ -232,7 +234,6 @@ ALIAS_MAP: Dict[str, str] = {
     "viêm gan b": "Viêm gan vi-rút B mạn",
     "viêm phổi": "Viêm phổi",
     "viêm phổi cộng đồng": "Viêm phổi",
-    "rối loạn lo âu": "Rối loạn lo âu lan tỏa",
     "rối loạn lo âu lan tỏa": "Rối loạn lo âu lan tỏa",
     "đa nang buồng trứng": "Đa nang buồng trứng",
     "hội chứng đa nang buồng trứng": "Đa nang buồng trứng",
@@ -476,6 +477,11 @@ def normalize_disease_name(name: str) -> str:
     clean = clean.strip()
     if not clean:
         return name.strip()
+
+    # STRIP_BY_CODE for M54.5: strip {"cấp", "nhói", "vùng", "mạn"} when "thắt lưng" is present
+    if "thắt lưng" in clean.lower():
+        clean = re.sub(r"\b(cấp|nhói|vùng|mạn)\b", "", clean, flags=re.IGNORECASE)
+        clean = re.sub(r"\s+", " ", clean).strip()
 
     # Alias re-check after prefix stripping, BEFORE synonym rewriting, so an exact
     # alias entry always wins over a generic folk-term substitution.

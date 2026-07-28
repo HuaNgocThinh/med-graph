@@ -8,6 +8,7 @@ import logging
 from pathlib import Path
 from typing import Dict, Any, Optional
 from src.config import ICD10_DICT_PATH
+from src.entity_linking.dict_loader import load_records
 from src.entity_linking.fuzzy_matcher import FuzzyMatcher
 from src.entity_linking.entity_normalizer import (
     normalize_entity_name, get_canonical_name, is_generic_term,
@@ -20,6 +21,12 @@ logger = logging.getLogger("ICD10Linker")
 # which is now the single authority. A per-module copy is precisely how this bug family kept
 # recurring: the local list was missing 'viêm', so 'viêm' fuzzy-matched to Viêm phổi (J18.9).
 # Import the gate, never re-declare it.
+
+# Explicitly blocked terms that carry medical conflicts and must never fuzzy/exact match
+# to wrong codes (e.g. 'loét dạ dày tá tràng' includes duodenal ulcer K26 so must not link to K25).
+BLOCKED_EXACT = {
+    "loét dạ dày tá tràng",
+}
 
 class ICD10Linker:
     """Links disease entity names to standardized ICD-10 codes."""
@@ -38,6 +45,17 @@ class ICD10Linker:
         clean_text = normalize_entity_name(entity_text, entity_type="DISEASE")
         clean_lower = clean_text.lower()
         canonical_fallback = get_canonical_name(clean_text)
+
+        if clean_lower in BLOCKED_EXACT or (entity_text and entity_text.strip().lower() in BLOCKED_EXACT):
+            logger.info(f"🚫 Blocked exact term with medical conflict: {entity_text!r}")
+            return {
+                "standard_name": canonical_fallback,
+                "code": None,
+                "confidence": 0.0,
+                "method": "unlinked",
+                "type": "DISEASE",
+                "blocked": True,
+            }
 
         # THE gate. Single authority, shared with GraphBuilder.
         # standard_name is deliberately None and rejected=True is set: the old code returned
@@ -92,8 +110,7 @@ class ICD10Linker:
         if not self.dict_path.exists():
             logger.warning(f"ICD-10 dictionary missing at {self.dict_path}")
             return []
-        with open(self.dict_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+        return load_records(self.dict_path)
 
     def _build_exact_map(self) -> Dict[str, Dict[str, Any]]:
         lookup = {}

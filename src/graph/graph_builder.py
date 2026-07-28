@@ -224,21 +224,26 @@ class GraphBuilder:
                 )
                 continue
 
+            head_surface = item.get("head", "")
+            tail_surface = item.get("tail", "")
+
             query = f"""
 MERGE (h:{head_type} {{name: $head_name}})
-ON CREATE SET h.code = $head_code, h.created_at = timestamp()
+ON CREATE SET h.code = $head_code, h.first_surface = $head_surface, h.created_at = timestamp()
 MERGE (t:{tail_type} {{name: $tail_name}})
-ON CREATE SET t.code = $tail_code, t.created_at = timestamp()
+ON CREATE SET t.code = $tail_code, t.first_surface = $tail_surface, t.created_at = timestamp()
 MERGE (h)-[r:{rel_type}]->(t)
-ON CREATE SET r.confidence = $confidence, r.negated = $negated, r.temporal = $temporal, r.source_sample_id = $sample_id
+ON CREATE SET r.confidence = $confidence, r.negated = $negated, r.temporal = $temporal, r.source_sample_id = $sample_id, r.head_surface = $head_surface, r.tail_surface = $tail_surface
 ON MATCH SET r.confidence = CASE WHEN r.confidence >= $confidence THEN r.confidence ELSE $confidence END,
              r.source_sample_id = CASE WHEN r.source_sample_id CONTAINS $sample_id THEN r.source_sample_id ELSE r.source_sample_id + ',' + $sample_id END
 """
             params = {
                 "head_name": head_name,
                 "head_code": head_code,
+                "head_surface": head_surface,
                 "tail_name": tail_name,
                 "tail_code": tail_code,
+                "tail_surface": tail_surface,
                 "confidence": confidence,
                 "negated": negated,
                 "temporal": temporal,

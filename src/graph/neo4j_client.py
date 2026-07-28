@@ -58,6 +58,7 @@ class Neo4jClient:
         self.user = user
         self.password = password
         self._driver = None
+        self.last_error_type: Optional[str] = None
 
     def connect(self) -> bool:
         """Establishes connection to Neo4j database instance."""
@@ -65,10 +66,21 @@ class Neo4jClient:
             from neo4j import GraphDatabase
             self._driver = GraphDatabase.driver(self.uri, auth=(self.user, self.password))
             self._driver.verify_connectivity()
+            self.last_error_type = None
             logger.info(f"Successfully connected to Neo4j at '{self.uri}'")
             return True
         except Exception as e:
-            logger.warning(f"Could not connect to Neo4j at '{self.uri}': {e}. Graph operations will run in memory/simulation mode.")
+            err_str = str(e).lower()
+            if "auth" in err_str or "unauthorized" in err_str or "password" in err_str:
+                self.last_error_type = "auth_failed"
+            elif "connection refused" in err_str or "could not connect" in err_str or "serviceunavailable" in err_str:
+                self.last_error_type = "connection_refused"
+            elif "timeout" in err_str or "timed out" in err_str:
+                self.last_error_type = "timeout"
+            else:
+                self.last_error_type = type(e).__name__.lower()
+
+            logger.warning(f"Could not connect to Neo4j at '{self.uri}' ({self.last_error_type}): {e}. Graph operations will run in memory/simulation mode.")
             self._driver = None
             return False
 
@@ -78,8 +90,20 @@ class Neo4jClient:
             return self.connect()
         try:
             self._driver.verify_connectivity()
+            self.last_error_type = None
             return True
-        except Exception:
+        except Exception as e:
+            err_str = str(e).lower()
+            if "auth" in err_str or "unauthorized" in err_str or "password" in err_str:
+                self.last_error_type = "auth_failed"
+            elif "connection refused" in err_str or "could not connect" in err_str or "serviceunavailable" in err_str:
+                self.last_error_type = "connection_refused"
+            elif "timeout" in err_str or "timed out" in err_str:
+                self.last_error_type = "timeout"
+            else:
+                self.last_error_type = type(e).__name__.lower()
+
+            logger.warning(f"Neo4j connectivity check failed ({self.last_error_type}): {e}")
             self._driver = None
             return False
 

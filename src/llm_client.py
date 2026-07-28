@@ -131,6 +131,9 @@ class LLMClient:
         self._last_request_time = 0.0
         self.real_calls_count = 0
         self.mock_calls_count = 0
+        self.is_mock_fallback = (self.provider == "mock")
+        self.corrupted_json_count = 0
+        self.total_json_attempts = 0
 
         logger.info(f"Initialized LLMClient with provider='{self.provider}', model='{self.model_name}', rpm_limit={self.rpm_limit:.0f} RPM")
 
@@ -304,9 +307,17 @@ class LLMClient:
         self._validated = False
         return False
 
+    def _show_mock_banner(self, reason: str = ""):
+        if not self.is_mock_fallback:
+            self.is_mock_fallback = True
+            logger.warning("=" * 70)
+            logger.warning(f"⚠️ SIMULATED_OFFLINE: LLM provider '{self.provider}' fell back to MOCK mode! ({reason})")
+            logger.warning("======================================================================")
+
     def generate(self, prompt: str, system_prompt: Optional[str] = None, temperature: float = 0.2) -> str:
         """Sends prompt to configured LLM provider with rate limiting and retry logic."""
         if self.provider == "mock":
+            self.is_mock_fallback = True
             self.mock_calls_count += 1
             return self._call_mock(prompt, system_prompt)
 
@@ -315,14 +326,27 @@ class LLMClient:
             self.real_calls_count += 1
             return result
         except Exception as e:
+            self._show_mock_banner(reason=str(e))
             logger.error(f"LLM API call failed: {e}. Falling back to mock response.")
             self.mock_calls_count += 1
             return self._call_mock(prompt, system_prompt)
 
     def generate_json(self, prompt: str, system_prompt: Optional[str] = None) -> Union[Dict[str, Any], list]:
         """Generates text and parses extracted JSON output."""
+        self.total_json_attempts += 1
         raw_response = self.generate(prompt, system_prompt=system_prompt, temperature=0.1)
-        return self._extract_json(raw_response)
+        res = self._extract_json(raw_response)
+
+        # Mark output with source: mock if generated in mock fallback or mock mode
+        if self.is_mock_fallback or self.provider == "mock":
+            if isinstance(res, list):
+                for item in res:
+                    if isinstance(item, dict):
+                        item["source"] = "mock"
+            elif isinstance(res, dict):
+                res["source"] = "mock"
+
+        return res
 
     def _track_daily_usage(self):
         """Tracks daily API call count and warns if approaching RPD quota threshold (80%)."""
@@ -336,7 +360,8 @@ class LLMClient:
                 try:
                     with open(USAGE_TRACKER_PATH, "r", encoding="utf-8") as f:
                         usage_data = json.load(f)
-                except Exception:
+                except Exception as e:
+                    logger.warning(f"Error reading usage tracker at '{USAGE_TRACKER_PATH}': {e}")
                     usage_data = {}
 
             current_count = usage_data.get(quota_day, 0) + 1
@@ -565,9 +590,13 @@ class LLMClient:
             return "Dựa trên Knowledge Graph y tế: Thuốc được chỉ định để điều trị bệnh Đái tháo đường týp 2 là Metformin."
 
     def get_stats_summary(self) -> str:
-        """Returns readable summary of real vs mock LLM calls."""
+        """Returns readable summary of real vs mock LLM calls and corrupted JSON counts."""
         total = self.real_calls_count + self.mock_calls_count
-        return f"=== LLM CALL STATS: {self.real_calls_count}/{total} calls succeeded via real API, {self.mock_calls_count}/{total} fell back to mock ==="
+        summary = f"=== LLM CALL STATS: {self.real_calls_count}/{total} calls succeeded via real API, {self.mock_calls_count}/{total} fell back to mock ==="
+        if self.corrupted_json_count > 0:
+            pct = (self.corrupted_json_count / max(1, self.total_json_attempts)) * 100
+            summary += f"\n⚠️ WARNING: {self.corrupted_json_count} triple bị mất do JSON hỏng ({pct:.1f}% của tổng)"
+        return summary
 
     def _extract_json(self, text: str) -> Union[Dict[str, Any], list]:
         cleaned = text.strip()
@@ -582,7 +611,12 @@ class LLMClient:
             if match:
                 try:
                     return json.loads(match.group(1))
-                except json.JSONDecodeError:
-                    pass
-            logger.error(f"Failed to parse JSON from response: {cleaned[:100]}...")
+                except json.JSONDecodeError as e:
+                    logger.debug(f"Regex fallback JSON decode failed: {e}")
+            self.corrupted_json_count += 1
+            pct = (self.corrupted_json_count / max(1, self.total_json_attempts)) * 100
+            logger.warning(
+                f"⚠️ WARNING: {self.corrupted_json_count} triple bị mất do JSON hỏng "
+                f"({pct:.1f}% của tổng {self.total_json_attempts} lần). Raw: {cleaned[:100]}..."
+            )
             return []

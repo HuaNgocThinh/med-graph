@@ -41,6 +41,10 @@ def evaluate_re():
         entities = sample.get("entities", [])
 
         llm_triples = llm_re.extract_relations(text, entities)
+        if any(t.get("source") == "mock" for t in llm_triples) or getattr(llm_re.llm_client, "is_mock_fallback", False):
+            logger.error(f"❌ EVALUATION REJECTED: Sample {sample['id']} contains mock triples! Mock results cannot be used for thesis evaluation.")
+            raise RuntimeError("EVALUATION REJECTED: Batch contains mock triples!")
+
         rule_triples = rule_re.extract_relations(text, entities)
 
         true_tuples = {(t["head"].lower(), t["relation"], t["tail"].lower()) for t in true_rels}

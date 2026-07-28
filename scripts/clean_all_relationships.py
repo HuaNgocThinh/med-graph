@@ -16,6 +16,8 @@ from pathlib import Path
 from typing import List, Set, Dict
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(BASE_DIR))
+from src.entity_linking.dict_loader import load_records  # noqa: E402
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
@@ -71,8 +73,8 @@ def load_standard_synonyms() -> Dict[str, Set[str]]:
     icd_path = BASE_DIR / "data" / "dictionaries" / "icd10_vi.json"
     if icd_path.exists():
         try:
-            with open(icd_path, "r", encoding="utf-8") as f:
-                icd_data = json.load(f)
+            icd_data = load_records(icd_path)
+            if True:
                 for item in icd_data:
                     name = item.get("name_vi", "").strip()
                     if name:
@@ -117,8 +119,8 @@ DRUG_NAMES = set()
 icd_path = BASE_DIR / "data" / "dictionaries" / "icd10_vi.json"
 if icd_path.exists():
     try:
-        with open(icd_path, "r", encoding="utf-8") as f:
-            icd_data = json.load(f)
+        icd_data = load_records(icd_path)
+        if True:
             for item in icd_data:
                 name = item.get("name_vi", "").strip()
                 if name:

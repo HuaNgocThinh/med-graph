@@ -1,417 +1,429 @@
-[
-  {
-    "code": "I10",
-    "name_vi": "Bệnh cao huyết áp",
-    "synonyms": [
-      "tăng huyết áp",
-      "cao huyết áp",
-      "bệnh tăng huyết áp"
-    ]
-  },
-  {
-    "code": "E11",
-    "name_vi": "Đái tháo đường týp 2",
-    "synonyms": [
-      "tiểu đường týp 2",
-      "tiểu đường tuýp 2",
-      "đái tháo đường loại 2",
-      "đái tháo đường tuýp 2"
-    ]
-  },
-  {
-    "code": "E10",
-    "name_vi": "Đái tháo đường týp 1",
-    "synonyms": [
-      "tiểu đường týp 1",
-      "tiểu đường tuýp 1"
-    ]
-  },
-  {
-    "code": "J18.9",
-    "name_vi": "Viêm phổi",
-    "synonyms": [
-      "viêm phổi cấp",
-      "viêm phế quản phổi",
-      "viêm phổi cộng đồng"
-    ]
-  },
-  {
-    "code": "J20.9",
-    "name_vi": "Viêm phế quản cấp",
-    "synonyms": [
-      "viêm phế quản",
-      "viêm phế quản cấp tính"
-    ]
-  },
-  {
-    "code": "K35.8",
-    "name_vi": "Viêm ruột thừa cấp",
-    "synonyms": [
-      "viêm ruột thừa",
-      "viêm ruột thừa cấp tính"
-    ]
-  },
-  {
-    "code": "I50.9",
-    "name_vi": "Suy tim sung huyết",
-    "synonyms": [
-      "suy tim",
-      "suy tim sung huyết mạn"
-    ]
-  },
-  {
-    "code": "M51.2",
-    "name_vi": "Thoát vị đĩa đệm cột sống thắt lưng",
-    "synonyms": [
-      "thoát vị đĩa đệm cột sống thắt lưng"
-    ]
-  },
-  {
-    "code": "M54.3",
-    "name_vi": "Đau thần kinh tọa",
-    "synonyms": [
-      "đau thần kinh tọa",
-      "đau dây thần kinh tọa"
-    ]
-  },
-  {
-    "code": "E78.5",
-    "name_vi": "Rối loạn lipid máu",
-    "synonyms": [
-      "mỡ máu cao",
-      "tăng lipid máu",
-      "rối loạn chuyển hóa lipid",
-      "rối loạn lipid máu"
-    ]
-  },
-  {
-    "code": "H36.0",
-    "name_vi": "Biến chứng võng mạc",
-    "synonyms": [
-      "biến chứng võng mạc"
-    ]
-  },
-  {
-    "code": "J45",
-    "name_vi": "Hen phế quản",
-    "synonyms": [
-      "bệnh hen",
-      "hen suyễn",
-      "hen phế quản mạn"
-    ]
-  },
-  {
-    "code": "J44",
-    "name_vi": "Bệnh phổi tắc nghẽn mạn tính",
-    "synonyms": [
-      "COPD",
-      "tắc nghẽn phổi mạn tính"
-    ]
-  },
-  {
-    "code": "K29.7",
-    "name_vi": "Viêm dạ dày",
-    "synonyms": [
-      "viêm dạ dày cấp",
-      "viêm loét dạ dày",
-      "viêm hang vị dạ dày"
-    ]
-  },
-  {
-    "code": "K25",
-    "name_vi": "Loét dạ dày",
-    "synonyms": [
-      "loét dạ dày tá tràng",
-      "loét hang vị dạ dày"
-    ]
-  },
-  {
-    "code": "K21.9",
-    "name_vi": "Trào ngược dạ dày thực quản",
-    "synonyms": [
-      "GERD",
-      "trào ngược dạ dày",
-      "trào ngược thực quản"
-    ]
-  },
-  {
-    "code": "N39.0",
-    "name_vi": "Nhiễm trùng đường tiết niệu",
-    "synonyms": [
-      "nhiễm trùng tiểu",
-      "nhiễm khuẩn tiết niệu",
-      "nhiễm khuẩn đường tiết niệu",
-      "viêm đường tiết niệu"
-    ]
-  },
-  {
-    "code": "I20",
-    "name_vi": "Cơn đau thắt ngực",
-    "synonyms": [
-      "đau thắt ngực",
-      "đau ngực do thiếu máu cục bộ",
-      "cơn đau thắt ngực cấp tính"
-    ]
-  },
-  {
-    "code": "I21",
-    "name_vi": "Nhồi máu cơ tim cấp",
-    "synonyms": [
-      "nhồi máu cơ tim"
-    ]
-  },
-  {
-    "code": "I63",
-    "name_vi": "Nhồi máu não",
-    "synonyms": []
-  },
-  {
-    "code": "J00",
-    "name_vi": "Viêm mũi họng cấp",
-    "synonyms": [
-      "cảm lạnh",
-      "viêm họng cấp"
-    ]
-  },
-  {
-    "code": "J02.9",
-    "name_vi": "Viêm họng",
-    "synonyms": []
-  },
-  {
-    "code": "J03.9",
-    "name_vi": "Viêm amiđan",
-    "synonyms": [
-      "viêm amidan",
-      "viêm amidan cấp"
-    ]
-  },
-  {
-    "code": "J30.4",
-    "name_vi": "Viêm mũi dị ứng",
-    "synonyms": [
-      "viêm mũi dị ứng mạn"
-    ]
-  },
-  {
-    "code": "A09",
-    "name_vi": "Viêm dạ dày ruột nhiễm khuẩn",
-    "synonyms": [
-      "tiêu chảy cấp",
-      "nhiễm trùng tiêu hóa"
-    ]
-  },
-  {
-    "code": "B18.2",
-    "name_vi": "Viêm gan vi-rút C mạn",
-    "synonyms": [
-      "viêm gan C",
-      "viêm gan vi rút C"
-    ]
-  },
-  {
-    "code": "B18.1",
-    "name_vi": "Viêm gan vi-rút B mạn",
-    "synonyms": [
-      "viêm gan B",
-      "viêm gan B mãn tính",
-      "viêm gan siêu vi B"
-    ]
-  },
-  {
-    "code": "K76.0",
-    "name_vi": "Gan nhiễm mỡ",
-    "synonyms": [
-      "thoái hóa mỡ ở gan",
-      "gan nhiễm mỡ không do rượu"
-    ]
-  },
-  {
-    "code": "M10.9",
-    "name_vi": "Bệnh Gút",
-    "synonyms": [
-      "gút",
-      "gout",
-      "bệnh gút cấp",
-      "viêm khớp gút"
-    ]
-  },
-  {
-    "code": "M19.9",
-    "name_vi": "Thoái hóa khớp",
-    "synonyms": [
-      "thoái hóa khớp gối"
-    ]
-  },
-  {
-    "code": "M06.9",
-    "name_vi": "Viêm khớp dạng thấp",
-    "synonyms": [
-      "viêm đa khớp dạng thấp"
-    ]
-  },
-  {
-    "code": "M54.5",
-    "name_vi": "Đau lưng dưới",
-    "synonyms": [
-      "đau thắt lưng",
-      "đau cột sống thắt lưng"
-    ]
-  },
-  {
-    "code": "G43.9",
-    "name_vi": "Bệnh Migraine",
-    "synonyms": [
-      "đau đầu migraine",
-      "đau nửa đầu"
-    ]
-  },
-  {
-    "code": "G40.9",
-    "name_vi": "Động kinh",
-    "synonyms": [
-      "bệnh động kinh",
-      "cơn co giật"
-    ]
-  },
-  {
-    "code": "F32.9",
-    "name_vi": "Rối loạn trầm cảm",
-    "synonyms": [
-      "trầm cảm",
-      "bệnh trầm cảm"
-    ]
-  },
-  {
-    "code": "F41.1",
-    "name_vi": "Rối loạn lo âu lan tỏa",
-    "synonyms": [
-      "rối loạn lo âu"
-    ]
-  },
-  {
-    "code": "E03.9",
-    "name_vi": "Suy giáp",
-    "synonyms": [
-      "suy tuyến giáp",
-      "bệnh suy giáp"
-    ]
-  },
-  {
-    "code": "E05.9",
-    "name_vi": "Cường giáp",
-    "synonyms": [
-      "cường tuyến giáp",
-      "bệnh cường giáp"
-    ]
-  },
-  {
-    "code": "N20.0",
-    "name_vi": "Sỏi thận",
-    "synonyms": []
-  },
-  {
-    "code": "K80.2",
-    "name_vi": "Sỏi túi mật",
-    "synonyms": []
-  },
-  {
-    "code": "A15.0",
-    "name_vi": "Lao phổi",
-    "synonyms": []
-  },
-  {
-    "code": "L20.9",
-    "name_vi": "Viêm da cơ địa",
-    "synonyms": [
-      "chàm cơ địa"
-    ]
-  },
-  {
-    "code": "L70.0",
-    "name_vi": "Mụn trứng cá",
-    "synonyms": [
-      "mụn trứng cá thông thường",
-      "mụn trứng cá mức độ trung bình"
-    ]
-  },
-  {
-    "code": "N76.0",
-    "name_vi": "Viêm âm đạo",
-    "synonyms": [
-      "viêm âm đạo do nấm"
-    ]
-  },
-  {
-    "code": "B35.9",
-    "name_vi": "Nấm da",
-    "synonyms": [
-      "nhiễm nấm da"
-    ]
-  },
-  {
-    "code": "D69.3",
-    "name_vi": "Xuất huyết giảm tiểu cầu vô căn",
-    "synonyms": [
-      "xuất huyết giảm tiểu cầu"
-    ]
-  },
-  {
-    "code": "D56.9",
-    "name_vi": "Thalassemia",
-    "synonyms": [
-      "tan máu bẩm sinh",
-      "bệnh thalassmia"
-    ]
-  },
-  {
-    "code": "I48.9",
-    "name_vi": "Rung nhĩ",
-    "synonyms": [
-      "bệnh rung nhĩ"
-    ]
-  },
-  {
-    "code": "M75.2",
-    "name_vi": "Viêm gân vai",
-    "synonyms": []
-  },
-  {
-    "code": "E27.4",
-    "name_vi": "Suy tuyến thượng thận",
-    "synonyms": [
-      "suy thượng thận"
-    ]
-  },
-  {
-    "code": "E28.2",
-    "name_vi": "Đa nang buồng trứng",
-    "synonyms": [
-      "hội chứng đa nang buồng trứng",
-      "PCOS"
-    ]
-  },
-  {
-    "code": "N40",
-    "name_vi": "Phì đại lành tính tuyến tiền liệt",
-    "synonyms": [
-      "phì đại tuyến tiền liệt",
-      "u xơ tuyến tiền liệt"
-    ]
-  },
-  {
-    "code": "D25.9",
-    "name_vi": "U xơ tử cung",
-    "synonyms": [
-      "bệnh u xơ tử cung"
-    ]
-  },
-  {
-    "code": "D50.9",
-    "name_vi": "Thiếu máu thiếu sắt",
-    "synonyms": [
-      "thiếu máu do thiếu sắt",
-      "thiếu máu nặng"
-    ]
-  }
-]
+{
+  "_comment": "Vietnamese ICD-10 reference dictionary. `name_vi` is the LOOKUP SURFACE and, via ICD10Linker -> get_canonical_name(rec['name_vi']), it also determines the NODE NAME in Neo4j. Those are two different jobs with two different authorities (principle 6: node name <- corpus, code <- authoritative standard), so the precise standard term lives in `name_vi_full`, not in `name_vi`. Changing `name_vi` renames graph nodes -- see data/exports/node_naming_provenance.csv before touching it.",
+  "_rules": "BAT BUOC ke tu 2026-07-27: moi record duoc THEM MOI hoac SUA MA/TEN phai co truong `standard_source` dan nguon co tham quyen (vd 'WHO ICD-10 2019 (K25); BYT QD 7603/QD-BYT ban Viet ngu'). Ly do: 27/49 ma RxCUI trong rxnorm_vi.json tung sai vi khong record nao ghi nguon, nen khong ai kiem chung duoc va khong ai phat hien duoc. Ma khong dan duoc nguon thi khong duoc ghi vao day. KHONG bat buoc backfill 53 record cu ngay -- ap dung cho moi thay doi tu nay tro di. Tieu chi nhan mot chuoi vao `synonyms` (4 tieu chi da duyet, xem cung bo quy tac trong src/entity_linking/canonical_synonyms_vi.json): (1) khong thu hep mot NHOM ve mot THANH VIEN; (2) khong nang mot TRIEU CHUNG len thanh CHAN DOAN; (3) khong cam ket qua muc vao mot chan doan cap tinh; (4) khong them chuoi ma ALIAS_MAP/ICD10Linker da xu ly.",
+  "diseases": [
+    {
+      "code": "I10",
+      "name_vi": "Tăng huyết áp",
+      "synonyms": [
+        "tăng huyết áp",
+        "cao huyết áp",
+        "bệnh tăng huyết áp"
+      ],
+      "name_en": "Essential (primary) hypertension",
+      "name_vi_full": "Tăng huyết áp vô căn (nguyên phát)",
+      "standard_source": "WHO ICD-10 2019 (I10); BYT QD 7603/QD-BYT ban Viet ngu"
+    },
+    {
+      "code": "E11",
+      "name_vi": "Đái tháo đường týp 2",
+      "synonyms": [
+        "tiểu đường týp 2",
+        "tiểu đường tuýp 2",
+        "đái tháo đường loại 2",
+        "đái tháo đường tuýp 2"
+      ]
+    },
+    {
+      "code": "E10",
+      "name_vi": "Đái tháo đường týp 1",
+      "synonyms": [
+        "tiểu đường týp 1",
+        "tiểu đường tuýp 1"
+      ]
+    },
+    {
+      "code": "J18.9",
+      "name_vi": "Viêm phổi",
+      "synonyms": [
+        "viêm phổi cấp",
+        "viêm phổi cộng đồng"
+      ]
+    },
+    {
+      "code": "J20.9",
+      "name_vi": "Viêm phế quản cấp",
+      "synonyms": [
+        "viêm phế quản cấp tính"
+      ]
+    },
+    {
+      "code": "K35.8",
+      "name_vi": "Viêm ruột thừa cấp",
+      "synonyms": [
+        "viêm ruột thừa",
+        "viêm ruột thừa cấp tính"
+      ]
+    },
+    {
+      "code": "I50.9",
+      "name_vi": "Suy tim sung huyết",
+      "synonyms": [
+        "suy tim",
+        "suy tim sung huyết mạn"
+      ]
+    },
+    {
+      "code": "M51.2",
+      "name_vi": "Thoát vị đĩa đệm cột sống thắt lưng",
+      "synonyms": [
+        "thoát vị đĩa đệm cột sống thắt lưng"
+      ]
+    },
+    {
+      "code": "M54.3",
+      "name_vi": "Đau thần kinh tọa",
+      "synonyms": [
+        "đau thần kinh tọa",
+        "đau dây thần kinh tọa"
+      ]
+    },
+    {
+      "code": "E78.5",
+      "name_vi": "Rối loạn lipid máu",
+      "synonyms": [
+        "mỡ máu cao",
+        "tăng lipid máu",
+        "rối loạn chuyển hóa lipid",
+        "rối loạn lipid máu"
+      ]
+    },
+    {
+      "code": "H36.0",
+      "name_vi": "Biến chứng võng mạc",
+      "synonyms": [
+        "biến chứng võng mạc"
+      ]
+    },
+    {
+      "code": "J45",
+      "name_vi": "Hen phế quản",
+      "synonyms": [
+        "bệnh hen",
+        "hen suyễn",
+        "hen phế quản mạn"
+      ]
+    },
+    {
+      "code": "J44",
+      "name_vi": "Bệnh phổi tắc nghẽn mạn tính",
+      "synonyms": [
+        "COPD",
+        "tắc nghẽn phổi mạn tính"
+      ]
+    },
+    {
+      "code": "K29.7",
+      "name_vi": "Viêm dạ dày",
+      "synonyms": [
+        "viêm dạ dày cấp",
+        "viêm hang vị dạ dày"
+      ]
+    },
+    {
+      "code": "K25",
+      "name_vi": "Viêm loét dạ dày",
+      "synonyms": [
+        "loét dạ dày"
+      ],
+      "name_en": "Gastric ulcer",
+      "name_vi_full": "Loét dạ dày",
+      "standard_source": "WHO ICD-10 2019 (K25: Gastric ulcer); BYT QD 7603/QD-BYT ban Viet ngu"
+    },
+    {
+      "code": "K21.9",
+      "name_vi": "Trào ngược dạ dày thực quản",
+      "synonyms": [
+        "GERD",
+        "trào ngược dạ dày",
+        "trào ngược thực quản"
+      ]
+    },
+    {
+      "code": "N39.0",
+      "name_vi": "Nhiễm trùng đường tiết niệu",
+      "synonyms": [
+        "nhiễm trùng tiểu",
+        "nhiễm khuẩn tiết niệu",
+        "nhiễm khuẩn đường tiết niệu",
+        "viêm đường tiết niệu"
+      ]
+    },
+    {
+      "code": "I20",
+      "name_vi": "Cơn đau thắt ngực",
+      "synonyms": [
+        "đau thắt ngực",
+        "đau ngực do thiếu máu cục bộ",
+        "cơn đau thắt ngực cấp tính"
+      ]
+    },
+    {
+      "code": "I21",
+      "name_vi": "Nhồi máu cơ tim cấp",
+      "synonyms": [
+        "nhồi máu cơ tim"
+      ]
+    },
+    {
+      "code": "I63",
+      "name_vi": "Nhồi máu não",
+      "synonyms": []
+    },
+    {
+      "code": "J00",
+      "name_vi": "Viêm mũi họng cấp",
+      "synonyms": [
+        "cảm lạnh",
+        "viêm họng cấp"
+      ]
+    },
+    {
+      "code": "J02.9",
+      "name_vi": "Viêm họng",
+      "synonyms": []
+    },
+    {
+      "code": "J03.9",
+      "name_vi": "Viêm amiđan",
+      "synonyms": [
+        "viêm amidan",
+        "viêm amidan cấp"
+      ]
+    },
+    {
+      "code": "J30.4",
+      "name_vi": "Viêm mũi dị ứng",
+      "synonyms": [
+        "viêm mũi dị ứng mạn"
+      ]
+    },
+    {
+      "code": "A09",
+      "name_vi": "Viêm dạ dày ruột nhiễm khuẩn",
+      "synonyms": [
+        "nhiễm trùng tiêu hóa"
+      ]
+    },
+    {
+      "code": "B18.2",
+      "name_vi": "Viêm gan vi-rút C mạn",
+      "synonyms": [
+        "viêm gan C",
+        "viêm gan vi rút C"
+      ]
+    },
+    {
+      "code": "B18.1",
+      "name_vi": "Viêm gan vi-rút B mạn",
+      "synonyms": [
+        "viêm gan B",
+        "viêm gan B mãn tính",
+        "viêm gan siêu vi B"
+      ]
+    },
+    {
+      "code": "K76.0",
+      "name_vi": "Gan nhiễm mỡ",
+      "synonyms": [
+        "thoái hóa mỡ ở gan",
+        "gan nhiễm mỡ không do rượu"
+      ]
+    },
+    {
+      "code": "M10.9",
+      "name_vi": "Bệnh Gút",
+      "synonyms": [
+        "gút",
+        "gout",
+        "bệnh gút cấp",
+        "viêm khớp gút"
+      ]
+    },
+    {
+      "code": "M17",
+      "name_vi": "Thoái hóa khớp gối",
+      "synonyms": [
+        "thoái hóa khớp gối",
+        "thoái hóa khớp"
+      ],
+      "name_en": "Gonarthrosis [arthrosis of knee]",
+      "name_vi_full": "Thoái hóa khớp gối",
+      "standard_source": "WHO ICD-10 2019 (M17: Gonarthrosis [arthrosis of knee])"
+    },
+    {
+      "code": "M06.9",
+      "name_vi": "Viêm khớp dạng thấp",
+      "synonyms": [
+        "viêm đa khớp dạng thấp"
+      ]
+    },
+    {
+      "code": "M54.5",
+      "name_vi": "Đau thắt lưng",
+      "synonyms": [
+        "đau thắt lưng",
+        "đau lưng dưới",
+        "đau cột sống thắt lưng"
+      ],
+      "name_vi_full": "",
+      "standard_source": "WHO ICD-10 2019 (M54.5: Low back pain)"
+    },
+    {
+      "code": "G43.9",
+      "name_vi": "Bệnh Migraine",
+      "synonyms": [
+        "đau đầu migraine",
+        "đau nửa đầu"
+      ]
+    },
+    {
+      "code": "G40.9",
+      "name_vi": "Động kinh",
+      "synonyms": [
+        "bệnh động kinh"
+      ]
+    },
+    {
+      "code": "F32.9",
+      "name_vi": "Rối loạn trầm cảm",
+      "synonyms": [
+        "trầm cảm",
+        "bệnh trầm cảm"
+      ]
+    },
+    {
+      "code": "F41.1",
+      "name_vi": "Rối loạn lo âu lan tỏa",
+      "synonyms": []
+    },
+    {
+      "code": "E03.9",
+      "name_vi": "Suy giáp",
+      "synonyms": [
+        "suy tuyến giáp",
+        "bệnh suy giáp"
+      ]
+    },
+    {
+      "code": "E05.9",
+      "name_vi": "Cường giáp",
+      "synonyms": [
+        "cường tuyến giáp",
+        "bệnh cường giáp"
+      ]
+    },
+    {
+      "code": "N20.0",
+      "name_vi": "Sỏi thận",
+      "synonyms": []
+    },
+    {
+      "code": "K80.2",
+      "name_vi": "Sỏi túi mật",
+      "synonyms": []
+    },
+    {
+      "code": "A15.0",
+      "name_vi": "Lao phổi",
+      "synonyms": []
+    },
+    {
+      "code": "L20.9",
+      "name_vi": "Viêm da cơ địa",
+      "synonyms": [
+        "chàm cơ địa"
+      ]
+    },
+    {
+      "code": "L70.0",
+      "name_vi": "Mụn trứng cá",
+      "synonyms": [
+        "mụn trứng cá thông thường",
+        "mụn trứng cá mức độ trung bình"
+      ]
+    },
+    {
+      "code": "B37.3",
+      "name_vi": "Viêm âm đạo do nấm",
+      "synonyms": [
+        "viêm âm đạo do nấm",
+        "viêm âm đạo do nấm candida"
+      ],
+      "name_en": "Candidiasis of vulva and vagina",
+      "name_vi_full": "Bệnh nấm âm đạo và âm hộ",
+      "standard_source": "WHO ICD-10 2019 (B37.3: Candidiasis of vulva and vagina)"
+    },
+    {
+      "code": "B35.9",
+      "name_vi": "Nấm da",
+      "synonyms": [
+        "nhiễm nấm da"
+      ]
+    },
+    {
+      "code": "D69.3",
+      "name_vi": "Xuất huyết giảm tiểu cầu vô căn",
+      "synonyms": [
+        "xuất huyết giảm tiểu cầu"
+      ]
+    },
+    {
+      "code": "D56.9",
+      "name_vi": "Thalassemia",
+      "synonyms": [
+        "tan máu bẩm sinh",
+        "bệnh thalassmia"
+      ]
+    },
+    {
+      "code": "I48.9",
+      "name_vi": "Rung nhĩ",
+      "synonyms": [
+        "bệnh rung nhĩ"
+      ]
+    },
+    {
+      "code": "M75.2",
+      "name_vi": "Viêm gân vai",
+      "synonyms": []
+    },
+    {
+      "code": "E27.4",
+      "name_vi": "Suy tuyến thượng thận",
+      "synonyms": [
+        "suy thượng thận"
+      ]
+    },
+    {
+      "code": "E28.2",
+      "name_vi": "Đa nang buồng trứng",
+      "synonyms": [
+        "hội chứng đa nang buồng trứng",
+        "PCOS"
+      ]
+    },
+    {
+      "code": "N40",
+      "name_vi": "Phì đại lành tính tuyến tiền liệt",
+      "synonyms": [
+        "phì đại tuyến tiền liệt",
+        "u xơ tuyến tiền liệt"
+      ]
+    },
+    {
+      "code": "D25.9",
+      "name_vi": "U xơ tử cung",
+      "synonyms": [
+        "bệnh u xơ tử cung"
+      ]
+    },
+    {
+      "code": "D50.9",
+      "name_vi": "Thiếu máu thiếu sắt",
+      "synonyms": [
+        "thiếu máu do thiếu sắt"
+      ]
+    }
+  ]
+}
