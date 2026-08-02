@@ -1,0 +1,33 @@
+﻿Type,Head,Relation,Tail,SourceSampleID
+ADDED,Suy tuyến thượng thận,HAS_SYMPTOM,Sụt cân không rõ nguyên nhân,syn_061
+ADDED,Methimazole 5mg,TREATS,Run tay,syn_026
+ADDED,Thalassemia,CAUSES,Thalassemia,syn_043
+ADDED,Loãng xương,HAS_SYMPTOM,Đau nhức âm ỉ cột sống thắt lưng,syn_075
+ADDED,Động kinh,HAS_SYMPTOM,Mất ý thức,syn_073
+ADDED,Bệnh Migraine,HAS_SYMPTOM,Đau đầu dữ dội,syn_074
+ADDED,Cao huyết áp,HAS_SYMPTOM,Đau đầu,syn_052
+ADDED,Viêm phế quản cấp,HAS_SYMPTOM,Ho nhiều,syn_018
+ADDED,Depakine Chrono 500mg,TREATS,Co giật toàn thể cứng - gi clon,syn_073
+ADDED,Tranexamic acid 500mg,TREATS,Rong kinh kéo dài,syn_064
+ADDED,Đau thắt lưng,HAS_SYMPTOM,Hạn chế vận động,syn_091
+ADDED,Methimazole 5mg,TREATS,Hồi hộp,syn_026
+ADDED,Salbutamol,TREATS,Ho khan,syn_013
+ADDED,Viêm âm đạo do nấm,HAS_SYMPTOM,Ngứa rát vùng kín dữ dội,syn_070
+ADDED,Nhân nữ 2,PRESCRIBED_FOR,Mụn trứng cá,syn_054
+ADDED,Tai biến mạch máu não,HAS_SYMPTOM,Liệt nhẹ nửa người trái,syn_038
+ADDED,Bệnh Migraine,HAS_SYMPTOM,Cơn đau dữ dội,syn_016
+ADDED,Omeprazole 20mg,PRESCRIBED_FOR,Loét,syn_087
+ADDED,Methotrexate 10mg/tuần,TREATS,Cứng khớp buổi sáng,syn_036
+ADDED,thuốc giãn cơ trơn,TREATS,Đau quặn thận trái,syn_031
+ADDED,Omeprazole 20mg,TREATS,Ợ chua,syn_087
+ADDED,Trimebutin 200mg,TREATS,Đau quặn bụng từng cơn,syn_078
+ADDED,Furosemide 40mg,TREATS,Khó thở khi gắng sức,syn_085
+ADDED,Celecoxib 200mg,TREATS,đau,syn_014
+ADDED,U xơ tử cung,HAS_SYMPTOM,Rong kinh kéo dài,syn_064
+ADDED,"NaCl 0,9% 500ml",PRESCRIBED_FOR,Viêm ruột thừa cấp,syn_095
+ADDED,Sertraline 50mg,PRESCRIBED_FOR,Rối loạn lo âu,syn_049
+ADDED,Oresol,TREATS,Đi ngoài 5 lần/ngày,syn_040
+ADDED,Ruột kích thích,HAS_SYMPTOM,Đau quặn bụng từng cơn,syn_078
+ADDED,Omeprazole 20mg,TREATS,Đau thượng vị,syn_087
+ADDED,Viêm phế quản cấp,HAS_SYMPTOM,Sốt 38.5 độ,syn_018
+ADDED,Paracetamol 500mg,TREATS,Sốt 38.5 độ,syn_018

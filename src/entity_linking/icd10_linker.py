@@ -26,6 +26,7 @@ logger = logging.getLogger("ICD10Linker")
 # to wrong codes (e.g. 'loét dạ dày tá tràng' includes duodenal ulcer K26 so must not link to K25).
 BLOCKED_EXACT = {
     "loét dạ dày tá tràng",
+    "tai biến mạch máu não",
 }
 
 class ICD10Linker:

@@ -110,7 +110,7 @@ def get_autocomplete_entities() -> List[str]:
     """Fetches list of known Disease and Drug entities from Neo4j for UI suggestions."""
     client = Neo4jClient()
     if not client.is_online():
-        return ["Đái tháo đường týp 2", "Cao huyết áp", "Viêm loét dạ dày", "Metformin", "Aspirin 81mg", "Ibuprofen"]
+        return ["Đái tháo đường týp 2", "Cao huyết áp", "Viêm loét dạ dày", "Metformin", "Aspirin", "Ibuprofen"]
     query = """
     MATCH (n) WHERE n:DISEASE OR n:DRUG OR n:DRUG_GROUP 
     RETURN DISTINCT n.name AS name 
@@ -126,6 +126,12 @@ st.divider()
 
 # Sidebar controls
 st.sidebar.header("⚙️ Cấu hình Môi trường")
+if st.sidebar.button("🔄 Xóa Cache & Khởi tạo lại Engine", use_container_width=True):
+    st.cache_resource.clear()
+    st.cache_data.clear()
+    st.sidebar.success("✅ Đã xóa toàn bộ Cache Streamlit!")
+    st.rerun()
+
 provider = st.sidebar.selectbox("LLM Provider", ["gemini", "openai", "anthropic", "mock"], index=0)
 api_key_input = st.sidebar.text_input("API Key (để trống nếu dùng env key hoặc Mock)", type="password")
 
@@ -188,7 +194,7 @@ with tab1:
         "Bệnh nhân Đái tháo đường týp 2 được kê thuốc gì?",
         "Thuốc nào điều trị Đái tháo đường týp 2?",
         "Bệnh nhân bị Viêm loét dạ dày chống chỉ định với thuốc gì?",
-        "Thuốc Aspirin 81mg được chỉ định cho bệnh nhân mắc bệnh gì?",
+        "Thuốc Aspirin được chỉ định cho bệnh nhân mắc bệnh gì?",
         "Cao huyết áp có những triệu chứng lâm sàng nào?"
     ]
     
@@ -289,13 +295,15 @@ with tab1:
 
             if not graph_results:
                 if fallback_status == "NODE_EXISTS_NO_RELATIONS":
-                    st.warning("⚠️ **Không có quan hệ trong DB:** Thực thể y tế CÓ TỒN TẠI trong Knowledge Graph, nhưng chưa có dữ liệu quan hệ lâm sàng tương ứng.")
+                    st.warning("⚠️ **[Trạng thái: NO_DATA]** Thực thể y tế CÓ TỒN TẠI trong Knowledge Graph, nhưng chưa có dữ liệu quan hệ lâm sàng tương ứng.")
                 elif fallback_status == "NODE_NOT_FOUND":
-                    st.error("❌ **Thực thể không tồn tại trong DB:** Không tìm thấy node Bệnh/Thuốc nào khớp với câu hỏi.")
+                    st.info("ℹ️ **[Trạng thái: NO_DATA / NOT_FOUND]** Không tìm thấy node Bệnh/Thuốc nào khớp với câu hỏi trong Knowledge Graph.")
+                elif fallback_status == "QUERY_ERROR":
+                    st.error("❌ **[Trạng thái: QUERY_ERROR - Lỗi Hệ Thống]** Truy vấn Cypher không thể thực thi. Chưa thể kết luận dữ liệu.")
                 else:
-                    st.warning("⚠️ Kết quả truy vấn Graph DB rỗng.")
+                    st.warning("⚠️ **[Trạng thái: NO_DATA]** Kết quả truy vấn Graph DB rỗng.")
             else:
-                st.success(f"✅ Đã tìm thấy {len(graph_results)} bản ghi quan hệ phù hợp trong Knowledge Graph.")
+                st.success(f"✅ **[Trạng thái: FOUND]** Đã tìm thấy {len(graph_results)} bản ghi quan hệ phù hợp trong Knowledge Graph.")
 
             st.markdown("**Kết quả từ Graph DB:**")
             st.json(graph_results)
@@ -534,10 +542,10 @@ with tab4:
     if not client.is_online():
         st.warning("⚠️ Neo4j đang offline. Hiển thị bảng mẫu tĩnh:")
         sample_nodes = [
-            {"head": "Paracetamol 500mg", "relation": "TREATS", "tail": "Viêm họng cấp", "source": "syn_001"},
+            {"head": "Paracetamol", "relation": "TREATS", "tail": "Viêm họng cấp", "source": "syn_001"},
             {"head": "Metformin", "relation": "PRESCRIBED_FOR", "tail": "Đái tháo đường týp 2", "source": "syn_004"},
             {"head": "Ibuprofen", "relation": "CONTRAINDICATED_FOR", "tail": "Viêm loét dạ dày", "source": "syn_003"},
-            {"head": "Aspirin 81mg", "relation": "PRESCRIBED_FOR", "tail": "Cơn đau thắt ngực", "source": "syn_002"}
+            {"head": "Aspirin", "relation": "PRESCRIBED_FOR", "tail": "Cơn đau thắt ngực", "source": "syn_002"}
         ]
         st.table(sample_nodes)
     else:

@@ -51,18 +51,22 @@ DRUG_GROUPS: Set[str] = {
 # passes through.
 # ---------------------------------------------------------------------------
 
-# Never a clinical entity under ANY label: meta/discourse words, and findings so generic
-# they carry no clinical content on their own.
+# Never a clinical entity under ANY label: meta/discourse words, and patient mis-extractions
 NEVER_AN_ENTITY: Set[str] = {
-    # discourse / meta
+    # discourse / meta / patient mis-extractions
     "bệnh", "bệnh nhân", "bệnh nhi", "thuốc", "khám", "chẩn đoán", "tiền sử",
     "hiện tại", "triệu chứng", "lâm sàng", "chứng", "tình trạng", "hội chứng",
     "bị", "trẻ", "người bệnh", "điều trị", "chỉ định", "xét nghiệm", "kết quả",
-    # generic pathological process -- the "viêm" family that caused bug #3
+    "nhân nữ", "nhân nữ 2", "nhân nữ 1", "nhân nam", "bệnh nhân nữ", "bệnh nhân nam",
+    # generic pathological process / bare modifier terms
     "viêm", "nhiễm", "nhiễm trùng", "nhiễm khuẩn", "viêm nhiễm", "rối loạn",
     "biến chứng", "tổn thương", "suy", "cấp", "cấp tính", "mạn", "mạn tính",
-    # therapeutic-intent phrases that NER mistakes for diagnoses
+    # therapeutic-intent phrases and generic drug group terms
     "giảm đau", "giảm viêm", "kháng viêm", "giảm sốt", "hạ sốt", "kháng sinh",
+    "thuốc giãn cơ trơn", "giãn cơ trơn", "thuốc hạ áp", "thuốc hạ huyết áp", "hạ huyết áp",
+    "thuốc kháng sinh", "thuốc lợi tiểu", "lợi tiểu", "thuốc giảm đau", "thuốc an thần",
+    "thuốc dãn mạch", "thuốc giãn mạch", "thuốc chống đông", "chống đông",
+    "thuốc bôi", "kem bôi", "thuốc đặt", "corticoid",
 }
 
 # Valid as a SYMPTOM, never as a DISEASE. 'sốt' and 'ho' are legitimate symptom nodes
@@ -122,6 +126,9 @@ def is_generic_term(name: str, entity_type: str = "DISEASE") -> bool:
         return True
 
     clean = name.strip().lower()
+    if re.match(r"^(bệnh\s+)?nhân\s+(nữ|nam)(\s*\d+)?(\s*tuổi)?$", clean):
+        return True
+
     forms = {clean}
     # prefix-stripped form, so 'chứng đau' / 'tình trạng viêm' are caught too
     stripped = re.sub(r"^(bệnh|hội\s+chứng|chứng|tình\s+trạng)\s+", "", clean).strip()

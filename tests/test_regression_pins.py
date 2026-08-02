@@ -40,15 +40,15 @@ CORPUS = BASE_DIR / "data" / "synthetic" / "synthetic_data.json"
 # (sample_id, drug, relation, disease-as-written-in-the-document)
 PINNED_EDGES = [
     ("syn_003", "Ibuprofen", "CONTRAINDICATED_FOR", "Viêm loét dạ dày"),
-    ("syn_003", "Omeprazole 20mg", "PRESCRIBED_FOR", "Viêm loét dạ dày"),
+    ("syn_003", "Omeprazole", "PRESCRIBED_FOR", "Viêm loét dạ dày"),
     ("syn_001", "Metformin", "PRESCRIBED_FOR", "Đái tháo đường týp 2"),
 ]
 
 # Edges that must NOT exist. Each was observed in the graph at some point.
 FORBIDDEN_EDGES = [
-    ("Paracetamol 500mg", "TREATS", "Đái tháo đường týp 2"),
-    ("Omeprazole 20mg", "CONTRAINDICATED_FOR", "Viêm loét dạ dày"),
-    ("Meloxicam 15mg", "PRESCRIBED_FOR", "Viêm phổi"),
+    ("Paracetamol", "TREATS", "Đái tháo đường týp 2"),
+    ("Omeprazole", "CONTRAINDICATED_FOR", "Viêm loét dạ dày"),
+    ("Meloxicam", "PRESCRIBED_FOR", "Viêm phổi"),
 ]
 
 # The ICD code each pinned disease node carries after Decision 3/4.

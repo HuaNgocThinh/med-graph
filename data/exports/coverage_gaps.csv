@@ -1,2 +1,5 @@
 ﻿entity_name,entity_type,missing_relation_type
-Viêm ruột thừa cấp,DISEASE,PRESCRIBED_FOR/TREATS
+Thalassemia,DISEASE,HAS_SYMPTOM
+Thalassemia,DISEASE,PRESCRIBED_FOR/TREATS
+Rối loạn lo âu,DISEASE,HAS_SYMPTOM
+Thoát vị đĩa đệm cột sống thắt lưng,DISEASE,HAS_SYMPTOM

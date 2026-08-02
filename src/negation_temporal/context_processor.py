@@ -13,7 +13,10 @@ logger = logging.getLogger("ConTextProcessor")
 
 # 20+ Vietnamese medical negation patterns (Pre-trigger & Post-trigger patterns)
 NEGATION_PRE_TRIGGERS = [
-    r"không\s+có",
+    r"không\s+có\s+",
+    r"không\s+",
+    r"chưa\s+có\s+",
+    r"chưa\s+",
     r"chưa\s+ghi\s+nhận",
     r"loại\s+trừ",
     r"không\s+thấy\s+dấu\s+hiệu",

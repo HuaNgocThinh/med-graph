@@ -101,6 +101,13 @@ class GraphBuilder:
 
             head_name = get_canonical_name(raw_head)
             head_code = normalize_code(head_info.get("code"))
+            tail_name = get_canonical_name(raw_tail)
+            tail_code = normalize_code(tail_info.get("code"))
+
+            # GUARD 0 - Self-loop gate. Refuses to create a relationship where head and tail are the same entity.
+            if head_name.strip().lower() == tail_name.strip().lower() or (head_code and tail_code and head_code == tail_code):
+                logger.warning(f"🚫 [GUARD REJECT] Self-loop relationship rejected: '{head_name}' -[{rel_type}]-> '{tail_name}' (sample={sample_id}). Not written to Neo4j.")
+                continue
             
             # Determine Node Label for Head
             if is_drug_group(head_name) or head_info.get("type") == "DRUG_GROUP":
@@ -235,6 +242,7 @@ ON CREATE SET t.code = $tail_code, t.first_surface = $tail_surface, t.created_at
 MERGE (h)-[r:{rel_type}]->(t)
 ON CREATE SET r.confidence = $confidence, r.negated = $negated, r.temporal = $temporal, r.source_sample_id = $sample_id, r.head_surface = $head_surface, r.tail_surface = $tail_surface
 ON MATCH SET r.confidence = CASE WHEN r.confidence >= $confidence THEN r.confidence ELSE $confidence END,
+             r.negated = (coalesce(r.negated, false) OR $negated),
              r.source_sample_id = CASE WHEN r.source_sample_id CONTAINS $sample_id THEN r.source_sample_id ELSE r.source_sample_id + ',' + $sample_id END
 """
             params = {

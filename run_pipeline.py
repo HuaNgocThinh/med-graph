@@ -7,6 +7,7 @@ import argparse
 import csv
 import json
 import logging
+import re
 import sys
 from pathlib import Path
 
@@ -227,8 +228,34 @@ def run_end_to_end_pipeline(batch_size: int = 10, total_samples: int = 50, reset
 
             tail_link["type"] = tail_type
 
-            head_ent_obj = next((e for e in processed_entities if e["entity"] == head_str or get_canonical_name(e["entity"]) == head_str), {})
-            tail_ent_obj = next((e for e in processed_entities if e["entity"] == tail_str or get_canonical_name(e["entity"]) == tail_str), {})
+            head_canon = get_canonical_name(head_str)
+            tail_canon = get_canonical_name(tail_str)
+
+            def _match_ent(e: dict, canon_target: str) -> bool:
+                raw_name = e.get("entity", "")
+                clean_name = re.sub(r"[\.,;:\?!\n].*$", "", raw_name).strip()
+                clean_name_no_mod = re.sub(r"\s+\d+\s*(năm|tháng|ngày|tuần)(\s+nay|\s+trước)?.*$", "", clean_name, flags=re.IGNORECASE).strip()
+                
+                cand1 = get_canonical_name(raw_name)
+                cand2 = get_canonical_name(clean_name) if clean_name else ""
+                cand3 = get_canonical_name(clean_name_no_mod) if clean_name_no_mod else ""
+
+                if cand1 == canon_target:
+                    logger.debug(f"🔍 [_match_ent] Branch 1 matched: '{raw_name}' -> '{canon_target}'")
+                    return True
+                if cand2 and cand2 == canon_target:
+                    logger.debug(f"🔍 [_match_ent] Branch 2 (clean_punct) matched: '{clean_name}' -> '{canon_target}'")
+                    return True
+                if cand3 and cand3 == canon_target:
+                    logger.debug(f"🔍 [_match_ent] Branch 3 (clean_modifier) matched: '{clean_name_no_mod}' -> '{canon_target}'")
+                    return True
+                if raw_name == canon_target:
+                    logger.debug(f"🔍 [_match_ent] Branch 4 (exact_raw) matched: '{raw_name}' -> '{canon_target}'")
+                    return True
+                return False
+
+            head_ent_obj = next((e for e in processed_entities if _match_ent(e, head_canon)), {})
+            tail_ent_obj = next((e for e in processed_entities if _match_ent(e, tail_canon)), {})
             is_negated = bool(head_ent_obj.get("negated", False) or tail_ent_obj.get("negated", False))
             
             enriched_triple = {

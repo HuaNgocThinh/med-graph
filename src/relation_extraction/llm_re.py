@@ -42,7 +42,13 @@ QUY TẮC PHÂN BỔ LOẠI QUAN HỆ BẮT BUỘC:
 4. CONTRAINDICATED_FOR: DÙNG DUY NHẤT cho cặp (DRUG, DISEASE) — Thuốc bị chống chỉ định đối với bệnh.
 5. CAUSES: Dùng cho (DISEASE/DRUG, SYMPTOM/DISEASE) — Bệnh hoặc thuốc gây ra triệu chứng/tác dụng phụ/biến chứng.
 
+QUY TẮC XỬ LÝ THỰC THỂ BỊ PHỦ ĐỊNH (NGHIÊM CẤM TẠO QUAN HỆ ĐỒNG XUẤT HIỆN GIẢ):
+1. Khi một thực thể bệnh/triệu chứng bị PHỦ ĐỊNH trong văn bản (VD: "không thấy dấu hiệu Viêm phổi", "chưa ghi nhận Bệnh Gút", "không bị sốt"), KHÔNG ĐƯỢC tự ý liên kết các thuốc kê đơn trong bài với thực thể bị phủ định đó.
+2. TUYỆT ĐỐI KHÔNG tạo quan hệ (DRUG, PRESCRIBED_FOR, DISEASE_BỊ_PHỦ_ĐỊNH) nếu bệnh đó không phải là chỉ định của thuốc.
+3. Thực thể bị phủ định CHỈ tạo quan hệ khi văn bản trực tiếp khẳng định mối quan hệ với thực thể đó.
+
 VÍ DỤ MẪU (CHỈ ĐỂ THAM KHẢO CÚ PHÁP, KHÔNG LẤY TÊN THỰC THỂ Ở ĐÂY CHO CÂU THỰC TẾ):
+Ví dụ 1:
 Văn bản: "Bệnh nhân Viêm phế quản cấp, ho nhiều đờm. Kê Amoxicillin 500mg và Bromhexine 8mg để long đờm."
 Thực thể: 'Viêm phế quản cấp' (DISEASE), 'ho nhiều đờm' (SYMPTOM), 'Amoxicillin 500mg' (DRUG), 'Bromhexine 8mg' (DRUG)
 Output:
@@ -50,6 +56,24 @@ Output:
   {"head": "Amoxicillin 500mg", "relation": "PRESCRIBED_FOR", "tail": "Viêm phế quản cấp", "confidence": 0.95, "evidence_span": "Viêm phế quản cấp ... Kê Amoxicillin 500mg"},
   {"head": "Bromhexine 8mg", "relation": "TREATS", "tail": "ho nhiều đờm", "confidence": 0.92, "evidence_span": "Bromhexine 8mg để long đờm"}
 ]
+
+Ví dụ 2 (Chống đồng xuất hiện giả với thực thể phủ định):
+Văn bản: "Bệnh nhân Đái tháo đường týp 2. Khám không thấy dấu hiệu Viêm phổi. Kê Metformin 500mg."
+Thực thể: 'Đái tháo đường týp 2' (DISEASE), 'Viêm phổi' (DISEASE), 'Metformin 500mg' (DRUG)
+Output:
+[
+  {"head": "Metformin 500mg", "relation": "PRESCRIBED_FOR", "tail": "Đái tháo đường týp 2", "confidence": 0.95, "evidence_span": "Đái tháo đường týp 2 ... Kê Metformin 500mg"}
+]
+(TUYỆT ĐỐI KHÔNG tạo bộ ba (Metformin 500mg, PRESCRIBED_FOR, Viêm phổi) vì Viêm phổi bị phủ định "không thấy dấu hiệu").
+
+Ví dụ 3 (Chống đồng xuất hiện giả với bệnh tiền sử phủ định):
+Văn bản: "Bệnh nhân Cơn đau thắt ngực. Tiền sử chưa ghi nhận Bệnh Gút. Kê Aspirin 81mg."
+Thực thể: 'Cơn đau thắt ngực' (DISEASE), 'Bệnh Gút' (DISEASE), 'Aspirin 81mg' (DRUG)
+Output:
+[
+  {"head": "Aspirin 81mg", "relation": "PRESCRIBED_FOR", "tail": "Cơn đau thắt ngực", "confidence": 0.95, "evidence_span": "Cơn đau thắt ngực ... Kê Aspirin 81mg"}
+]
+(TUYỆT ĐỐI KHÔNG tạo bộ ba (Aspirin 81mg, PRESCRIBED_FOR, Bệnh Gút) vì Bệnh Gút bị phủ định "chưa ghi nhận").
 
 Yêu cầu đầu ra: Trả về một JSON Array duy nhất không chứa lời giải thích:
 [

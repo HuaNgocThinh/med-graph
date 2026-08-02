@@ -26,7 +26,8 @@ QUY TẮC SINH CYPHER:
 1. Khi truy vấn theo tên BỆNH hoặc THUỐC, hãy dùng CONTAINS với toLower(node.name) (VD: WHERE toLower(dis.name) CONTAINS 'đái tháo đường' hoặc 'dạ dày').
 2. Khi câu hỏi liên quan đến "thuốc điều trị bệnh gì" hoặc "bệnh gì được kê thuốc gì", LUÔN sinh Cypher tìm CẢ HAI loại quan hệ: [:PRESCRIBED_FOR|TREATS] thay vì chỉ 1 loại, và có thể bỏ qua nhãn Node (labels) của đích để tránh phân loại sai (VD: MATCH (d)-[r:PRESCRIBED_FOR|TREATS]->(b) hoặc sử dụng nhãn kép :DISEASE|SYMPTOM). Thuốc giảm triệu chứng dùng TREATS.
 3. Thuốc chống chỉ định với bệnh dùng CONTRAINDICATED_FOR. Bệnh biểu hiện triệu chứng dùng HAS_SYMPTOM.
-4. Hãy LUÔN trả về r.source_sample_id AS source_sample_id trong câu lệnh RETURN (ví dụ: RETURN d.name AS Thuoc, b.name AS Benh, r.source_sample_id AS source_sample_id) để hỗ trợ truy vết nguồn dữ liệu.
+4. Hãy LUÔN trả về r.source_sample_id AS source_sample_id và coalesce(r.dosage, "") AS Lieu trong câu lệnh RETURN (ví dụ: RETURN d.name AS Thuoc, coalesce(r.dosage, "") AS Lieu, b.name AS Benh, r.source_sample_id AS source_sample_id) để hỗ trợ truy vết nguồn dữ liệu và hiển thị hàm lượng liều dùng.
+5. LUÔN lọc bỏ các quan hệ bị phủ định bằng cách thêm điều kiện `coalesce(r.negated, false) = false` (hoặc `r.negated = false`) vào mệnh đề WHERE.
 
 Hãy sinh MỘT câu lệnh Cypher duy nhất (bắt đầu bằng MATCH, MERGE, hoặc WITH; không chứa lời giải thích, không chứa markdown code block) để trả lời câu hỏi:
 "{question}"
@@ -37,6 +38,8 @@ Dựa trên kết quả truy vấn từ Knowledge Graph y tế và trạng thái
 
 Lưu ý quan trọng:
 - Nếu kết quả từ DB có dữ liệu, hãy tổng hợp câu trả lời tự nhiên.
+- Khi kết quả truy vấn có thông tin liều dùng (Lieu / dosage / r.dosage không rỗng), hãy LUÔN trình bày hàm lượng/liều dùng trong ngoặc đơn ngay sau tên thuốc (Ví dụ: 'Meloxicam (15mg)' thay vì 'Meloxicam'). Nếu có nhiều mức liều cho cùng một thuốc (VD: Meloxicam 15mg và Meloxicam 7.5mg), hãy trình bày rõ ràng từng mức liều kèm theo mục đích/quan hệ tương ứng.
+- Nếu trong kết quả truy vấn có mã nguồn r.source_sample_id (ví dụ: syn_001, syn_004, syn_015, syn_072), hãy LUÔN đính kèm danh sách các mã nguồn đó trong ngoặc đơn ngay sau tên thực thể/câu trả lời (Ví dụ: 'Đái tháo đường týp 2 (syn_001, syn_004, syn_015, syn_072)') để đảm bảo tính truy vết dữ liệu (Traceability).
 - Nếu trạng thái kiểm tra là 'NODE_EXISTS_NO_RELATIONS': Hãy thông báo rõ ràng là 'Cơ sở dữ liệu y tế hiện đã ghi nhận thực thể này, nhưng chưa có dữ liệu quan hệ lâm sàng tương ứng trong Knowledge Graph' để người dùng phân biệt giữa dữ liệu chưa đủ và lỗi hệ thống.
 - Nếu trạng thái kiểm tra là 'NODE_NOT_FOUND': Hãy thông báo rõ ràng là 'Cơ sở dữ liệu hiện chưa ghi nhận thực thể này'.
 - Nếu trạng thái kiểm tra là 'QUERY_ERROR': Truy vấn KHÔNG chạy được (lỗi hệ thống), nên ta KHÔNG biết dữ liệu có hay không. TUYỆT ĐỐI KHÔNG được nói 'chưa ghi nhận' hay 'không có dữ liệu'. Hãy trả lời đúng một ý: 'Lỗi hệ thống: truy vấn cơ sở dữ liệu không thực hiện được, chưa thể kết luận.'
@@ -103,6 +106,33 @@ def canonicalize_cypher_literals(cypher: str) -> str:
             out = out.replace(f"'{lit}'", f"'{canonical}'").replace(f'"{lit}"', f'"{canonical}"')
             logger.info(f"🔤 Synonym canonicalization of Cypher literal: '{lit}' -> '{canonical}'")
     return out
+def ensure_negated_filter(cypher: str) -> str:
+    """
+    Ensures that any generated Cypher query containing a relationship variable [r...]
+    filters out negated relationships with coalesce(r.negated, false) = false.
+    """
+    if not cypher or "negated" in cypher.lower():
+        return cypher
+
+    if not re.search(r'-\[\s*r\b', cypher):
+        return cypher
+
+    match = re.search(r'\b(RETURN|WITH)\b', cypher, re.IGNORECASE)
+    if match:
+        idx = match.start()
+        prefix = cypher[:idx].rstrip()
+        suffix = cypher[idx:]
+        if " WHERE " in prefix.upper():
+            return f"{prefix} AND coalesce(r.negated, false) = false {suffix}"
+        else:
+            return f"{prefix} WHERE coalesce(r.negated, false) = false {suffix}"
+    else:
+        if " WHERE " in cypher.upper():
+            return f"{cypher} AND coalesce(r.negated, false) = false"
+        else:
+            return f"{cypher} WHERE coalesce(r.negated, false) = false"
+
+
 OFFLINE_WARNING_PREFIX = "⚠️ [CẢNH BÁO: Neo4j đang offline, đây là kết quả giả lập, KHÔNG dùng để đánh giá/báo cáo]\n\n"
 
 class TextToCypherQA:
@@ -137,22 +167,30 @@ class TextToCypherQA:
             q_lower = question.lower()
             if "chống chỉ định" in q_lower:
                 if "dạ dày" in q_lower:
-                    raw_cypher = "MATCH (d)-[r:CONTRAINDICATED_FOR]->(b:DISEASE) WHERE toLower(b.name) CONTAINS 'dạ dày' RETURN d.name AS ThuocChongChiDinh, b.name AS Benh, r.source_sample_id AS source_sample_id"
+                    raw_cypher = "MATCH (d)-[r:CONTRAINDICATED_FOR]->(b:DISEASE) WHERE toLower(b.name) CONTAINS 'dạ dày' AND coalesce(r.negated, false) = false RETURN d.name AS ThuocChongChiDinh, coalesce(r.dosage, '') AS Lieu, b.name AS Benh, r.source_sample_id AS source_sample_id"
                 else:
-                    raw_cypher = "MATCH (d)-[r:CONTRAINDICATED_FOR]->(b:DISEASE) RETURN d.name AS ThuocChongChiDinh, b.name AS Benh, r.source_sample_id AS source_sample_id"
+                    raw_cypher = "MATCH (d)-[r:CONTRAINDICATED_FOR]->(b:DISEASE) WHERE coalesce(r.negated, false) = false RETURN d.name AS ThuocChongChiDinh, coalesce(r.dosage, '') AS Lieu, b.name AS Benh, r.source_sample_id AS source_sample_id"
             elif "thuốc" in q_lower or "kê" in q_lower or "điều trị" in q_lower:
                 if "dạ dày" in q_lower:
-                    raw_cypher = "MATCH (d)-[r:PRESCRIBED_FOR|TREATS]->(b) WHERE toLower(b.name) CONTAINS 'dạ dày' RETURN d.name AS Thuoc, b.name AS Benh, r.source_sample_id AS source_sample_id"
+                    raw_cypher = "MATCH (d)-[r:PRESCRIBED_FOR|TREATS]->(b) WHERE toLower(b.name) CONTAINS 'dạ dày' AND coalesce(r.negated, false) = false RETURN d.name AS Thuoc, coalesce(r.dosage, '') AS Lieu, b.name AS Benh, r.source_sample_id AS source_sample_id"
                 elif "huyết áp" in q_lower:
-                    raw_cypher = "MATCH (d)-[r:PRESCRIBED_FOR|TREATS]->(b) WHERE toLower(b.name) CONTAINS 'huyết áp' RETURN d.name AS Thuoc, b.name AS Benh, r.source_sample_id AS source_sample_id"
+                    raw_cypher = "MATCH (d)-[r:PRESCRIBED_FOR|TREATS]->(b) WHERE toLower(b.name) CONTAINS 'huyết áp' AND coalesce(r.negated, false) = false RETURN d.name AS Thuoc, coalesce(r.dosage, '') AS Lieu, b.name AS Benh, r.source_sample_id AS source_sample_id"
                 else:
-                    raw_cypher = "MATCH (d)-[r:PRESCRIBED_FOR|TREATS]->(b:DISEASE) WHERE toLower(b.name) CONTAINS 'đái tháo đường' RETURN d.name AS Thuoc, b.name AS Benh, r.source_sample_id AS source_sample_id"
+                    raw_cypher = "MATCH (d)-[r:PRESCRIBED_FOR|TREATS]->(b:DISEASE) WHERE toLower(b.name) CONTAINS 'đái tháo đường' AND coalesce(r.negated, false) = false RETURN d.name AS Thuoc, coalesce(r.dosage, '') AS Lieu, b.name AS Benh, r.source_sample_id AS source_sample_id"
             elif "triệu chứng" in q_lower:
-                raw_cypher = "MATCH (b:DISEASE)-[r:HAS_SYMPTOM|CAUSES]->(s:SYMPTOM) RETURN b.name AS Benh, s.name AS TrieuChung, r.source_sample_id AS source_sample_id"
+                raw_cypher = "MATCH (b:DISEASE)-[r:HAS_SYMPTOM|CAUSES]->(s:SYMPTOM) WHERE coalesce(r.negated, false) = false RETURN b.name AS Benh, s.name AS TrieuChung, r.source_sample_id AS source_sample_id"
             else:
-                raw_cypher = "MATCH (head)-[r]->(tail) RETURN head.name, type(r), tail.name, r.source_sample_id AS source_sample_id LIMIT 10"
+                raw_cypher = "MATCH (head)-[r]->(tail) WHERE coalesce(r.negated, false) = false RETURN head.name, type(r), tail.name, coalesce(r.dosage, '') AS Lieu, r.source_sample_id AS source_sample_id LIMIT 10"
 
-        return raw_cypher
+        # Ensure query has RETURN clause
+        if "RETURN" not in raw_cypher.upper():
+            logger.warning(f"⚠️ Generated Cypher lacks RETURN clause: '{raw_cypher}'. Appending default RETURN clause.")
+            if "-[r" in raw_cypher or "-[r:" in raw_cypher:
+                raw_cypher = f"{raw_cypher} RETURN d.name AS Thuoc, coalesce(r.dosage, '') AS Lieu, b.name AS Benh, r.source_sample_id AS source_sample_id"
+            else:
+                raw_cypher = f"{raw_cypher} RETURN *"
+
+        return ensure_negated_filter(raw_cypher)
 
     def check_node_existence(self, question: str) -> List[Dict[str, Any]]:
         """Queries Neo4j to audit if nodes matching terms in question exist in Knowledge Graph."""
