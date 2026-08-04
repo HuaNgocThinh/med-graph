@@ -20,7 +20,10 @@ EL_CSV_PATH = BASE_DIR / "data" / "annotation" / "el_annotation_set.csv"
 
 def compute_re_metrics(rows: List[Dict[str, str]]) -> Dict[str, Any]:
     """Computes Precision, Recall, F1 overall and per-relation type for RE."""
-    valid_rows = [r for r in rows if r.get("relation_gold", "").strip() != ""]
+    valid_rows = [
+        r for r in rows 
+        if r.get("relation_gold", "").strip() != "" and r.get("relation_gold", "").strip().lower() != "uncertain"
+    ]
     if not valid_rows:
         return {"total_valid": 0, "message": "Chưa có dòng nào được điền nhãn relation_gold."}
 
@@ -73,7 +76,10 @@ def compute_re_metrics(rows: List[Dict[str, str]]) -> Dict[str, Any]:
 
 def compute_el_metrics(rows: List[Dict[str, str]]) -> Dict[str, Any]:
     """Computes Exact Match Accuracy % for Entity Linking."""
-    valid_rows = [r for r in rows if r.get("code_gold", "").strip() != ""]
+    valid_rows = [
+        r for r in rows 
+        if r.get("code_gold", "").strip() != "" and r.get("code_gold", "").strip().lower() != "uncertain"
+    ]
     if not valid_rows:
         return {"total_valid": 0, "message": "Chưa có dòng nào được điền nhãn code_gold."}
 
@@ -151,45 +157,66 @@ def run_mock_test():
     print("=" * 80)
 
 
-def evaluate_live_files():
+def evaluate_live_files(re_path: Path = RE_CSV_PATH, el_path: Path = EL_CSV_PATH):
     print("=" * 80)
     print("📊 ĐÁNH GIÁ TRÊN FILE GÁN NHÃN THỰC TẾ (REAL ANNOTATION FILES)")
     print("=" * 80)
 
-    if RE_CSV_PATH.exists():
-        with open(RE_CSV_PATH, "r", encoding="utf-8-sig") as f:
+    re_file = Path(re_path)
+    if re_file.exists():
+        with open(re_file, "r", encoding="utf-8-sig") as f:
             re_rows = list(csv.DictReader(f))
         re_res = compute_re_metrics(re_rows)
         msg = re_res.get("message")
         total_v = re_res.get("total_valid", 0)
         status_str = msg if msg else f"Đã gán {total_v} dòng"
-        print(f"\n[RE Annotation Status]: {status_str}")
+        print(f"\n--- RE EVALUATION RESULT ({re_file.name}) ---")
+        print(f"Status          : {status_str}")
         if "micro_f1" in re_res:
-            print(f"  Micro F1: {re_res['micro_f1']*100:.1f}% | Macro F1: {re_res['macro_f1']*100:.1f}%")
+            print(f"Total Evaluated : {re_res['total_valid']}")
+            print(f"Micro Precision : {re_res['micro_precision'] * 100:.1f}%")
+            print(f"Micro Recall    : {re_res['micro_recall'] * 100:.1f}%")
+            print(f"Micro F1 Score  : {re_res['micro_f1'] * 100:.1f}%")
+            print(f"Macro F1 Score  : {re_res['macro_f1'] * 100:.1f}%")
+            if "per_label" in re_res:
+                print("\nChi tiết từng loại quan hệ (Per-label):")
+                for lbl, m in re_res['per_label'].items():
+                    print(f"  • {lbl:<20}: P={m['precision']*100:.1f}%, R={m['recall']*100:.1f}%, F1={m['f1']*100:.1f}%")
     else:
-        print(f"❌ File '{RE_CSV_PATH}' không tồn tại.")
+        print(f"❌ File '{re_file}' không tồn tại.")
 
-    if EL_CSV_PATH.exists():
-        with open(EL_CSV_PATH, "r", encoding="utf-8-sig") as f:
+    el_file = Path(el_path)
+    if el_file.exists():
+        with open(el_file, "r", encoding="utf-8-sig") as f:
             el_rows = list(csv.DictReader(f))
         el_res = compute_el_metrics(el_rows)
         msg = el_res.get("message")
         total_v = el_res.get("total_valid", 0)
         status_str = msg if msg else f"Đã gán {total_v} dòng"
-        print(f"\n[EL Annotation Status]: {status_str}")
+        print(f"\n--- EL EVALUATION RESULT ({el_file.name}) ---")
+        print(f"Status          : {status_str}")
         if "accuracy_pct" in el_res:
-            print(f"  Exact Match Accuracy: {el_res['accuracy_pct']:.1f}%")
+            print(f"Total Evaluated : {el_res['total_valid']}")
+            print(f"Exact Match Count: {el_res['exact_match_count']}/{el_res['total_valid']}")
+            print(f"Exact Match Acc  : {el_res['accuracy_pct']:.1f}%")
+            if "per_source" in el_res:
+                print("\nChi tiết theo nguồn mã (Per-source):")
+                for src, acc_val in el_res['per_source'].items():
+                    print(f"  • {src:<10}: {acc_val:.1f}%")
     else:
-        print(f"❌ File '{EL_CSV_PATH}' không tồn tại.")
+        print(f"❌ File '{el_file}' không tồn tại.")
     print("=" * 80)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluation script for human-annotated datasets.")
+    parser.add_argument("--re", type=str, default=str(RE_CSV_PATH), help="Path to RE annotation CSV file.")
+    parser.add_argument("--el", type=str, default=str(EL_CSV_PATH), help="Path to EL annotation CSV file.")
     parser.add_argument("--test", action="store_true", help="Run mock evaluation test on fake rows.")
     args = parser.parse_args()
 
     if args.test:
         run_mock_test()
     else:
-        evaluate_live_files()
+        evaluate_live_files(re_path=Path(args.re), el_path=Path(args.el))
+

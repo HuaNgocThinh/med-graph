@@ -117,3 +117,5 @@
 {"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "Metformin 500mg", "tail": "Viêm phổi", "relation": "PRESCRIBED_FOR", "details": "Triple involves a negated medical entity from source text."}
 {"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "đái tháo đường", "tail": "sốt", "relation": "HAS_SYMPTOM", "details": "Triple involves a negated medical entity from source text."}
 {"type": "NEGATED_ENTITY_RELATION_CONFLICT", "head": "Metformin 500mg", "tail": "Viêm phổi", "relation": "PRESCRIBED_FOR", "details": "Triple involves a negated medical entity from source text."}
+{"type": "PRESCRIBED_FOR_VS_TREATS_REDUNDANCY", "head": "Meloxicam", "tail": "Đau thắt lưng", "details": "Node pair has both 'PRESCRIBED_FOR' and 'TREATS' edges in Neo4j DB."}
+{"type": "PRESCRIBED_FOR_VS_TREATS_REDUNDANCY", "head": "Meloxicam", "tail": "Đau thắt lưng", "details": "Node pair has both 'PRESCRIBED_FOR' and 'TREATS' edges in Neo4j DB."}
