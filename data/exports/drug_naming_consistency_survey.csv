@@ -1,0 +1,52 @@
+﻿name,labels,code,degree,out_degree,in_degree,has_dosage_token,base_ingredient,nodes_sharing_base
+Alendronate 70mg,DRUG,RXCUI-UNKNOWN,1,1,0,Y,alendronate,1
+Amlodipine 5mg,DRUG,RXCUI:4337,1,1,0,Y,amlodipine,1
+Amoxicillin 500mg,DRUG,RXCUI:723,2,2,0,Y,amoxicillin,1
+Aspirin 81mg,DRUG,RXCUI:1191,2,2,0,Y,aspirin,1
+Atorvastatin 20mg,DRUG,RXCUI:83367,3,3,0,Y,atorvastatin,1
+Augmentin,DRUG,RXCUI:2193,1,1,0,N,augmentin,1
+Calcium,DRUG,RXCUI:1895,1,1,0,N,calcium,1
+Carbamazepine 200mg,DRUG,RXCUI:2002,1,1,0,Y,carbamazepine,1
+Cefixim 200mg,DRUG,RXCUI-UNKNOWN,1,1,0,Y,cefixim,1
+Celecoxib 200mg,DRUG,RXCUI:2156,2,2,0,Y,celecoxib,1
+Cetirizine 10mg,DRUG,RXCUI:20610,3,3,0,Y,cetirizine,1
+Clotrimazole,DRUG,RXCUI:2525,3,3,0,N,clotrimazole,1
+Corticoid,DRUG_GROUP,RXCUI:2828,1,1,0,N,corticoid,1
+Cyproterone acetate 2mg,DRUG,RXCUI-UNKNOWN,1,1,0,Y,cyproterone acetate,1
+Depakine Chrono 500mg,DRUG,RXCUI-UNKNOWN,2,2,0,Y,depakine chrono,1
+Diane-35,DRUG,RXCUI-UNKNOWN,1,1,0,N,diane-35,1
+Diclofenac,DRUG,RXCUI:3355,4,4,0,N,diclofenac,1
+Digoxin 0.25mg,DRUG,RXCUI-UNKNOWN,1,1,0,Y,digoxin,1
+Escitalopram 10mg,DRUG,RXCUI-UNKNOWN,1,1,0,Y,escitalopram,1
+Esomeprazole 40mg,DRUG,RXCUI:283742,2,2,0,Y,esomeprazole,1
+Ethinylestradiol 0.03mg,DRUG,RXCUI-UNKNOWN,1,1,0,Y,ethinylestradiol,1
+Ferrous sulfate,DRUG,RXCUI:4477,1,1,0,N,ferrous sulfate,1
+Fluconazole 150mg,DRUG,RXCUI:4492,1,1,0,Y,fluconazole,1
+Furosemide 40mg,DRUG,RXCUI:4815,2,2,0,Y,furosemide,1
+Hydrocortisone,DRUG,RXCUI:5492,3,3,0,N,hydrocortisone,2
+Hydrocortisone 10mg,DRUG,RXCUI-UNKNOWN,1,1,0,Y,hydrocortisone,2
+Ibuprofen,DRUG,RXCUI:5640,1,1,0,N,ibuprofen,1
+Isotretinoin 10mg,DRUG,RXCUI:6064,1,1,0,Y,isotretinoin,1
+Levothyroxine 50mcg,DRUG,RXCUI:10582,1,1,0,Y,levothyroxine,1
+Lisinopril 10mg,DRUG,RXCUI:6472,1,1,0,Y,lisinopril,1
+Loratadine,DRUG,RXCUI:28889,2,2,0,N,loratadine,1
+Meloxicam 15mg,DRUG,RXCUI-UNKNOWN,8,8,0,Y,meloxicam,2
+Meloxicam 7.5mg,DRUG,RXCUI-UNKNOWN,3,3,0,Y,meloxicam,2
+Metformin,DRUG,RXCUI:6809,2,2,0,N,metformin,1
+Methimazole 5mg,DRUG,RXCUI:6876,1,1,0,Y,methimazole,1
+Methotrexate 10mg/tuần,DRUG,RXCUI:6809,1,1,0,Y,methotrexate,1
+Omeprazole 20mg,DRUG,RXCUI:7052,2,2,0,Y,omeprazole,1
+Oresol,DRUG,RXCUI:7800,1,1,0,N,oresol,1
+Paracetamol 500mg,DRUG,RXCUI:161,3,3,0,Y,paracetamol,1
+Prednisolone 5mg,DRUG,RXCUI:3498,1,1,0,Y,prednisolone,1
+Salbutamol,DRUG,RXCUI:86045,2,2,0,N,salbutamol,1
+Salmeterol/Fluticasone 50/250 mcg,DRUG,RXCUI-UNKNOWN,1,1,0,Y,salmeterol/fluticasone,1
+Sertraline 50mg,DRUG,RXCUI:36437,2,2,0,Y,sertraline,1
+Sumatriptan 50mg,DRUG,RXCUI-UNKNOWN,1,1,0,Y,sumatriptan,1
+Tamsulosin 0.4mg,DRUG,RXCUI:77492,2,2,0,Y,tamsulosin,1
+Tenofovir 300mg,DRUG,RXCUI:284192,1,1,0,Y,tenofovir,1
+Tranexamic acid 500mg,DRUG,RXCUI-UNKNOWN,2,2,0,Y,tranexamic acid,1
+Trimebutin 200mg,DRUG,RXCUI-UNKNOWN,3,3,0,Y,trimebutin,1
+Vitamin D3,DRUG,RXCUI:1244014,1,1,0,N,vitamin d3,1
+Warfarin 2.5mg,DRUG,RXCUI:11170,1,1,0,Y,warfarin,1
+thuốc giãn cơ trơn,DRUG_GROUP,RXCUI-UNKNOWN,1,1,0,N,thuốc giãn cơ trơn,1

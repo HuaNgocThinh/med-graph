@@ -1,0 +1,198 @@
+﻿label,name,code
+DISEASE,Bệnh Migraine,G43.9
+DISEASE,Bệnh phổi tắc nghẽn mạn tính,J44
+DISEASE,Cao huyết áp,I10
+DISEASE,Cường giáp,E05.9
+DISEASE,Hen phế quản,J45
+DISEASE,Loãng xương,ICD-UNKNOWN
+DISEASE,Mụn trứng cá,L70.0
+DISEASE,Nhiễm trùng đường tiết niệu,N39.0
+DISEASE,Nhồi máu não,I63
+DISEASE,Nấm da,B35.9
+DISEASE,Phì đại lành tính tuyến tiền liệt,N40
+DISEASE,Rung nhĩ,I48.9
+DISEASE,Ruột kích thích,ICD-UNKNOWN
+DISEASE,Rối loạn lipid máu,E78.5
+DISEASE,Rối loạn lo âu lan tỏa,F41.1
+DISEASE,Suy giáp,E03.9
+DISEASE,Suy tim sung huyết,I50.9
+DISEASE,Suy tuyến thượng thận,E27.4
+DISEASE,Sỏi thận,N20.0
+DISEASE,Thiếu máu thiếu sắt,D50.9
+DISEASE,Thoái hóa khớp,M19.9
+DISEASE,Thoát vị đĩa đệm cột sống thắt lưng,M51.2
+DISEASE,Trào ngược dạ dày thực quản,K21.9
+DISEASE,U xơ tử cung,D25.9
+DISEASE,Viêm da cơ địa,L20.9
+DISEASE,Viêm dạ dày ruột nhiễm khuẩn,A09
+DISEASE,Viêm gan vi-rút B mạn,B18.1
+DISEASE,Viêm gân vai,M75.2
+DISEASE,Viêm khớp dạng thấp,M06.9
+DISEASE,Viêm loét dạ dày,K29.7
+DISEASE,Viêm mũi dị ứng,J30.4
+DISEASE,Viêm mũi họng cấp,J00
+DISEASE,Viêm phế quản cấp,J20.9
+DISEASE,Viêm phổi,J18.9
+DISEASE,Viêm ruột thừa cấp,K35.8
+DISEASE,Viêm âm đạo do nấm,N76.0
+DISEASE,Xơ vữa động mạch cảnh,ICD-UNKNOWN
+DISEASE,Đa nang buồng trứng,E28.2
+DISEASE,Đau lưng dưới,M54.5
+DISEASE,Đái tháo đường týp 2,E11
+DISEASE,Động kinh,G40.9
+DRUG,Alendronate 70mg,RXCUI:46041
+DRUG,Amlodipine 5mg,RXCUI:17767
+DRUG,Amoxicillin 500mg,RXCUI:723
+DRUG,Aspirin 81mg,RXCUI:1191
+DRUG,Atorvastatin 20mg,RXCUI:83367
+DRUG,Augmentin,RXCUI:48203
+DRUG,Calcium,RXCUI:1895
+DRUG,Carbamazepine 200mg,RXCUI:2002
+DRUG,Cefixim 200mg,RXCUI:25033
+DRUG,Celecoxib 200mg,RXCUI:140587
+DRUG,Cetirizine 10mg,RXCUI:20610
+DRUG,Clotrimazole,RXCUI:2623
+DRUG,Cyproterone acetate 2mg,RXCUI:22054
+DRUG,Depakine Chrono 500mg,RXCUI-UNKNOWN
+DRUG,Diane-35,RXCUI-UNKNOWN
+DRUG,Diclofenac,RXCUI:3355
+DRUG,Digoxin 0.25mg,RXCUI:3407
+DRUG,Escitalopram 10mg,RXCUI:321988
+DRUG,Esomeprazole 40mg,RXCUI:283742
+DRUG,Ethinylestradiol 0.03mg,RXCUI:4124
+DRUG,Ferrous sulfate,RXCUI:24947
+DRUG,Fluconazole 150mg,RXCUI:4450
+DRUG,Furosemide 40mg,RXCUI:4603
+DRUG,Hydrocortisone,RXCUI:5492
+DRUG,Hydrocortisone 10mg,RXCUI:5492
+DRUG,Ibuprofen,RXCUI:5640
+DRUG,Isotretinoin 10mg,RXCUI:6064
+DRUG,Levothyroxine 50mcg,RXCUI:10582
+DRUG,Lisinopril 10mg,RXCUI:29046
+DRUG,Loratadine,RXCUI:28889
+DRUG,Meloxicam 15mg,RXCUI:41493
+DRUG,Meloxicam 7.5mg,RXCUI:41493
+DRUG,Metformin,RXCUI:6809
+DRUG,Methimazole 5mg,RXCUI:6835
+DRUG,Methotrexate 10mg/tuần,RXCUI:6851
+DRUG,Omeprazole 20mg,RXCUI:7646
+DRUG,Oresol,
+DRUG,Paracetamol 500mg,RXCUI:161
+DRUG,Prednisolone 5mg,RXCUI:8638
+DRUG,Salbutamol,RXCUI:435
+DRUG,Salmeterol/Fluticasone 50/250 mcg,RXCUI-UNKNOWN
+DRUG,Sertraline 50mg,RXCUI:36437
+DRUG,Sumatriptan 50mg,RXCUI:37418
+DRUG,Tamsulosin 0.4mg,RXCUI:77492
+DRUG,Tenofovir 300mg,RXCUI:117466
+DRUG,Tranexamic acid 500mg,RXCUI:10691
+DRUG,Trimebutin 200mg,RXCUI-UNKNOWN
+DRUG,Vitamin D3,RXCUI:1244014
+DRUG,Warfarin 2.5mg,RXCUI:11289
+DRUG_GROUP,Corticoid,RXCUI:2828
+DRUG_GROUP,thuốc giãn cơ trơn,RXCUI-UNKNOWN
+SYMPTOM,Buồn nôn,UNKNOWN
+SYMPTOM,Chiều cao cơ thể giảm,UNKNOWN
+SYMPTOM,Chóng mặt,UNKNOWN
+SYMPTOM,Chóng mặt kéo dài,UNKNOWN
+SYMPTOM,Chảy nước mũi nhiều,UNKNOWN
+SYMPTOM,Co cứng cơ cạnh sống thắt lưng,UNKNOWN
+SYMPTOM,Co giật toàn thể cứng - gi clon,UNKNOWN
+SYMPTOM,Cơn co giật,UNKNOWN
+SYMPTOM,Cơn đau thắt ngực,UNKNOWN
+SYMPTOM,Cứng khớp buổi sáng,UNKNOWN
+SYMPTOM,Cứng khớp buổi sáng kéo dài trên 1 giờ,UNKNOWN
+SYMPTOM,Da xanh xao,UNKNOWN
+SYMPTOM,Ho khan,UNKNOWN
+SYMPTOM,Ho khan kéo dài,UNKNOWN
+SYMPTOM,Ho khạc đờm mủ,UNKNOWN
+SYMPTOM,Ho khạc đờm nhầy mạn tính,UNKNOWN
+SYMPTOM,Hoa mắt,UNKNOWN
+SYMPTOM,Hạn chế tầm vận động khớp,UNKNOWN
+SYMPTOM,Hạn chế vận động cột sống,UNKNOWN
+SYMPTOM,Hạn chế vận động rõ rệt khi cúi người,UNKNOWN
+SYMPTOM,Hắt hơi,UNKNOWN
+SYMPTOM,Hồi hộp,UNKNOWN
+SYMPTOM,Hồi hộp đánh trống ngực,UNKNOWN
+SYMPTOM,Khát nước liên tục,UNKNOWN
+SYMPTOM,Khó nói,UNKNOWN
+SYMPTOM,Khó thở khi gắng sức,UNKNOWN
+SYMPTOM,Khó thở rít,UNKNOWN
+SYMPTOM,Khó tập trung công việc,UNKNOWN
+SYMPTOM,Liệt nhẹ nửa người trái,UNKNOWN
+SYMPTOM,Liệt nửa người bên phải,UNKNOWN
+SYMPTOM,Lo lắng quá mức,UNKNOWN
+SYMPTOM,Méo miệng,UNKNOWN
+SYMPTOM,Mảng đỏ,UNKNOWN
+SYMPTOM,Mất ý thức đột ngột,UNKNOWN
+SYMPTOM,Mệt mỏi,UNKNOWN
+SYMPTOM,Mệt mỏi kéo dài,UNKNOWN
+SYMPTOM,Nghẹt mũi,UNKNOWN
+SYMPTOM,Ngứa,UNKNOWN
+SYMPTOM,Ngứa rát vùng kín,UNKNOWN
+SYMPTOM,Nhân trứng cá đầu đen,UNKNOWN
+SYMPTOM,Nuốt khó,UNKNOWN
+SYMPTOM,Nóng rát sau xương ức,UNKNOWN
+SYMPTOM,Phù chi dưới,UNKNOWN
+SYMPTOM,Phù hai chi dưới,UNKNOWN
+SYMPTOM,Ra khí hư đặc dính màu trắng đục như váng sữa,UNKNOWN
+SYMPTOM,Rong kinh,UNKNOWN
+SYMPTOM,Run tay,UNKNOWN
+SYMPTOM,Rậm lông mặt,UNKNOWN
+SYMPTOM,Rối loạn kinh nguyệt,UNKNOWN
+SYMPTOM,Sưng đau các khớp bàn tay đối xứng,UNKNOWN
+SYMPTOM,Sẩn đỏ viêm,UNKNOWN
+SYMPTOM,Sốt cao,UNKNOWN
+SYMPTOM,Sốt nhẹ,UNKNOWN
+SYMPTOM,Sợ lạnh,UNKNOWN
+SYMPTOM,Sụt cân,UNKNOWN
+SYMPTOM,Sụt cân nhanh,UNKNOWN
+SYMPTOM,Sủi bọt mép,UNKNOWN
+SYMPTOM,Tiêu chảy,UNKNOWN
+SYMPTOM,Tiêu chảy cấp,UNKNOWN
+SYMPTOM,Tiểu buốt,UNKNOWN
+SYMPTOM,Tiểu khó,UNKNOWN
+SYMPTOM,Tiểu máu vi thể,UNKNOWN
+SYMPTOM,Tiểu ngắt quãng,UNKNOWN
+SYMPTOM,Tiểu rắt,UNKNOWN
+SYMPTOM,Tiểu đêm,UNKNOWN
+SYMPTOM,Táo bón,UNKNOWN
+SYMPTOM,Tê bì cẳng chân,UNKNOWN
+SYMPTOM,Tê bì hai chi dưới,UNKNOWN
+SYMPTOM,Tê yếu nửa người thoáng qua,UNKNOWN
+SYMPTOM,Tổn thương da dạng vành cung có bờ viền rõ,UNKNOWN
+SYMPTOM,Viêm ngứa,UNKNOWN
+SYMPTOM,Vàng da,UNKNOWN
+SYMPTOM,Vòng kinh kéo dài,UNKNOWN
+SYMPTOM,ho,UNKNOWN
+SYMPTOM,sốt,UNKNOWN
+SYMPTOM,Đau bụng,UNKNOWN
+SYMPTOM,Đau bụng vùng hố chậu phải,UNKNOWN
+SYMPTOM,Đau dữ dội,UNKNOWN
+SYMPTOM,Đau họng,UNKNOWN
+SYMPTOM,Đau khớp,UNKNOWN
+SYMPTOM,Đau nhói khớp vai khi giơ tay lên cao,UNKNOWN
+SYMPTOM,Đau nhói vùng cột sống,UNKNOWN
+SYMPTOM,Đau nhói vùng thắt lưng,UNKNOWN
+SYMPTOM,Đau nhức âm ỉ vùng cột sống thắt lưng,UNKNOWN
+SYMPTOM,Đau quặn bụng,UNKNOWN
+SYMPTOM,Đau quặn bụng vùng quanh rốn,UNKNOWN
+SYMPTOM,Đau quặn hố chậu phải,UNKNOWN
+SYMPTOM,Đau quặn thận bên phải,UNKNOWN
+SYMPTOM,Đau quặn thận trái,UNKNOWN
+SYMPTOM,Đau rát họng,UNKNOWN
+SYMPTOM,Đau thượng vị,UNKNOWN
+SYMPTOM,Đau thần kinh tọa,UNKNOWN
+SYMPTOM,Đau thắt lưng,UNKNOWN
+SYMPTOM,Đau tăng khi vận động,UNKNOWN
+SYMPTOM,Đau tức hạ vị,UNKNOWN
+SYMPTOM,Đau tức ngực âm ỉ,UNKNOWN
+SYMPTOM,Đau âm ỉ vùng hố chậu phải,UNKNOWN
+SYMPTOM,Đau đầu,UNKNOWN
+SYMPTOM,Đau đầu dữ dội theo mạch đập ở một bên thái dương,UNKNOWN
+SYMPTOM,Đau đầu vùng chẩm,UNKNOWN
+SYMPTOM,Đi ngoài 5 lần/ngày,UNKNOWN
+SYMPTOM,Đi ngoài phân lỏng,UNKNOWN
+SYMPTOM,Đờm trắng,UNKNOWN
+SYMPTOM,Ợ chua,UNKNOWN
+SYMPTOM,ợ nóng,UNKNOWN

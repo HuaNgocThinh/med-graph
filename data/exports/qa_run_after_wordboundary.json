@@ -1,0 +1,138 @@
+[
+  {
+    "question": "Tiểu đường có triệu chứng gì?",
+    "kg_qa": {
+      "question": "Tiểu đường có triệu chứng gì?",
+      "cypher_query": "MATCH (d:DISEASE)-[r:HAS_SYMPTOM]->(s:SYMPTOM) WHERE toLower(d.name) CONTAINS 'đái tháo đường' RETURN d.name AS Benh, s.name AS TrieuChung, r.source_sample_id AS source_sample_id",
+      "graph_results": [
+        {
+          "Benh": "Đái tháo đường týp 2",
+          "TrieuChung": "Sụt cân nhanh",
+          "source_sample_id": "syn_072"
+        },
+        {
+          "Benh": "Đái tháo đường týp 2",
+          "TrieuChung": "Khát nước liên tục",
+          "source_sample_id": "syn_072"
+        }
+      ],
+      "source_sample_ids": [
+        "syn_072"
+      ],
+      "fallback_status": "FOUND",
+      "fallback_used": false,
+      "node_existence_info": [
+        {
+          "name": "Đái tháo đường týp 2",
+          "labels": [
+            "DISEASE"
+          ]
+        }
+      ],
+      "answer": "Dựa trên cơ sở dữ liệu y tế, các triệu chứng thường gặp của bệnh đái tháo đường týp 2 bao gồm sụt cân nhanh và khát nước liên tục.",
+      "data_source": "LIVE_NEO4J",
+      "method": "KG-QA"
+    }
+  },
+  {
+    "question": "Đái tháo đường có triệu chứng gì?",
+    "kg_qa": {
+      "question": "Đái tháo đường có triệu chứng gì?",
+      "cypher_query": "MATCH (dis:DISEASE)-[r:HAS_SYMPTOM]->(s:SYMPTOM) WHERE toLower(dis.name) CONTAINS 'đái tháo đường' RETURN dis.name AS Benh, s.name AS TrieuChung, r.source_sample_id AS source_sample_id",
+      "graph_results": [
+        {
+          "Benh": "Đái tháo đường týp 2",
+          "TrieuChung": "Sụt cân nhanh",
+          "source_sample_id": "syn_072"
+        },
+        {
+          "Benh": "Đái tháo đường týp 2",
+          "TrieuChung": "Khát nước liên tục",
+          "source_sample_id": "syn_072"
+        }
+      ],
+      "source_sample_ids": [
+        "syn_072"
+      ],
+      "fallback_status": "FOUND",
+      "fallback_used": false,
+      "node_existence_info": [
+        {
+          "name": "Đái tháo đường týp 2",
+          "labels": [
+            "DISEASE"
+          ]
+        }
+      ],
+      "answer": "Các triệu chứng thường gặp của đái tháo đường týp 2 bao gồm khát nước liên tục và sụt cân nhanh.",
+      "data_source": "LIVE_NEO4J",
+      "method": "KG-QA"
+    }
+  },
+  {
+    "question": "Thuốc nào điều trị tiểu đường?",
+    "kg_qa": {
+      "question": "Thuốc nào điều trị tiểu đường?",
+      "cypher_query": "MATCH (d:DRUG)-[r:PRESCRIBED_FOR|TREATS]->(b) WHERE toLower(b.name) CONTAINS 'đái tháo đường' RETURN d.name AS Thuoc, b.name AS Benh, r.source_sample_id AS source_sample_id",
+      "graph_results": [
+        {
+          "Thuoc": "Metformin",
+          "Benh": "Đái tháo đường týp 2",
+          "source_sample_id": "syn_001,syn_004,syn_015,syn_072"
+        }
+      ],
+      "source_sample_ids": [
+        "syn_001",
+        "syn_004",
+        "syn_015",
+        "syn_072"
+      ],
+      "fallback_status": "FOUND",
+      "fallback_used": false,
+      "node_existence_info": [
+        {
+          "name": "Đái tháo đường týp 2",
+          "labels": [
+            "DISEASE"
+          ]
+        }
+      ],
+      "answer": "Dựa trên cơ sở dữ liệu y tế, thuốc Metformin hiện được sử dụng để điều trị bệnh đái tháo đường týp 2.",
+      "data_source": "LIVE_NEO4J",
+      "method": "KG-QA"
+    }
+  },
+  {
+    "question": "Thuốc nào điều trị đái tháo đường týp 2?",
+    "kg_qa": {
+      "question": "Thuốc nào điều trị đái tháo đường týp 2?",
+      "cypher_query": "MATCH (d:DRUG)-[r:PRESCRIBED_FOR|TREATS]->(b) WHERE toLower(b.name) CONTAINS 'đái tháo đường týp 2' RETURN d.name AS Thuoc, b.name AS Benh, r.source_sample_id AS source_sample_id",
+      "graph_results": [
+        {
+          "Thuoc": "Metformin",
+          "Benh": "Đái tháo đường týp 2",
+          "source_sample_id": "syn_001,syn_004,syn_015,syn_072"
+        }
+      ],
+      "source_sample_ids": [
+        "syn_001",
+        "syn_004",
+        "syn_015",
+        "syn_072"
+      ],
+      "fallback_status": "FOUND",
+      "fallback_used": false,
+      "node_existence_info": [
+        {
+          "name": "Đái tháo đường týp 2",
+          "labels": [
+            "DISEASE"
+          ]
+        }
+      ],
+      "answer": "Thuốc được sử dụng để điều trị đái tháo đường týp 2 là Metformin.",
+      "data_source": "LIVE_NEO4J",
+      "method": "KG-QA"
+    }
+  }
+]

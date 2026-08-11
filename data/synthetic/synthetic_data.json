@@ -1,0 +1,482 @@
+[
+  {
+    "id": "syn_001",
+    "template_type": "nội khoa",
+    "text": "Bệnh nhân nam 54 tuổi, có tiền sử Đái tháo đường týp 2 và Cao huyết áp 3 năm nay. Hiện tại ho kéo dài và khó thở. Khám không thấy dấu hiệu Viêm phổi. Bệnh nhân được kê Paracetamol 500mg và Metformin."
+  },
+  {
+    "id": "syn_002",
+    "template_type": "ngoại khoa",
+    "text": "Bệnh nhân nữ 42 tuổi, nhập viện vì Cơn đau thắt ngực cấp tính. Tiền sử chưa ghi nhận Bệnh Gút. Bác sĩ chỉ định Aspirin 81mg và Atorvastatin để điều trị."
+  },
+  {
+    "id": "syn_003",
+    "template_type": "kê đơn thuốc",
+    "text": "Bệnh nhân Viêm loét dạ dày kèm trào ngược dạ dày. Không phát hiện Tiêu chảy cấp. Chống chỉ định với Ibuprofen. Đã kê Omeprazole 20mg."
+  },
+  {
+    "id": "syn_004",
+    "template_type": "nội khoa",
+    "text": "Bệnh nhân nam 65 tuổi nhập viện với chẩn đoán xác định Đái tháo đường tuýp 2. Hiện tại, bệnh nhân không có triệu chứng đau ngực hay khó thở, các chỉ số sinh tồn ổn định. Tiền sử 5 năm điều trị bằng Metformin nhưng chưa ghi nhận biến chứng võng mạc."
+  },
+  {
+    "id": "syn_005",
+    "template_type": "ngoại khoa",
+    "text": "Bệnh nhân nữ 32 tuổi được chỉ định phẫu thuật nội soi do Viêm ruột thừa cấp. Sau 3 ngày trước khi nhập viện, bệnh nhân đau âm ỉ vùng hố chậu phải. Kết quả siêu âm loại trừ các bệnh lý phụ khoa, không thấy dấu hiệu thủng tạng rỗng."
+  },
+  {
+    "id": "syn_006",
+    "template_type": "kê đơn thuốc",
+    "text": "Chỉ định điều trị cho bệnh nhân Viêm phế quản cấp: Amoxicillin 500mg uống 2 lần/ngày trong 7 ngày, kết hợp với Bromhexine 8mg để long đờm. Bệnh nhân không có tiền sử dị ứng với nhóm Penicillin."
+  },
+  {
+    "id": "syn_007",
+    "template_type": "tiền sử bệnh lý",
+    "text": "Bệnh nhân có tiền sử 2 năm mắc Hen phế quản, hiện đang kiểm soát tốt bằng Salbutamol khi cần thiết. Chưa ghi nhận các đợt cấp tính trong 6 tháng gần đây, không thấy dấu hiệu suy hô hấp khi gắng sức."
+  },
+  {
+    "id": "syn_008",
+    "template_type": "nội khoa",
+    "text": "Thăm khám lâm sàng bệnh nhân Suy tim sung huyết cho thấy tình trạng phù hai chi dưới. Bác sĩ đã kê đơn Furosemide 40mg và Lisinopril 10mg. Hiện tại, bệnh nhân không có dấu hiệu khó thở khi nằm đầu thấp."
+  },
+  {
+    "id": "syn_009",
+    "template_type": "ngoại khoa",
+    "text": "Bệnh nhân nam 45 tuổi nhập viện vì Thoát vị đĩa đệm cột sống thắt lưng. Tiền sử 1 năm đau thần kinh tọa, đã điều trị bảo tồn bằng Diclofenac nhưng không thuyên giảm. Hiện tại, bác sĩ loại trừ các tổn thương chèn ép tủy cấp tính."
+  },
+  {
+    "id": "syn_010",
+    "template_type": "kê đơn thuốc",
+    "text": "Đơn thuốc ngoại trú cho bệnh nhân Rối loạn lipid máu: Atorvastatin 20mg uống vào buổi tối. Bệnh nhân cần tái khám sau 1 tháng để kiểm tra chỉ số men gan, hiện tại không thấy tác dụng phụ đau cơ hay mệt mỏi."
+  },
+  {
+    "id": "syn_011",
+    "template_type": "Tim mạch",
+    "text": "Bệnh nhân nam 65 tuổi, tiền sử Cao huyết áp 5 năm, hiện đang điều trị bằng Amlodipine 5mg/ngày. 3 ngày trước bệnh nhân xuất hiện đau thắt ngực trái, không lan, không kèm khó thở. Kết quả điện tâm đồ chưa ghi nhận dấu hiệu nhồi máu cơ tim cấp."
+  },
+  {
+    "id": "syn_012",
+    "template_type": "Tiêu hóa",
+    "text": "Bệnh nhân nữ 42 tuổi nhập viện vì đau thượng vị. Nội soi dạ dày chẩn đoán Viêm loét dạ dày tá tràng. Bệnh nhân không có tiền sử dị ứng thuốc, hiện được chỉ định dùng Omeprazole 20mg và Amoxicillin 500mg."
+  },
+  {
+    "id": "syn_013",
+    "template_type": "Hô hấp",
+    "text": "Bệnh nhân nam 30 tuổi, tiền sử Hen phế quản. Hiện tại bệnh nhân ho khan kéo dài 2 tuần, không sốt, không có đờm. Đã sử dụng Salbutamol dạng hít nhưng triệu chứng chưa thuyên giảm đáng kể."
+  },
+  {
+    "id": "syn_014",
+    "template_type": "Cơ xương khớp",
+    "text": "Bệnh nhân nữ 55 tuổi bị Thoái hóa khớp gối 2 năm nay. Bệnh nhân đau tăng khi vận động, không thấy sưng nóng đỏ tại khớp. Bác sĩ kê đơn Celecoxib 200mg để giảm đau."
+  },
+  {
+    "id": "syn_015",
+    "template_type": "Nội tiết",
+    "text": "Bệnh nhân nam 58 tuổi, chẩn đoán Đái tháo đường tuýp 2. Xét nghiệm HbA1c là 8.5%. Hiện tại bệnh nhân đang dùng Metformin 850mg, chưa ghi nhận biến chứng bàn chân hay bệnh võng mạc."
+  },
+  {
+    "id": "syn_016",
+    "template_type": "Thần kinh",
+    "text": "Bệnh nhân nữ 45 tuổi, tiền sử Đau nửa đầu (Migraine). 2 ngày trước bệnh nhân xuất hiện cơn đau dữ dội kèm buồn nôn. Loại trừ các nguyên nhân tổn thương thực thể tại não qua chụp MRI."
+  },
+  {
+    "id": "syn_017",
+    "template_type": "Sản phụ khoa",
+    "text": "Sản phụ 28 tuổi, thai 32 tuần, chẩn đoán Thiếu máu thiếu sắt. Bệnh nhân được chỉ định bổ sung Ferrous sulfate 325mg mỗi ngày. Hiện tại không có dấu hiệu dọa sinh non."
+  },
+  {
+    "id": "syn_018",
+    "template_type": "Nhi khoa",
+    "text": "Bệnh nhi 5 tuổi nhập viện vì Viêm phế quản cấp. Trẻ sốt 38.5 độ, ho nhiều. Không thấy dấu hiệu suy hô hấp nặng. Bác sĩ chỉ định dùng Paracetamol để hạ sốt."
+  },
+  {
+    "id": "syn_019",
+    "template_type": "Da liễu",
+    "text": "Bệnh nhân nam 22 tuổi bị Viêm da cơ địa tái phát nhiều lần. Hiện tại vùng da tay có nhiều mảng đỏ, ngứa. Bác sĩ kê đơn kem bôi chứa Hydrocortisone và thuốc kháng Histamin Loratadine."
+  },
+  {
+    "id": "syn_020",
+    "template_type": "Tiết niệu",
+    "text": "Bệnh nhân nam 40 tuổi, chẩn đoán Nhiễm khuẩn đường tiết niệu. Bệnh nhân tiểu buốt, tiểu rắt 3 ngày nay. Xét nghiệm nước tiểu không thấy hồng cầu, chỉ định dùng Ciprofloxacin 500mg."
+  },
+  {
+    "id": "syn_021",
+    "template_type": "Huyết học",
+    "text": "Bệnh nhân nữ 35 tuổi, tiền sử Thiếu máu hồng cầu nhỏ nhược sắc. Hiện tại chỉ số Hemoglobin là 9.5 g/dL. Chưa ghi nhận xuất huyết dưới da hay chảy máu chân răng."
+  },
+  {
+    "id": "syn_022",
+    "template_type": "Tim mạch",
+    "text": "Bệnh nhân nam 70 tuổi, chẩn đoán Suy tim sung huyết. Bệnh nhân đang dùng Furosemide 40mg. Hiện tại không có phù chi dưới, huyết áp ổn định."
+  },
+  {
+    "id": "syn_023",
+    "template_type": "Tiêu hóa",
+    "text": "Bệnh nhân nữ 50 tuổi bị Trào ngược dạ dày thực quản. Bệnh nhân thường xuyên ợ nóng sau ăn. Đã dùng Esomeprazole 40mg trong 4 tuần, triệu chứng đã cải thiện."
+  },
+  {
+    "id": "syn_024",
+    "template_type": "Hô hấp",
+    "text": "Bệnh nhân nam 60 tuổi, tiền sử Bệnh phổi tắc nghẽn mãn tính (COPD). Hiện tại bệnh nhân khó thở khi gắng sức, không có dấu hiệu nhiễm trùng phổi cấp."
+  },
+  {
+    "id": "syn_025",
+    "template_type": "Cơ xương khớp",
+    "text": "Bệnh nhân nữ 65 tuổi, chẩn đoán Loãng xương. Bệnh nhân đau lưng âm ỉ 1 tháng nay. Bác sĩ chỉ định bổ sung Calcium và Vitamin D3."
+  },
+  {
+    "id": "syn_026",
+    "template_type": "Nội tiết",
+    "text": "Bệnh nhân nữ 30 tuổi, chẩn đoán Cường giáp. Bệnh nhân hồi hộp, run tay. Hiện tại đang điều trị bằng Methimazole 5mg, chưa ghi nhận tác dụng phụ."
+  },
+  {
+    "id": "syn_027",
+    "template_type": "Thần kinh",
+    "text": "Bệnh nhân nam 55 tuổi, tiền sử Động kinh. Bệnh nhân đang dùng Carbamazepine 200mg. 1 tuần nay không có cơn co giật nào xảy ra."
+  },
+  {
+    "id": "syn_028",
+    "template_type": "Sản phụ khoa",
+    "text": "Bệnh nhân nữ 25 tuổi, chẩn đoán Viêm âm đạo do nấm. Bác sĩ kê đơn Fluconazole 150mg liều duy nhất. Không thấy triệu chứng đau bụng dưới."
+  },
+  {
+    "id": "syn_029",
+    "template_type": "Nhi khoa",
+    "text": "Bệnh nhi 8 tuổi bị Viêm họng cấp. Trẻ đau họng, nuốt khó. Không thấy mủ ở amidan. Bác sĩ chỉ định súc họng nước muối, chưa dùng kháng sinh."
+  },
+  {
+    "id": "syn_030",
+    "template_type": "Da liễu",
+    "text": "Bệnh nhân nam 18 tuổi bị Mụn trứng cá mức độ trung bình. Đã dùng Isotretinoin 10mg được 2 tháng, tình trạng da đã cải thiện rõ rệt."
+  },
+  {
+    "id": "syn_031",
+    "template_type": "Tiết niệu",
+    "text": "Bệnh nhân nam 45 tuổi, chẩn đoán Sỏi thận. Bệnh nhân đau quặn thận trái. Siêu âm không thấy ứ nước thận độ 3. Chỉ định dùng thuốc giãn cơ trơn."
+  },
+  {
+    "id": "syn_032",
+    "template_type": "Huyết học",
+    "text": "Bệnh nhân nữ 29 tuổi, chẩn đoán Xuất huyết giảm tiểu cầu vô căn. Hiện tại tiểu cầu 80 G/L. Không có dấu hiệu xuất huyết niêm mạc."
+  },
+  {
+    "id": "syn_033",
+    "template_type": "Tim mạch",
+    "text": "Bệnh nhân nam 52 tuổi, tiền sử Rối loạn lipid máu. Đang dùng Atorvastatin 20mg. Hiện tại không có đau ngực, không chóng mặt."
+  },
+  {
+    "id": "syn_034",
+    "template_type": "Tiêu hóa",
+    "text": "Bệnh nhân nam 38 tuổi, chẩn đoán Hội chứng ruột kích thích. Bệnh nhân đau bụng, đi ngoài phân lỏng. Không thấy máu trong phân."
+  },
+  {
+    "id": "syn_035",
+    "template_type": "Hô hấp",
+    "text": "Bệnh nhân nữ 40 tuổi bị Viêm mũi dị ứng. Hiện tại hắt hơi, chảy nước mũi nhiều. Đã dùng Cetirizine 10mg, triệu chứng giảm nhẹ."
+  },
+  {
+    "id": "syn_036",
+    "template_type": "Cơ xương khớp",
+    "text": "Bệnh nhân nam 48 tuổi, chẩn đoán Viêm khớp dạng thấp. Bệnh nhân cứng khớp buổi sáng. Đang dùng Methotrexate 10mg/tuần."
+  },
+  {
+    "id": "syn_037",
+    "template_type": "Nội tiết",
+    "text": "Bệnh nhân nữ 45 tuổi, chẩn đoán Suy giáp. Đang dùng Levothyroxine 50mcg. Hiện tại không có triệu chứng mệt mỏi, táo bón."
+  },
+  {
+    "id": "syn_038",
+    "template_type": "Thần kinh",
+    "text": "Bệnh nhân nam 60 tuổi, tiền sử Tai biến mạch máu não. Hiện tại liệt nhẹ nửa người trái, đang tập vật lý trị liệu."
+  },
+  {
+    "id": "syn_039",
+    "template_type": "Sản phụ khoa",
+    "text": "Bệnh nhân nữ 32 tuổi, chẩn đoán U xơ tử cung. Bệnh nhân rong kinh 10 ngày. Không thấy dấu hiệu thiếu máu nặng."
+  },
+  {
+    "id": "syn_040",
+    "template_type": "Nhi khoa",
+    "text": "Bệnh nhi 3 tuổi bị Tiêu chảy cấp. Trẻ đi ngoài 5 lần/ngày. Đã bù Oresol, không thấy dấu hiệu mất nước."
+  },
+  {
+    "id": "syn_041",
+    "template_type": "Da liễu",
+    "text": "Bệnh nhân nam 35 tuổi bị Nấm da. Vùng tổn thương ở bẹn. Đã bôi Clotrimazole 1 tuần, tình trạng đã khô."
+  },
+  {
+    "id": "syn_042",
+    "template_type": "Tiết niệu",
+    "text": "Bệnh nhân nam 65 tuổi, chẩn đoán Phì đại lành tính tuyến tiền liệt. Tiểu đêm 3 lần. Đang dùng Tamsulosin 0.4mg."
+  },
+  {
+    "id": "syn_043",
+    "template_type": "Huyết học",
+    "text": "Bệnh nhân nam 20 tuổi, chẩn đoán Tan máu bẩm sinh (Thalassemia). Hiện tại không cần truyền máu, chỉ theo dõi định kỳ."
+  },
+  {
+    "id": "syn_044",
+    "template_type": "Tim mạch",
+    "text": "Bệnh nhân nữ 55 tuổi, chẩn đoán Rung nhĩ. Đang dùng Warfarin 2.5mg. Chỉ số INR hiện tại là 2.2, nằm trong ngưỡng điều trị."
+  },
+  {
+    "id": "syn_045",
+    "template_type": "Tiêu hóa",
+    "text": "Bệnh nhân nam 42 tuổi, chẩn đoán Viêm gan B mãn tính. Đang dùng Tenofovir 300mg. Men gan hiện tại trong giới hạn bình thường."
+  },
+  {
+    "id": "syn_046",
+    "template_type": "Hô hấp",
+    "text": "Bệnh nhân nam 25 tuổi bị Viêm phổi cộng đồng. Đang dùng Amoxicillin/Clavulanate 875mg. Hiện tại đã hết sốt."
+  },
+  {
+    "id": "syn_047",
+    "template_type": "Cơ xương khớp",
+    "text": "Bệnh nhân nữ 50 tuổi bị Viêm gân vai. Đã tiêm Corticoid tại chỗ 1 lần. Hiện tại vận động vai đã linh hoạt hơn."
+  },
+  {
+    "id": "syn_048",
+    "template_type": "Nội tiết",
+    "text": "Bệnh nhân nam 35 tuổi, chẩn đoán Suy tuyến thượng thận. Đang dùng Prednisolone 5mg. Không có dấu hiệu sụt cân hay hạ huyết áp."
+  },
+  {
+    "id": "syn_049",
+    "template_type": "Thần kinh",
+    "text": "Bệnh nhân nữ 28 tuổi bị Rối loạn lo âu. Đang dùng Sertraline 50mg. Hiện tại giấc ngủ đã cải thiện, không còn hồi hộp."
+  },
+  {
+    "id": "syn_050",
+    "template_type": "Sản phụ khoa",
+    "text": "Bệnh nhân nữ 34 tuổi, chẩn đoán Đa nang buồng trứng. Đang dùng Metformin để hỗ trợ rụng trứng. Chưa ghi nhận thai kỳ."
+  },
+  {
+    "id": "syn_051",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 62 tuổi, nhập viện với chẩn đoán xác định Bệnh phổi tắc nghẽn mạn tính. Triệu chứng lâm sàng cụ thể gồm khó thở khi gắng sức và ho khạc đờm nhầy mạn tính. Bác sĩ chỉ định sử dụng ống hít Salmeterol/Fluticasone 50/250 mcg (1 nhát xịt x 2 lần/ngày) để kiểm soát triệu chứng và giảm viêm đường thở."
+  },
+  {
+    "id": "syn_052",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 58 tuổi, chẩn đoán xác định Cao huyết áp. Triệu chứng lâm sàng hiện tại gồm đau đầu vùng chẩm và chóng mặt khi thay đổi tư thế. Bác sĩ chỉ định sử dụng thuốc Amlodipin 5mg uống 1 viên/ngày để hạ và kiểm soát huyết áp."
+  },
+  {
+    "id": "syn_053",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 45 tuổi vào viện với chẩn đoán xác định **Hen phế quản**, biểu hiện qua các triệu chứng lâm sàng cụ thể gồm khó thở rít và ho khan kèm đờm trắng. Bác sĩ chỉ định điều trị bằng thuốc Salbutamol 2.5mg/2.5ml khí dung mỗi 6 giờ khi lên cơn khó thở."
+  },
+  {
+    "id": "syn_054",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 20 tuổi, chẩn đoán xác định Mụn trứng cá. Triệu chứng lâm sàng gồm nhiều sẩn đỏ viêm và nhân trứng cá đầu đen vùng mặt. Bác sĩ chỉ định dùng kem bôi Adapalene 0,1% bôi buổi tối để điều trị tổn thương da."
+  },
+  {
+    "id": "syn_055",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 65 tuổi vào viện được chẩn đoán xác định Nhồi máu não giờ thứ 4. Triệu chứng lâm sàng nổi bật gồm liệt nửa người bên phải và méo miệng, khó nói. Bác sĩ chỉ định sử dụng Aspirin 81mg (1 viên/ngày) uống sau ăn để dự phòng huyết khối tái phát."
+  },
+  {
+    "id": "syn_056",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 28 tuổi, chẩn đoán xác định Nấm da. Triệu chứng lâm sàng gồm tổn thương da dạng vành cung có bờ viền rõ và ngứa nhiều ở vùng bẹn. Bác sĩ chỉ định dùng kem bôi Ketoconazol 2% để bôi ngoài da 2 lần/ngày nhằm kháng nấm và giảm ngứa."
+  },
+  {
+    "id": "syn_057",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 68 tuổi, chẩn đoán xác định Rung nhĩ với triệu chứng lâm sàng nổi bật là hồi hộp đánh trống ngực và khó thở khi gắng sức. Bác sĩ chỉ định điều trị bằng thuốc Digoxin 0.25mg (1 viên/ngày) nhằm kiểm soát tần số thất."
+  },
+  {
+    "id": "syn_058",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 52 tuổi đến khám với chẩn đoán xác định **Rối loạn lipid máu**. Triệu chứng lâm sàng ghi nhận bệnh nhân thường xuyên có cảm giác đau tức ngực âm ỉ và chóng mặt, hoa mắt khi thay đổi tư thế. Bác sĩ chỉ định sử dụng thuốc Atorvastatin 20mg, uống 1 viên/ngày vào buổi tối để điều trị hạ lipid máu."
+  },
+  {
+    "id": "syn_059",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 35 tuổi đến khám vì lo lắng quá mức kéo dài và khó tập trung công việc, được chẩn đoán xác định **Rối loạn lo âu lan tỏa**. Bác sĩ chỉ định điều trị bằng viên nén Escitalopram 10mg, uống 1 viên/ngày vào buổi sáng nhằm kiểm soát triệu chứng lo âu và cải thiện tâm trạng cho bệnh nhân."
+  },
+  {
+    "id": "syn_060",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 45 tuổi vào viện với chẩn đoán xác định **Suy giáp**, biểu hiện qua triệu chứng lâm sàng nổi bật là mệt mỏi kéo dài và sợ lạnh. Bác sĩ chỉ định điều trị bằng thuốc Levothyroxine 50 mcg/ngày uống buổi sáng trước khi ăn để bù đắp hormone tuyến giáp."
+  },
+  {
+    "id": "syn_061",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 45 tuổi vào viện được chẩn đoán xác định Suy tuyến thượng thận với các triệu chứng lâm sàng nổi bật gồm mệt mỏi kéo dài và sụt cân không rõ nguyên nhân. Bác sĩ chỉ định điều trị thay thế hormone bằng viên Hydrocortisone 10mg, uống 2 viên/ngày chia sáng và chiều."
+  },
+  {
+    "id": "syn_062",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 32 tuổi, đến khám vì mệt mỏi mệt mỏi và da xanh xao, được chẩn đoán xác định là **Thiếu máu thiếu sắt**. Bác sĩ chỉ định điều trị bằng viên uống Ferrous Sulfate 325 mg (tương đương 65 mg sắt nguyên tố), uống 1 viên/ngày lúc đói để bổ sung dự trữ sắt cho cơ thể."
+  },
+  {
+    "id": "syn_063",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 45 tuổi vào viện vì đau thắt lưng lan xuống chân trái và tê bì cẳng chân, chẩn đoán xác định **Thoát vị đĩa đệm cột sống thắt lưng**. Bác sĩ chỉ định điều trị nội khoa bằng viên uống Meloxicam 15mg (1 viên/ngày) để kháng viêm, giảm đau và kết hợp nghỉ ngơi tại giường."
+  },
+  {
+    "id": "syn_064",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 42 tuổi vào viện với chẩn đoán xác định u xơ tử cung, có biểu hiện lâm sàng cụ thể gồm rong kinh kéo dài và đau tức hạ vị. Bác sĩ chỉ định điều trị nội khoa bằng thuốc Tranexamic acid 500mg (uống 2 viên/ngày, chia 2 lần) nhằm cầm máu và giảm triệu chứng rong kinh."
+  },
+  {
+    "id": "syn_065",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 45 tuổi vào viện với chẩn đoán xác định Viêm gan vi-rút B mạn, kèm theo các triệu chứng lâm sàng cụ thể là vàng da và mệt mỏi kéo dài. Bác sĩ chỉ định điều trị bằng thuốc Tenofovir disoproxil fumarat 300mg/ngày nhằm ức chế sự sao chép của vi-rút và bảo vệ chức năng gan."
+  },
+  {
+    "id": "syn_066",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 52 tuổi, chẩn đoán xác định Rối loạn lipid máu. Triệu chứng lâm sàng ghi nhận gồm đau tức ngực âm ỉ và chóng mặt thường xuyên khi thay đổi tư thế. Bác sĩ chỉ định dùng Atorvastatin 20mg (1 viên/ngày, uống buổi tối) để điều trị giảm mỡ máu."
+  },
+  {
+    "id": "syn_067",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 48 tuổi, chẩn đoán xác định **Viêm gân vai**. Triệu chứng lâm sàng gồm đau nhói khớp vai khi giơ tay lên cao và hạn chế tầm vận động khớp. Bác sĩ chỉ định dùng viên nén Meloxicam 15mg uống 1 lần/ngày để kháng viêm và giảm đau."
+  },
+  {
+    "id": "syn_068",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 45 tuổi vào viện với chẩn đoán xác định Viêm phổi, lâm sàng ghi nhận sốt cao và ho khạc đờm mủ. Bác sĩ chỉ định điều trị bằng thuốc kháng sinh Amoxicillin/Clavulanic acid 1g, uống 2 viên/ngày chia 2 lần."
+  },
+  {
+    "id": "syn_069",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 28 tuổi vào viện với chẩn đoán xác định **Viêm ruột thừa cấp**, biểu hiện qua triệu chứng đau bụng âm ỉ vùng hố chậu phải và sốt nhẹ. Bác sĩ chỉ định truyền dịch NaCl 0,9% 500ml (truyền tĩnh mạch 20 giọt/phút) để bù nước và điện giải trong thời gian chờ phẫu thuật nội soi cắt ruột thừa."
+  },
+  {
+    "id": "syn_070",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 32 tuổi đến khám với chẩn đoán xác định **Viêm âm đạo do nấm**, lâm sàng nổi bật với các triệu chứng ngứa rát vùng kín dữ dội và ra khí hư đặc dính màu trắng đục như váng sữa. Bác sĩ chỉ định điều trị bằng viên đặt âm đạo Clotrimazole 500mg (đặt 1 liều duy nhất vào buổi tối) kết hợp kem bôi ngoài da để giảm triệu chứng viêm ngứa."
+  },
+  {
+    "id": "syn_071",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 28 tuổi đến khám với chẩn đoán xác định **Đa nang buồng trứng**, kèm triệu chứng lâm sàng là rối loạn kinh nguyệt (vòng kinh kéo dài) và rậm lông mặt. Bác sĩ chỉ định điều trị bằng thuốc Diane-35 (hàm lượng Ethinylestradiol 0.03mg + Cyproterone acetate 2mg), uống 1 viên/ngày từ ngày thứ 1 của chu kỳ kinh nguyệt trong 21 ngày."
+  },
+  {
+    "id": "syn_072",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 58 tuổi nhập viện với chẩn đoán xác định **Đái tháo đường týp 2**, lâm sàng ghi nhận tình trạng khát nước liên tục và sụt cân nhanh trong một tháng qua. Bác sĩ chỉ định điều trị bằng thuốc Metformin 500mg, uống 2 viên/ngày chia hai lần sau ăn để kiểm soát đường huyết."
+  },
+  {
+    "id": "syn_073",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 32 tuổi, chẩn đoán xác định Động kinh. Triệu chứng lâm sàng gồm co giật toàn thể cứng - gi clon và mất ý thức đột ngột kèm sủi bọt mép. Bác sĩ chỉ định dùng thuốc Depakine Chrono 500mg (liều 1 viên/lần x 2 lần/ngày) để kiểm soát cơn co giật và duy trì ổn định điện não đồ."
+  },
+  {
+    "id": "syn_074",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 32 tuổi vào viện với chẩn đoán xác định Bệnh Migraine. Triệu chứng lâm sàng nổi bật gồm đau đầu dữ dội theo mạch đập ở một bên thái dương kèm theo buồn nôn. Bác sĩ chỉ định sử dụng Sumatriptan 50mg uống khi khởi phát cơn đau để điều trị cắt cơn."
+  },
+  {
+    "id": "syn_075",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 68 tuổi, chẩn đoán xác định Loãng xương. Triệu chứng lâm sàng gồm đau nhức âm ỉ vùng cột sống thắt lưng và chiều cao cơ thể giảm so với trước. Bác sĩ chỉ định dùng viên nén Alendronate 70mg uống 1 viên/tuần để điều trị giảm hủy xương."
+  },
+  {
+    "id": "syn_076",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 35 tuổi đến khám vì tiểu buốt và sốt nhẹ, được chẩn đoán xác định **Nhiễm trùng đường tiết niệu**. Bác sĩ chỉ định điều trị bằng kháng sinh Cefixim 200mg, uống 1 viên/lần, ngày 2 lần trong 7 ngày."
+  },
+  {
+    "id": "syn_077",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 68 tuổi đến khám với chẩn đoán xác định **Phì đại lành tính tuyến tiền liệt**. Lâm sàng ghi nhận tình trạng tiểu khó và tiểu ngắt quãng nhiều lần trong ngày. Bác sĩ chỉ định sử dụng thuốc Tamsulosin 0,4mg, uống 1 viên/ngày vào buổi tối để cải thiện triệu chứng đường niệu dưới."
+  },
+  {
+    "id": "syn_078",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 32 tuổi, chẩn đoán xác định Ruột kích thích với triệu chứng lâm sàng nổi bật là đau quặn bụng từng cơn và tiêu chảy xen kẽ táo bón. Bác sĩ chỉ định sử dụng Trimebutin 200mg (uống 3 lần/ngày) để điều hòa nhu động ruột và giảm đau."
+  },
+  {
+    "id": "syn_079",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 45 tuổi vào viện được chẩn đoán xác định Sỏi thận với triệu chứng lâm sàng cụ thể gồm đau quặn thận bên phải và tiểu máu vi thể. Bác sĩ chỉ định điều trị bằng thuốc giảm đau kháng viêm Diclofenac 75mg/3ml (tiêm bắp 1 ống/ngày) kết hợp uống nhiều nước để hỗ trợ tống sỏi."
+  },
+  {
+    "id": "syn_080",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 60 tuổi, chẩn đoán xác định Thoái hóa khớp gối hai bên. Triệu chứng lâm sàng gồm đau khớp tăng lên khi vận động và cứng khớp buổi sáng kéo dài dưới 30 phút. Bác sĩ chỉ định dùng Meloxicam 15mg uống 1 viên/ngày để giảm đau và kháng viêm."
+  },
+  {
+    "id": "syn_081",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 58 tuổi, chẩn đoán xác định **Rối loạn lipid máu**. Triệu chứng lâm sàng ghi nhận tình trạng đau tức ngực âm ỉ khi gắng sức và chóng mặt thường xuyên do huyết áp dao động. Bác sĩ chỉ định điều trị bằng Atorvastatin 20mg (uống 1 viên/ngày vào buổi tối) nhằm kiểm soát nồng độ cholesterol trong máu."
+  },
+  {
+    "id": "syn_082",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 32 tuổi vào viện với chẩn đoán xác định **Viêm dạ dày ruột nhiễm khuẩn**, lâm sàng biểu hiện tiêu chảy cấp nhiều lần trong ngày và đau quặn bụng vùng quanh rốn. Bác sĩ chỉ định điều trị bằng Oresol 1 gói pha với 200ml nước uống sau mỗi lần đi ngoài để bù nước và điện giải."
+  },
+  {
+    "id": "syn_083",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 48 tuổi, chẩn đoán xác định Viêm khớp dạng thấp với các triệu chứng lâm sàng điển hình là sưng đau các khớp bàn tay đối xứng và cứng khớp buổi sáng kéo dài trên 1 giờ. Bác sĩ chỉ định điều trị bằng Methotrexate 15mg uống 1 lần/tuần để kiểm soát quá trình viêm và bảo tồn chức năng khớp."
+  },
+  {
+    "id": "syn_084",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 28 tuổi đến khám vì đau rát họng và nghẹt mũi, được chẩn đoán xác định là **Viêm mũi họng cấp**. Bác sĩ chỉ định điều trị bằng Paracetamol 500mg (uống 1 viên/lần khi sốt hoặc đau đầu) kết hợp dung dịch nhỏ mũi Xylometazolin 0.05% để giảm triệu chứng."
+  },
+  {
+    "id": "syn_085",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 65 tuổi vào viện được chẩn đoán xác định Suy tim sung huyết. Triệu chứng lâm sàng nổi bật gồm khó thở khi gắng sức và phù chi dưới. Bác sĩ chỉ định sử dụng thuốc Furosemid 40mg (1 viên/ngày, uống buổi sáng) để giảm tình trạng ứ dịch và điều trị triệu chứng."
+  },
+  {
+    "id": "syn_086",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 42 tuổi, chẩn đoán xác định Trào ngược dạ dày thực quản với triệu chứng lâm sàng nổi bật là ợ chua và nóng rát sau xương ức. Bác sĩ chỉ định điều trị bằng thuốc Esomeprazol 40mg (uống 1 viên/ngày trước ăn sáng) kết hợp chế độ ăn uống phù hợp."
+  },
+  {
+    "id": "syn_087",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 45 tuổi vào viện với chẩn đoán xác định **Viêm loét dạ dày**, kèm theo các triệu chứng lâm sàng cụ thể là đau thượng vị từng cơn và ợ chua nhiều về đêm. Bác sĩ chỉ định điều trị bằng thuốc Omeprazol 20mg uống 1 viên/ngày trước khi ăn sáng để giảm tiết axit và làm lành ổ loét."
+  },
+  {
+    "id": "syn_088",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 28 tuổi vào viện với chẩn đoán xác định **Viêm ruột thừa cấp**, lâm sàng ghi nhận đau bụng vùng hố chậu phải và sốt nhẹ. Bác sĩ chỉ định truyền dịch NaCl 0,9% 500ml (24 giọt/phút) để bù nước và điện giải trong quá trình chờ phẫu thuật nội soi cắt ruột thừa."
+  },
+  {
+    "id": "syn_089",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 45 tuổi vào viện với chẩn đoán xác định đau. Triệu chứng lâm sàng gồm đau nhói vùng thắt lưng và hạn chế tầm vận động cột sống. Bác sĩ chỉ định dùng thuốc Meloxicam 15mg uống 1 viên/ngày để giảm viêm và giảm đau."
+  },
+  {
+    "id": "syn_090",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 52 tuổi đến khám với chẩn đoán xác định **Rối loạn lipid máu**. Khám lâm sàng ghi nhận triệu chứng tê bì hai chi dưới và tình trạng xơ vữa động mạch cảnh. Bác sĩ chỉ định sử dụng thuốc Atorvastatin 20mg liều 1 viên/ngày uống vào buổi tối để điều trị hạ lipid máu."
+  },
+  {
+    "id": "syn_091",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 45 tuổi vào viện với chẩn đoán xác định đau thắt lưng cấp. Triệu chứng lâm sàng gồm đau nhói vùng cột sống và hạn chế vận động rõ rệt khi cúi người. Bác sĩ chỉ định dùng viên nén Meloxicam 7.5mg uống 1 viên/ngày để giảm viêm và giảm đau."
+  },
+  {
+    "id": "syn_092",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 28 tuổi vào viện với chẩn đoán xác định **Viêm ruột thừa cấp**, lâm sàng ghi nhận đau bụng vùng hố chậu phải và sốt nhẹ. Bác sĩ chỉ định truyền dịch NaCl 0,9% 500ml (24 giọt/phút) để bù nước và điện giải trong quá trình chờ phẫu thuật nội soi cắt ruột thừa."
+  },
+  {
+    "id": "syn_093",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 65 tuổi, chẩn đoán xác định Xơ vữa động mạch cảnh với các triệu chứng lâm sàng cụ thể gồm chóng mặt kéo dài và tê yếu nửa người thoáng qua. Bác sĩ chỉ định điều trị bằng Atorvastatin 20mg (uống 1 viên/ngày vào buổi tối) nhằm kiểm soát mỡ máu và ổn định mảng xơ vữa."
+  },
+  {
+    "id": "syn_094",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 52 tuổi đến khám với chẩn đoán xác định **Rối loạn lipid máu**. Triệu chứng lâm sàng ghi nhận bệnh nhân thường xuyên có cảm giác đau tức ngực âm ỉ và chóng mặt, hoa mắt khi thay đổi tư thế. Bác sĩ chỉ định sử dụng thuốc Atorvastatin 20mg, uống 1 viên/ngày vào buổi tối để điều trị hạ lipid máu."
+  },
+  {
+    "id": "syn_095",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nữ 28 tuổi, chẩn đoán xác định Viêm ruột thừa cấp. Triệu chứng lâm sàng gồm đau quặn hố chậu phải và sốt nhẹ. Bác sĩ chỉ định truyền dịch NaCl 0,9% 500ml (truyền tĩnh mạch 20 giọt/phút) để bù nước và điện giải trước phẫu thuật."
+  },
+  {
+    "id": "syn_096",
+    "template_type": "targeted_gap_fill",
+    "text": "Bệnh nhân nam 45 tuổi, chẩn đoán xác định đau thắt lưng cấp. Triệu chứng lâm sàng gồm hạn chế vận động cột sống và co cứng cơ cạnh sống thắt lưng. Bác sĩ chỉ định dùng viên nén Meloxicam 15mg uống 1 lần/ngày để kháng viêm và giảm đau."
+  }
+]

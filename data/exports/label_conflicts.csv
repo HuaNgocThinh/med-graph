@@ -1,0 +1,84 @@
+﻿source_sample_id,role,entity,requested_label,existing_labels,relation,head,tail
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_019,head,Hydrocortisone,DUPLICATE_CODE:RXCUI:5492,Hydrocortisone 10mg,PRESCRIBED_FOR,Hydrocortisone,Viêm da cơ địa
+syn_019,head,Hydrocortisone,DUPLICATE_CODE:RXCUI:5492,Hydrocortisone 10mg,TREATS,Hydrocortisone,Mảng đỏ
+syn_019,head,Hydrocortisone,DUPLICATE_CODE:RXCUI:5492,Hydrocortisone 10mg,TREATS,Hydrocortisone,Ngứa
+syn_040,tail,Tiêu chảy cấp,DISEASE,SYMPTOM,PRESCRIBED_FOR,Oresol,Tiêu chảy cấp
+syn_053,head,Salbutamol 2.5mg/2.5ml,DUPLICATE_CODE:RXCUI:435,Salbutamol,PRESCRIBED_FOR,Salbutamol 2.5mg/2.5ml,Hen phế quản
+syn_060,head,Levothyroxine 50 mcg/ngày,DUPLICATE_CODE:RXCUI:10582,Levothyroxine 50mcg,PRESCRIBED_FOR,Levothyroxine 50 mcg/ngày,Suy giáp
+syn_063,head,Meloxicam 15mg,DUPLICATE_CODE:RXCUI:41493,Meloxicam 7.5mg,PRESCRIBED_FOR,Meloxicam 15mg,Thoát vị đĩa đệm cột sống thắt lưng
+syn_063,head,Meloxicam 15mg,DUPLICATE_CODE:RXCUI:41493,Meloxicam 7.5mg,TREATS,Meloxicam 15mg,Đau thắt lưng
+syn_063,head,Meloxicam 15mg,DUPLICATE_CODE:RXCUI:41493,Meloxicam 7.5mg,TREATS,Meloxicam 15mg,Tê bì cẳng chân
+syn_067,head,Meloxicam 15mg,DUPLICATE_CODE:RXCUI:41493,Meloxicam 7.5mg,PRESCRIBED_FOR,Meloxicam 15mg,Viêm gân vai
+syn_070,head,Clotrimazole 500mg,DUPLICATE_CODE:RXCUI:2623,Clotrimazole,PRESCRIBED_FOR,Clotrimazole 500mg,Viêm âm đạo do nấm
+syn_070,head,Clotrimazole 500mg,DUPLICATE_CODE:RXCUI:2623,Clotrimazole,TREATS,Clotrimazole 500mg,Viêm ngứa
+syn_071,head,Ethinylestradiol,DUPLICATE_CODE:RXCUI:4124,Ethinylestradiol 0.03mg,PRESCRIBED_FOR,Ethinylestradiol,Đa nang buồng trứng
+syn_071,head,Cyproterone acetate,DUPLICATE_CODE:RXCUI:22054,Cyproterone acetate 2mg,PRESCRIBED_FOR,Cyproterone acetate,Đa nang buồng trứng
+syn_077,head,"Tamsulosin 0,4mg",DUPLICATE_CODE:RXCUI:77492,Tamsulosin 0.4mg,PRESCRIBED_FOR,"Tamsulosin 0,4mg",Phì đại lành tính tuyến tiền liệt
+syn_077,head,"Tamsulosin 0,4mg",DUPLICATE_CODE:RXCUI:77492,Tamsulosin 0.4mg,TREATS,"Tamsulosin 0,4mg",Tiểu khó
+syn_077,head,"Tamsulosin 0,4mg",DUPLICATE_CODE:RXCUI:77492,Tamsulosin 0.4mg,TREATS,"Tamsulosin 0,4mg",Tiểu ngắt quãng
+syn_079,head,Diclofenac 75mg/3ml,DUPLICATE_CODE:RXCUI:3355,Diclofenac,PRESCRIBED_FOR,Diclofenac 75mg/3ml,Sỏi thận
+syn_080,head,Meloxicam 15mg,DUPLICATE_CODE:RXCUI:41493,Meloxicam 7.5mg,PRESCRIBED_FOR,Meloxicam 15mg,Thoái hóa khớp gối
+syn_083,head,Methotrexate 15mg,DUPLICATE_CODE:RXCUI:6851,Methotrexate 10mg/tuần,PRESCRIBED_FOR,Methotrexate 15mg,Viêm khớp dạng thấp
+syn_096,head,Meloxicam 15mg,DUPLICATE_CODE:RXCUI:41493,Meloxicam 7.5mg,PRESCRIBED_FOR,Meloxicam 15mg,Đau thắt lưng
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_test,tail,Viêm loét dạ dày,SYMPTOM,DISEASE,TREATS,Omeprazole 20mg,Viêm loét dạ dày
+syn_test,head,Methotrexate 10mg/tuần,DUPLICATE_CODE:RXCUI:6809,Metformin,PRESCRIBED_FOR,Methotrexate 10mg/tuần,Viêm khớp dạng thấp
+syn_002,tail,Cơn đau thắt ngực,DISEASE,SYMPTOM,PRESCRIBED_FOR,Aspirin 81mg,Cơn đau thắt ngực
+syn_002,tail,Cơn đau thắt ngực,DISEASE,SYMPTOM,PRESCRIBED_FOR,Atorvastatin 20mg,Cơn đau thắt ngực
+syn_053,head,Salbutamol 2.5mg/2.5ml,DUPLICATE_CODE:RXCUI:435,Salbutamol,PRESCRIBED_FOR,Salbutamol 2.5mg/2.5ml,Hen phế quản
+syn_060,head,Levothyroxine 50 mcg/ngày,DUPLICATE_CODE:RXCUI:10582,Levothyroxine 50mcg,PRESCRIBED_FOR,Levothyroxine 50 mcg/ngày,Suy giáp
+syn_061,head,Hydrocortisone 10mg,DUPLICATE_CODE:RXCUI:5492,Hydrocortisone,PRESCRIBED_FOR,Hydrocortisone 10mg,Suy tuyến thượng thận
+syn_070,head,Clotrimazole 500mg,DUPLICATE_CODE:RXCUI:2623,Clotrimazole,PRESCRIBED_FOR,Clotrimazole 500mg,Viêm âm đạo do nấm
+syn_077,head,"Tamsulosin 0,4mg",DUPLICATE_CODE:RXCUI:77492,Tamsulosin 0.4mg,PRESCRIBED_FOR,"Tamsulosin 0,4mg",Phì đại lành tính tuyến tiền liệt
+syn_077,head,"Tamsulosin 0,4mg",DUPLICATE_CODE:RXCUI:77492,Tamsulosin 0.4mg,TREATS,"Tamsulosin 0,4mg",Tiểu khó
+syn_077,head,"Tamsulosin 0,4mg",DUPLICATE_CODE:RXCUI:77492,Tamsulosin 0.4mg,TREATS,"Tamsulosin 0,4mg",Tiểu ngắt quãng
+syn_079,head,Diclofenac 75mg/3ml,DUPLICATE_CODE:RXCUI:3355,Diclofenac,TREATS,Diclofenac 75mg/3ml,Đau quặn thận bên phải
+syn_082,tail,Tiêu chảy cấp,SYMPTOM,DISEASE,HAS_SYMPTOM,Viêm dạ dày ruột nhiễm khuẩn,Tiêu chảy cấp
+syn_082,tail,Tiêu chảy cấp,SYMPTOM,DISEASE,TREATS,Oresol,Tiêu chảy cấp
+syn_082,tail,Tiêu chảy cấp,SYMPTOM,DISEASE,HAS_SYMPTOM,Viêm dạ dày ruột nhiễm khuẩn,Tiêu chảy cấp
+syn_083,head,Methotrexate 15mg,DUPLICATE_CODE:RXCUI:6851,Methotrexate 10mg/tuần,PRESCRIBED_FOR,Methotrexate 15mg,Viêm khớp dạng thấp
+syn_091,head,Đau thắt lưng,DISEASE,SYMPTOM,HAS_SYMPTOM,Đau thắt lưng,Đau nhói vùng cột sống
+syn_091,head,Đau thắt lưng,DISEASE,SYMPTOM,HAS_SYMPTOM,Đau thắt lưng,Hạn chế vận động
+syn_091,tail,Đau thắt lưng,DISEASE,SYMPTOM,PRESCRIBED_FOR,Meloxicam 7.5mg,Đau thắt lưng
+syn_096,head,Đau thắt lưng,DISEASE,SYMPTOM,HAS_SYMPTOM,Đau thắt lưng,Hạn chế vận động cột sống
+syn_096,head,Đau thắt lưng,DISEASE,SYMPTOM,HAS_SYMPTOM,Đau thắt lưng,Co cứng cơ cạnh sống thắt lưng
+syn_096,tail,Đau thắt lưng,DISEASE,SYMPTOM,PRESCRIBED_FOR,Meloxicam 15mg,Đau thắt lưng

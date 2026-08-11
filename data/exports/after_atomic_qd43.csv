@@ -1,0 +1,194 @@
+﻿Head,HeadCode,Relation,Tail,TailCode,SourceSampleID
+Alendronate 70mg,RXCUI:46041,PRESCRIBED_FOR,Loãng xương,,syn_075
+Amlodipine 5mg,RXCUI:17767,PRESCRIBED_FOR,Cao huyết áp,I10,"syn_011,syn_052"
+Amoxicillin 500mg,RXCUI:723,PRESCRIBED_FOR,Viêm loét dạ dày,K25,syn_012
+Amoxicillin 500mg,RXCUI:723,PRESCRIBED_FOR,Viêm phế quản cấp,J20.9,syn_006
+Aspirin 81mg,RXCUI:1191,PRESCRIBED_FOR,Nhồi máu não,I63,syn_055
+Aspirin 81mg,RXCUI:1191,TREATS,Cơn đau thắt ngực,,syn_002
+Atorvastatin 20mg,RXCUI:83367,PRESCRIBED_FOR,Rối loạn lipid máu,E78.5,"syn_010,syn_033,syn_058,syn_066,syn_081,syn_090,syn_094"
+Atorvastatin 20mg,RXCUI:83367,PRESCRIBED_FOR,Xơ vữa động mạch cảnh,,syn_093
+Atorvastatin 20mg,RXCUI:83367,TREATS,Cơn đau thắt ngực,,syn_002
+Augmentin,RXCUI:48203,PRESCRIBED_FOR,Viêm phổi,J18.9,"syn_046,syn_068"
+Bệnh Migraine,G43.9,HAS_SYMPTOM,Buồn nôn,,"syn_016,syn_074"
+Bệnh Migraine,G43.9,HAS_SYMPTOM,Đau dữ dội,,syn_016
+Bệnh Migraine,G43.9,HAS_SYMPTOM,Đau đầu dữ dội theo mạch đập ở một bên thái dương,,syn_074
+Bệnh phổi tắc nghẽn mạn tính,J44,HAS_SYMPTOM,Ho khạc đờm nhầy mạn tính,,syn_051
+Bệnh phổi tắc nghẽn mạn tính,J44,HAS_SYMPTOM,Khó thở khi gắng sức,,"syn_024,syn_051"
+Calcium,RXCUI:1895,PRESCRIBED_FOR,Loãng xương,,syn_025
+Cao huyết áp,I10,HAS_SYMPTOM,Chóng mặt,,syn_052
+Cao huyết áp,I10,HAS_SYMPTOM,Đau đầu vùng chẩm,,syn_052
+Carbamazepine 200mg,RXCUI:2002,PRESCRIBED_FOR,Động kinh,G40.9,syn_027
+Cefixim 200mg,RXCUI:25033,PRESCRIBED_FOR,Nhiễm trùng đường tiết niệu,N39.0,syn_076
+Celecoxib 200mg,RXCUI:140587,PRESCRIBED_FOR,Thoái hóa khớp gối,M17,syn_014
+Cetirizine 10mg,RXCUI:20610,PRESCRIBED_FOR,Viêm mũi dị ứng,J30.4,syn_035
+Cetirizine 10mg,RXCUI:20610,TREATS,Chảy nước mũi nhiều,,syn_035
+Cetirizine 10mg,RXCUI:20610,TREATS,Hắt hơi,,syn_035
+Clotrimazole,RXCUI:2623,PRESCRIBED_FOR,Nấm da,B35.9,syn_041
+Clotrimazole,RXCUI:2623,PRESCRIBED_FOR,Viêm âm đạo do nấm,B37.3,syn_070
+Clotrimazole,RXCUI:2623,TREATS,Viêm ngứa,,syn_070
+Corticoid,RXCUI:2828,PRESCRIBED_FOR,Viêm gân vai,M75.2,syn_047
+Cyproterone acetate 2mg,RXCUI:22054,PRESCRIBED_FOR,Đa nang buồng trứng,E28.2,syn_071
+Cường giáp,E05.9,HAS_SYMPTOM,Hồi hộp,,syn_026
+Cường giáp,E05.9,HAS_SYMPTOM,Run tay,,syn_026
+Depakine Chrono 500mg,,PRESCRIBED_FOR,Động kinh,G40.9,syn_073
+Depakine Chrono 500mg,,TREATS,Cơn co giật,,syn_073
+Diane-35,,PRESCRIBED_FOR,Đa nang buồng trứng,E28.2,syn_071
+Diclofenac,RXCUI:3355,PRESCRIBED_FOR,Sỏi thận,N20.0,syn_079
+Diclofenac,RXCUI:3355,PRESCRIBED_FOR,Thoát vị đĩa đệm cột sống thắt lưng,M51.2,syn_009
+Diclofenac,RXCUI:3355,TREATS,Đau quặn thận bên phải,,syn_079
+Diclofenac,RXCUI:3355,TREATS,Đau thần kinh tọa,,syn_009
+Digoxin 0.25mg,RXCUI:3407,PRESCRIBED_FOR,Rung nhĩ,I48.9,syn_057
+Escitalopram 10mg,RXCUI:321988,PRESCRIBED_FOR,Rối loạn lo âu lan tỏa,F41.1,syn_059
+Esomeprazole 40mg,RXCUI:283742,PRESCRIBED_FOR,Trào ngược dạ dày thực quản,K21.9,"syn_023,syn_086"
+Esomeprazole 40mg,RXCUI:283742,TREATS,ợ nóng,,syn_023
+Ethinylestradiol 0.03mg,RXCUI:4124,PRESCRIBED_FOR,Đa nang buồng trứng,E28.2,syn_071
+Ferrous sulfate,RXCUI:24947,PRESCRIBED_FOR,Thiếu máu thiếu sắt,D50.9,"syn_017,syn_062"
+Fluconazole 150mg,RXCUI:4450,PRESCRIBED_FOR,Viêm âm đạo do nấm,B37.3,syn_028
+Furosemide 40mg,RXCUI:4603,PRESCRIBED_FOR,Suy tim sung huyết,I50.9,"syn_008,syn_022,syn_085"
+Furosemide 40mg,RXCUI:4603,TREATS,Phù chi dưới,,syn_085
+Hen phế quản,J45,HAS_SYMPTOM,Ho khan,,syn_053
+Hen phế quản,J45,HAS_SYMPTOM,Khó thở rít,,syn_053
+Hen phế quản,J45,HAS_SYMPTOM,Đờm trắng,,syn_053
+Hydrocortisone,RXCUI:5492,PRESCRIBED_FOR,Viêm da cơ địa,L20.9,syn_019
+Hydrocortisone,RXCUI:5492,TREATS,Mảng đỏ,,syn_019
+Hydrocortisone,RXCUI:5492,TREATS,Ngứa,,syn_019
+Hydrocortisone 10mg,RXCUI:5492,PRESCRIBED_FOR,Suy tuyến thượng thận,E27.4,syn_061
+Ibuprofen,RXCUI:5640,CONTRAINDICATED_FOR,Viêm loét dạ dày,K25,syn_003
+Isotretinoin 10mg,RXCUI:6064,PRESCRIBED_FOR,Mụn trứng cá,L70.0,syn_030
+Levothyroxine 50mcg,RXCUI:10582,PRESCRIBED_FOR,Suy giáp,E03.9,"syn_037,syn_060"
+Lisinopril 10mg,RXCUI:29046,PRESCRIBED_FOR,Suy tim sung huyết,I50.9,syn_008
+Loratadine,RXCUI:28889,PRESCRIBED_FOR,Viêm da cơ địa,L20.9,syn_019
+Loratadine,RXCUI:28889,TREATS,Ngứa,,syn_019
+Loãng xương,,HAS_SYMPTOM,Chiều cao cơ thể giảm,,syn_075
+Loãng xương,,HAS_SYMPTOM,Đau nhức âm ỉ vùng cột sống thắt lưng,,syn_075
+Meloxicam 15mg,RXCUI:41493,PRESCRIBED_FOR,Thoái hóa khớp gối,M17,syn_080
+Meloxicam 15mg,RXCUI:41493,PRESCRIBED_FOR,Thoát vị đĩa đệm cột sống thắt lưng,M51.2,syn_063
+Meloxicam 15mg,RXCUI:41493,PRESCRIBED_FOR,Viêm gân vai,M75.2,syn_067
+Meloxicam 15mg,RXCUI:41493,PRESCRIBED_FOR,Đau thắt lưng,M54.5,syn_096
+Meloxicam 15mg,RXCUI:41493,TREATS,Đau nhói vùng thắt lưng,,syn_089
+Meloxicam 15mg,RXCUI:41493,TREATS,Đau thắt lưng,,syn_063
+Meloxicam 7.5mg,RXCUI:41493,PRESCRIBED_FOR,Đau thắt lưng,M54.5,syn_091
+Metformin,RXCUI:6809,PRESCRIBED_FOR,Đa nang buồng trứng,E28.2,syn_050
+Metformin,RXCUI:6809,PRESCRIBED_FOR,Đái tháo đường týp 2,E11,"syn_001,syn_004,syn_015,syn_072"
+Methimazole 5mg,RXCUI:6835,PRESCRIBED_FOR,Cường giáp,E05.9,syn_026
+Methotrexate 10mg/tuần,RXCUI:6851,PRESCRIBED_FOR,Viêm khớp dạng thấp,M06.9,"syn_036,syn_083"
+Mụn trứng cá,L70.0,HAS_SYMPTOM,Nhân trứng cá đầu đen,,syn_054
+Mụn trứng cá,L70.0,HAS_SYMPTOM,Sẩn đỏ viêm,,syn_054
+Nhiễm trùng đường tiết niệu,N39.0,HAS_SYMPTOM,Sốt nhẹ,,syn_076
+Nhiễm trùng đường tiết niệu,N39.0,HAS_SYMPTOM,Tiểu buốt,,"syn_020,syn_076"
+Nhiễm trùng đường tiết niệu,N39.0,HAS_SYMPTOM,Tiểu rắt,,syn_020
+Nhồi máu não,I63,HAS_SYMPTOM,Khó nói,,syn_055
+Nhồi máu não,I63,HAS_SYMPTOM,Liệt nhẹ nửa người trái,,syn_038
+Nhồi máu não,I63,HAS_SYMPTOM,Liệt nửa người bên phải,,syn_055
+Nhồi máu não,I63,HAS_SYMPTOM,Méo miệng,,syn_055
+Nấm da,B35.9,HAS_SYMPTOM,Ngứa,,syn_056
+Nấm da,B35.9,HAS_SYMPTOM,Tổn thương da dạng vành cung có bờ viền rõ,,syn_056
+Omeprazole 20mg,RXCUI:7646,PRESCRIBED_FOR,Trào ngược dạ dày thực quản,K21.9,syn_003
+Omeprazole 20mg,RXCUI:7646,PRESCRIBED_FOR,Viêm loét dạ dày,K25,"syn_003,syn_012,syn_087"
+Oresol,,PRESCRIBED_FOR,Viêm dạ dày ruột nhiễm khuẩn,A09,"syn_040,syn_082"
+Paracetamol 500mg,RXCUI:161,PRESCRIBED_FOR,Viêm mũi họng cấp,J00,syn_084
+Paracetamol 500mg,RXCUI:161,TREATS,sốt,,"syn_018,syn_084"
+Paracetamol 500mg,RXCUI:161,TREATS,Đau đầu,,syn_084
+Phì đại lành tính tuyến tiền liệt,N40,HAS_SYMPTOM,Tiểu khó,,syn_077
+Phì đại lành tính tuyến tiền liệt,N40,HAS_SYMPTOM,Tiểu ngắt quãng,,syn_077
+Phì đại lành tính tuyến tiền liệt,N40,HAS_SYMPTOM,Tiểu đêm,,syn_042
+Prednisolone 5mg,RXCUI:8638,PRESCRIBED_FOR,Suy tuyến thượng thận,E27.4,syn_048
+Rung nhĩ,I48.9,HAS_SYMPTOM,Hồi hộp đánh trống ngực,,syn_057
+Rung nhĩ,I48.9,HAS_SYMPTOM,Khó thở khi gắng sức,,syn_057
+Ruột kích thích,,HAS_SYMPTOM,Tiêu chảy,,syn_078
+Ruột kích thích,,HAS_SYMPTOM,Táo bón,,syn_078
+Ruột kích thích,,HAS_SYMPTOM,Đau bụng,,syn_034
+Ruột kích thích,,HAS_SYMPTOM,Đau quặn bụng,,syn_078
+Ruột kích thích,,HAS_SYMPTOM,Đi ngoài phân lỏng,,syn_034
+Rối loạn lipid máu,E78.5,CAUSES,Xơ vữa động mạch cảnh,,syn_090
+Rối loạn lipid máu,E78.5,HAS_SYMPTOM,Chóng mặt,,syn_094
+Rối loạn lipid máu,E78.5,HAS_SYMPTOM,Hoa mắt,,syn_094
+Rối loạn lipid máu,E78.5,HAS_SYMPTOM,Tê bì hai chi dưới,,syn_090
+Rối loạn lipid máu,E78.5,HAS_SYMPTOM,Đau tức ngực âm ỉ,,syn_094
+Rối loạn lo âu lan tỏa,F41.1,HAS_SYMPTOM,Khó tập trung công việc,,syn_059
+Rối loạn lo âu lan tỏa,F41.1,HAS_SYMPTOM,Lo lắng quá mức,,syn_059
+Salbutamol,RXCUI:435,PRESCRIBED_FOR,Hen phế quản,J45,"syn_007,syn_053"
+Salbutamol,RXCUI:435,TREATS,Ho khan kéo dài,,syn_013
+Salmeterol/Fluticasone 50/250 mcg,,PRESCRIBED_FOR,Bệnh phổi tắc nghẽn mạn tính,J44,syn_051
+Sertraline 50mg,RXCUI:36437,PRESCRIBED_FOR,Rối loạn lo âu lan tỏa,F41.1,syn_049
+Sertraline 50mg,RXCUI:36437,TREATS,Hồi hộp,,syn_049
+Sumatriptan 50mg,RXCUI:37418,PRESCRIBED_FOR,Bệnh Migraine,G43.9,syn_074
+Suy giáp,E03.9,HAS_SYMPTOM,Mệt mỏi kéo dài,,syn_060
+Suy giáp,E03.9,HAS_SYMPTOM,Sợ lạnh,,syn_060
+Suy tim sung huyết,I50.9,HAS_SYMPTOM,Khó thở khi gắng sức,,syn_085
+Suy tim sung huyết,I50.9,HAS_SYMPTOM,Phù chi dưới,,syn_085
+Suy tim sung huyết,I50.9,HAS_SYMPTOM,Phù hai chi dưới,,syn_008
+Suy tuyến thượng thận,E27.4,HAS_SYMPTOM,Mệt mỏi kéo dài,,syn_061
+Suy tuyến thượng thận,E27.4,HAS_SYMPTOM,Sụt cân,,syn_061
+Sỏi thận,N20.0,HAS_SYMPTOM,Tiểu máu vi thể,,syn_079
+Sỏi thận,N20.0,HAS_SYMPTOM,Đau quặn thận bên phải,,syn_079
+Sỏi thận,N20.0,HAS_SYMPTOM,Đau quặn thận trái,,syn_031
+Tamsulosin 0.4mg,RXCUI:77492,PRESCRIBED_FOR,Phì đại lành tính tuyến tiền liệt,N40,"syn_042,syn_077"
+Tamsulosin 0.4mg,RXCUI:77492,TREATS,Tiểu đêm,,syn_042
+Tenofovir 300mg,RXCUI:117466,PRESCRIBED_FOR,Viêm gan vi-rút B mạn,B18.1,"syn_045,syn_065"
+Thiếu máu thiếu sắt,D50.9,HAS_SYMPTOM,Da xanh xao,,syn_062
+Thiếu máu thiếu sắt,D50.9,HAS_SYMPTOM,Mệt mỏi,,syn_062
+Thoái hóa khớp gối,M17,HAS_SYMPTOM,Cứng khớp buổi sáng,,syn_080
+Thoái hóa khớp gối,M17,HAS_SYMPTOM,Đau khớp,,syn_080
+Thoái hóa khớp gối,M17,HAS_SYMPTOM,Đau tăng khi vận động,,syn_014
+Thoát vị đĩa đệm cột sống thắt lưng,M51.2,HAS_SYMPTOM,Tê bì cẳng chân,,syn_063
+Thoát vị đĩa đệm cột sống thắt lưng,M51.2,HAS_SYMPTOM,Đau thắt lưng,,syn_063
+Tranexamic acid 500mg,RXCUI:10691,PRESCRIBED_FOR,U xơ tử cung,D25.9,syn_064
+Tranexamic acid 500mg,RXCUI:10691,TREATS,Rong kinh,,syn_064
+Trimebutin 200mg,,PRESCRIBED_FOR,Ruột kích thích,,syn_078
+Trimebutin 200mg,,TREATS,Đau quặn bụng,,syn_078
+Trào ngược dạ dày thực quản,K21.9,HAS_SYMPTOM,Nóng rát sau xương ức,,syn_086
+Trào ngược dạ dày thực quản,K21.9,HAS_SYMPTOM,Ợ chua,,syn_086
+Trào ngược dạ dày thực quản,K21.9,HAS_SYMPTOM,ợ nóng,,syn_023
+U xơ tử cung,D25.9,HAS_SYMPTOM,Rong kinh,,"syn_039,syn_064"
+U xơ tử cung,D25.9,HAS_SYMPTOM,Đau tức hạ vị,,syn_064
+Vitamin D3,RXCUI:1244014,PRESCRIBED_FOR,Loãng xương,,syn_025
+Viêm da cơ địa,L20.9,HAS_SYMPTOM,Mảng đỏ,,syn_019
+Viêm da cơ địa,L20.9,HAS_SYMPTOM,Ngứa,,syn_019
+Viêm dạ dày ruột nhiễm khuẩn,A09,HAS_SYMPTOM,Tiêu chảy cấp,,syn_082
+Viêm dạ dày ruột nhiễm khuẩn,A09,HAS_SYMPTOM,Đau quặn bụng vùng quanh rốn,,syn_082
+Viêm dạ dày ruột nhiễm khuẩn,A09,HAS_SYMPTOM,Đi ngoài 5 lần/ngày,,syn_040
+Viêm gan vi-rút B mạn,B18.1,CAUSES,Vàng da,,syn_065
+Viêm gan vi-rút B mạn,B18.1,HAS_SYMPTOM,Mệt mỏi kéo dài,,syn_065
+Viêm gan vi-rút B mạn,B18.1,HAS_SYMPTOM,Vàng da,,syn_065
+Viêm gân vai,M75.2,HAS_SYMPTOM,Hạn chế tầm vận động khớp,,syn_067
+Viêm gân vai,M75.2,HAS_SYMPTOM,Đau nhói khớp vai khi giơ tay lên cao,,syn_067
+Viêm khớp dạng thấp,M06.9,HAS_SYMPTOM,Cứng khớp buổi sáng,,syn_036
+Viêm khớp dạng thấp,M06.9,HAS_SYMPTOM,Cứng khớp buổi sáng kéo dài trên 1 giờ,,syn_083
+Viêm khớp dạng thấp,M06.9,HAS_SYMPTOM,Sưng đau các khớp bàn tay đối xứng,,syn_083
+Viêm loét dạ dày,K25,CAUSES,Đau thượng vị,,syn_087
+Viêm loét dạ dày,K25,HAS_SYMPTOM,Đau thượng vị,,"syn_012,syn_087"
+Viêm loét dạ dày,K25,HAS_SYMPTOM,Ợ chua,,syn_087
+Viêm mũi dị ứng,J30.4,HAS_SYMPTOM,Chảy nước mũi nhiều,,syn_035
+Viêm mũi dị ứng,J30.4,HAS_SYMPTOM,Hắt hơi,,syn_035
+Viêm mũi họng cấp,J00,HAS_SYMPTOM,Nghẹt mũi,,syn_084
+Viêm mũi họng cấp,J00,HAS_SYMPTOM,Nuốt khó,,syn_029
+Viêm mũi họng cấp,J00,HAS_SYMPTOM,Đau họng,,syn_029
+Viêm mũi họng cấp,J00,HAS_SYMPTOM,Đau rát họng,,syn_084
+Viêm phế quản cấp,J20.9,HAS_SYMPTOM,ho,,syn_018
+Viêm phế quản cấp,J20.9,HAS_SYMPTOM,sốt,,syn_018
+Viêm phổi,J18.9,HAS_SYMPTOM,Ho khạc đờm mủ,,syn_068
+Viêm phổi,J18.9,HAS_SYMPTOM,Sốt cao,,syn_068
+Viêm ruột thừa cấp,K35.8,HAS_SYMPTOM,Sốt nhẹ,,"syn_069,syn_088,syn_092,syn_095"
+Viêm ruột thừa cấp,K35.8,HAS_SYMPTOM,Đau bụng,,syn_069
+Viêm ruột thừa cấp,K35.8,HAS_SYMPTOM,Đau bụng vùng hố chậu phải,,"syn_088,syn_092"
+Viêm ruột thừa cấp,K35.8,HAS_SYMPTOM,Đau quặn hố chậu phải,,syn_095
+Viêm ruột thừa cấp,K35.8,HAS_SYMPTOM,Đau âm ỉ vùng hố chậu phải,,syn_005
+Viêm âm đạo do nấm,B37.3,HAS_SYMPTOM,Ngứa rát vùng kín,,syn_070
+Viêm âm đạo do nấm,B37.3,HAS_SYMPTOM,Ra khí hư đặc dính màu trắng đục như váng sữa,,syn_070
+Warfarin 2.5mg,RXCUI:11289,PRESCRIBED_FOR,Rung nhĩ,I48.9,syn_044
+Xơ vữa động mạch cảnh,,HAS_SYMPTOM,Chóng mặt kéo dài,,syn_093
+Xơ vữa động mạch cảnh,,HAS_SYMPTOM,Tê yếu nửa người thoáng qua,,syn_093
+thuốc giãn cơ trơn,,PRESCRIBED_FOR,Sỏi thận,N20.0,syn_031
+Đa nang buồng trứng,E28.2,HAS_SYMPTOM,Rậm lông mặt,,syn_071
+Đa nang buồng trứng,E28.2,HAS_SYMPTOM,Rối loạn kinh nguyệt,,syn_071
+Đa nang buồng trứng,E28.2,HAS_SYMPTOM,Vòng kinh kéo dài,,syn_071
+Đau thắt lưng,M54.5,HAS_SYMPTOM,Co cứng cơ cạnh sống thắt lưng,,syn_096
+Đau thắt lưng,M54.5,HAS_SYMPTOM,Hạn chế vận động cột sống,,syn_096
+Đau thắt lưng,M54.5,HAS_SYMPTOM,Hạn chế vận động rõ rệt khi cúi người,,syn_091
+Đau thắt lưng,M54.5,HAS_SYMPTOM,Đau nhói vùng cột sống,,syn_091
+Đái tháo đường týp 2,E11,HAS_SYMPTOM,Khát nước liên tục,,syn_072
+Đái tháo đường týp 2,E11,HAS_SYMPTOM,Sụt cân nhanh,,syn_072
+Động kinh,G40.9,HAS_SYMPTOM,Co giật toàn thể cứng - gi clon,,syn_073
+Động kinh,G40.9,HAS_SYMPTOM,Mất ý thức đột ngột,,syn_073
+Động kinh,G40.9,HAS_SYMPTOM,Sủi bọt mép,,syn_073

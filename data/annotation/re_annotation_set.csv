@@ -1,0 +1,122 @@
+﻿sentence_id,sample_id,sentence_text,entity_1,entity_2,relation_predicted,relation_gold,note
+RE_001,syn_001,"Bệnh nhân nam 54 tuổi, có tiền sử Đái tháo đường týp 2 và Cao huyết áp 3 năm nay.",Metformin,Đái tháo đường týp 2,PRESCRIBED_FOR,PRESCRIBED_FOR,Có tiền sử
+RE_002,syn_004,Tiền sử 5 năm điều trị bằng Metformin nhưng chưa ghi nhận biến chứng võng mạc.,Metformin,Đái tháo đường týp 2,PRESCRIBED_FOR,PRESCRIBED_FOR,Có phủ định; Có tiền sử
+RE_003,syn_015,"Hiện tại bệnh nhân đang dùng Metformin 850mg, chưa ghi nhận biến chứng bàn chân hay bệnh võng mạc.",Metformin,Đái tháo đường týp 2,PRESCRIBED_FOR,PRESCRIBED_FOR,Có phủ định
+RE_004,syn_072,"Bệnh nhân nữ 58 tuổi nhập viện với chẩn đoán xác định **Đái tháo đường týp 2**, lâm sàng ghi nhận tình trạng khát nước liên tục và sụt cân nhanh trong một tháng qua.",Metformin,Đái tháo đường týp 2,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_005,syn_002,"Bệnh nhân nữ 42 tuổi, nhập viện vì Cơn đau thắt ngực cấp tính.",Aspirin 81mg,Cơn đau thắt ngực,TREATS,TREATS,Chuyên khoa ngoại khoa
+RE_006,syn_002,"Bệnh nhân nữ 42 tuổi, nhập viện vì Cơn đau thắt ngực cấp tính.",Atorvastatin 20mg,Cơn đau thắt ngực,TREATS,TREATS,Chuyên khoa ngoại khoa
+RE_007,syn_003,Bệnh nhân Viêm loét dạ dày kèm trào ngược dạ dày.,Ibuprofen,Viêm loét dạ dày,CONTRAINDICATED_FOR,CONTRAINDICATED_FOR,Chuyên khoa kê đơn thuốc
+RE_008,syn_003,Đã kê Omeprazole 20mg.,Omeprazole 20mg,Trào ngược dạ dày thực quản,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa kê đơn thuốc
+RE_009,syn_003,Bệnh nhân Viêm loét dạ dày kèm trào ngược dạ dày.,Omeprazole 20mg,Viêm loét dạ dày,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa kê đơn thuốc
+RE_010,syn_012,Nội soi dạ dày chẩn đoán Viêm loét dạ dày tá tràng.,Omeprazole 20mg,Viêm loét dạ dày,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Tiêu hóa
+RE_011,syn_087,"Bệnh nhân nam 45 tuổi vào viện với chẩn đoán xác định **Viêm loét dạ dày**, kèm theo các triệu chứng lâm sàng cụ thể là đau thượng vị từng cơn và ợ chua nhiều về đêm.",Omeprazole 20mg,Viêm loét dạ dày,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_012,syn_005,Bệnh nhân nữ 32 tuổi được chỉ định phẫu thuật nội soi do Viêm ruột thừa cấp.,Viêm ruột thừa cấp,Đau âm ỉ vùng hố chậu phải,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa ngoại khoa
+RE_013,syn_006,"Chỉ định điều trị cho bệnh nhân Viêm phế quản cấp: Amoxicillin 500mg uống 2 lần/ngày trong 7 ngày, kết hợp với Bromhexine 8mg để long đờm.",Amoxicillin 500mg,Viêm phế quản cấp,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa kê đơn thuốc
+RE_014,syn_007,"Bệnh nhân có tiền sử 2 năm mắc Hen phế quản, hiện đang kiểm soát tốt bằng Salbutamol khi cần thiết.",Salbutamol,Hen phế quản,PRESCRIBED_FOR,PRESCRIBED_FOR,Có tiền sử
+RE_015,syn_053,"Bệnh nhân nam 45 tuổi vào viện với chẩn đoán xác định **Hen phế quản**, biểu hiện qua các triệu chứng lâm sàng cụ thể gồm khó thở rít và ho khan kèm đờm trắng.",Salbutamol,Hen phế quản,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_016,syn_008,Thăm khám lâm sàng bệnh nhân Suy tim sung huyết cho thấy tình trạng phù hai chi dưới.,Lisinopril 10mg,Suy tim sung huyết,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa nội khoa
+RE_017,syn_008,Thăm khám lâm sàng bệnh nhân Suy tim sung huyết cho thấy tình trạng phù hai chi dưới.,Suy tim sung huyết,Phù hai chi dưới,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa nội khoa
+RE_018,syn_008,Thăm khám lâm sàng bệnh nhân Suy tim sung huyết cho thấy tình trạng phù hai chi dưới.,Furosemide 40mg,Suy tim sung huyết,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa nội khoa
+RE_019,syn_022,"Bệnh nhân nam 70 tuổi, chẩn đoán Suy tim sung huyết.",Furosemide 40mg,Suy tim sung huyết,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Tim mạch
+RE_020,syn_085,Bệnh nhân nữ 65 tuổi vào viện được chẩn đoán xác định Suy tim sung huyết.,Furosemide 40mg,Suy tim sung huyết,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_021,syn_009,Bệnh nhân nam 45 tuổi nhập viện vì Thoát vị đĩa đệm cột sống thắt lưng.,Diclofenac,Thoát vị đĩa đệm cột sống thắt lưng,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa ngoại khoa
+RE_022,syn_009,"Tiền sử 1 năm đau thần kinh tọa, đã điều trị bảo tồn bằng Diclofenac nhưng không thuyên giảm.",Diclofenac,Đau thần kinh tọa,TREATS,TREATS,Có phủ định; Có tiền sử
+RE_023,syn_010,Đơn thuốc ngoại trú cho bệnh nhân Rối loạn lipid máu: Atorvastatin 20mg uống vào buổi tối.,Atorvastatin 20mg,Rối loạn lipid máu,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa kê đơn thuốc
+RE_024,syn_033,"Bệnh nhân nam 52 tuổi, tiền sử Rối loạn lipid máu.",Atorvastatin 20mg,Rối loạn lipid máu,PRESCRIBED_FOR,PRESCRIBED_FOR,Có tiền sử
+RE_025,syn_058,Bệnh nhân nam 52 tuổi đến khám với chẩn đoán xác định **Rối loạn lipid máu**.,Atorvastatin 20mg,Rối loạn lipid máu,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_026,syn_066,"Bệnh nhân nam 52 tuổi, chẩn đoán xác định Rối loạn lipid máu.",Atorvastatin 20mg,Rối loạn lipid máu,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_027,syn_081,"Bệnh nhân nữ 58 tuổi, chẩn đoán xác định **Rối loạn lipid máu**.",Atorvastatin 20mg,Rối loạn lipid máu,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_028,syn_090,Bệnh nhân nam 52 tuổi đến khám với chẩn đoán xác định **Rối loạn lipid máu**.,Atorvastatin 20mg,Rối loạn lipid máu,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_029,syn_094,Bệnh nhân nam 52 tuổi đến khám với chẩn đoán xác định **Rối loạn lipid máu**.,Atorvastatin 20mg,Rối loạn lipid máu,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_030,syn_011,"Bệnh nhân nam 65 tuổi, tiền sử Cao huyết áp 5 năm, hiện đang điều trị bằng Amlodipine 5mg/ngày.",Amlodipine 5mg,Cao huyết áp,PRESCRIBED_FOR,PRESCRIBED_FOR,Có tiền sử
+RE_031,syn_052,"Bệnh nhân nữ 58 tuổi, chẩn đoán xác định Cao huyết áp.",Amlodipine 5mg,Cao huyết áp,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_032,syn_012,Nội soi dạ dày chẩn đoán Viêm loét dạ dày tá tràng.,Amoxicillin 500mg,Viêm loét dạ dày,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Tiêu hóa
+RE_033,syn_012,Bệnh nhân nữ 42 tuổi nhập viện vì đau thượng vị.,Viêm loét dạ dày,Đau thượng vị,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Tiêu hóa
+RE_034,syn_087,"Bệnh nhân nam 45 tuổi vào viện với chẩn đoán xác định **Viêm loét dạ dày**, kèm theo các triệu chứng lâm sàng cụ thể là đau thượng vị từng cơn và ợ chua nhiều về đêm.",Viêm loét dạ dày,Đau thượng vị,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa targeted_gap_fill
+RE_035,syn_013,"Hiện tại bệnh nhân ho khan kéo dài 2 tuần, không sốt, không có đờm.",Salbutamol,Ho khan kéo dài,TREATS,TREATS,Có phủ định
+RE_036,syn_013,"Hiện tại bệnh nhân ho khan kéo dài 2 tuần, không sốt, không có đờm.",Salbutamol,Ho khan,TREATS,TREATS,Có phủ định
+RE_037,syn_014,Bệnh nhân nữ 55 tuổi bị Thoái hóa khớp gối 2 năm nay.,Celecoxib 200mg,Thoái hóa khớp gối,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Cơ xương khớp
+RE_038,syn_014,"Bệnh nhân đau tăng khi vận động, không thấy sưng nóng đỏ tại khớp.",Celecoxib 200mg,đau,TREATS,TREATS,Có phủ định
+RE_039,syn_014,Bệnh nhân nữ 55 tuổi bị Thoái hóa khớp gối 2 năm nay.,Thoái hóa khớp gối,Đau tăng khi vận động,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Cơ xương khớp
+RE_040,syn_016,2 ngày trước bệnh nhân xuất hiện cơn đau dữ dội kèm buồn nôn.,Bệnh Migraine,Đau dữ dội,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Thần kinh
+RE_041,syn_016,2 ngày trước bệnh nhân xuất hiện cơn đau dữ dội kèm buồn nôn.,Bệnh Migraine,Cơn đau dữ dội,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Thần kinh
+RE_042,syn_016,2 ngày trước bệnh nhân xuất hiện cơn đau dữ dội kèm buồn nôn.,Bệnh Migraine,Buồn nôn,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Thần kinh
+RE_043,syn_074,Bệnh nhân nữ 32 tuổi vào viện với chẩn đoán xác định Bệnh Migraine.,Bệnh Migraine,Buồn nôn,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa targeted_gap_fill
+RE_044,syn_017,"Sản phụ 28 tuổi, thai 32 tuần, chẩn đoán Thiếu máu thiếu sắt.",Ferrous sulfate,Thiếu máu thiếu sắt,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Sản phụ khoa
+RE_045,syn_062,"Bệnh nhân nữ 32 tuổi, đến khám vì mệt mỏi mệt mỏi và da xanh xao, được chẩn đoán xác định là **Thiếu máu thiếu sắt**.",Ferrous sulfate,Thiếu máu thiếu sắt,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_046,syn_018,"Trẻ sốt 38.5 độ, ho nhiều.",Paracetamol 500mg,Sốt 38.5 độ,TREATS,TREATS,Chuyên khoa Nhi khoa
+RE_047,syn_018,Bệnh nhi 5 tuổi nhập viện vì Viêm phế quản cấp.,Viêm phế quản cấp,sốt,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Nhi khoa
+RE_048,syn_018,Bệnh nhi 5 tuổi nhập viện vì Viêm phế quản cấp.,Viêm phế quản cấp,ho,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Nhi khoa
+RE_049,syn_018,Bệnh nhi 5 tuổi nhập viện vì Viêm phế quản cấp.,Viêm phế quản cấp,Sốt 38.5 độ,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Nhi khoa
+RE_050,syn_018,Bệnh nhi 5 tuổi nhập viện vì Viêm phế quản cấp.,Viêm phế quản cấp,Ho nhiều,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Nhi khoa
+RE_051,syn_018,"Trẻ sốt 38.5 độ, ho nhiều.",Paracetamol 500mg,sốt,TREATS,TREATS,Chuyên khoa Nhi khoa
+RE_052,syn_084,Bác sĩ chỉ định điều trị bằng Paracetamol 500mg (uống 1 viên/lần khi sốt hoặc đau đầu) kết hợp dung dịch nhỏ mũi Xylometazolin 0.05% để giảm triệu chứng.,Paracetamol 500mg,sốt,TREATS,TREATS,Chuyên khoa targeted_gap_fill
+RE_053,syn_019,Bệnh nhân nam 22 tuổi bị Viêm da cơ địa tái phát nhiều lần.,Hydrocortisone,Viêm da cơ địa,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Da liễu
+RE_054,syn_019,"Hiện tại vùng da tay có nhiều mảng đỏ, ngứa.",Hydrocortisone,Ngứa,TREATS,TREATS,Chuyên khoa Da liễu
+RE_055,syn_019,"Hiện tại vùng da tay có nhiều mảng đỏ, ngứa.",Hydrocortisone,Mảng đỏ,TREATS,TREATS,Chuyên khoa Da liễu
+RE_056,syn_019,Bệnh nhân nam 22 tuổi bị Viêm da cơ địa tái phát nhiều lần.,Loratadine,Viêm da cơ địa,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Da liễu
+RE_057,syn_019,"Hiện tại vùng da tay có nhiều mảng đỏ, ngứa.",Loratadine,Ngứa,TREATS,TREATS,Chuyên khoa Da liễu
+RE_058,syn_019,Bệnh nhân nam 22 tuổi bị Viêm da cơ địa tái phát nhiều lần.,Viêm da cơ địa,Mảng đỏ,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Da liễu
+RE_059,syn_019,Bệnh nhân nam 22 tuổi bị Viêm da cơ địa tái phát nhiều lần.,Viêm da cơ địa,Ngứa,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Da liễu
+RE_060,syn_020,"Bệnh nhân tiểu buốt, tiểu rắt 3 ngày nay.",Nhiễm trùng đường tiết niệu,Tiểu rắt,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Tiết niệu
+RE_061,syn_020,"Bệnh nhân tiểu buốt, tiểu rắt 3 ngày nay.",Nhiễm trùng đường tiết niệu,Tiểu buốt,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Tiết niệu
+RE_062,syn_076,"Bệnh nhân nữ 35 tuổi đến khám vì tiểu buốt và sốt nhẹ, được chẩn đoán xác định **Nhiễm trùng đường tiết niệu**.",Nhiễm trùng đường tiết niệu,Tiểu buốt,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa targeted_gap_fill
+RE_063,syn_023,Bệnh nhân thường xuyên ợ nóng sau ăn.,Esomeprazole 40mg,ợ nóng,TREATS,TREATS,Chuyên khoa Tiêu hóa
+RE_064,syn_023,Bệnh nhân nữ 50 tuổi bị Trào ngược dạ dày thực quản.,Trào ngược dạ dày thực quản,ợ nóng,HAS_SYMPTOM,TREATS,Chuyên khoa Tiêu hóa
+RE_065,syn_023,Bệnh nhân nữ 50 tuổi bị Trào ngược dạ dày thực quản.,Esomeprazole 40mg,Trào ngược dạ dày thực quản,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Tiêu hóa
+RE_066,syn_086,"Bệnh nhân nữ 42 tuổi, chẩn đoán xác định Trào ngược dạ dày thực quản với triệu chứng lâm sàng nổi bật là ợ chua và nóng rát sau xương ức.",Esomeprazole 40mg,Trào ngược dạ dày thực quản,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_067,syn_024,"Hiện tại bệnh nhân khó thở khi gắng sức, không có dấu hiệu nhiễm trùng phổi cấp.",Bệnh phổi tắc nghẽn mạn tính,Khó thở khi gắng sức,HAS_SYMPTOM,HAS_SYMPTOM,Có phủ định
+RE_068,syn_051,"Bệnh nhân nam 62 tuổi, nhập viện với chẩn đoán xác định Bệnh phổi tắc nghẽn mạn tính.",Bệnh phổi tắc nghẽn mạn tính,Khó thở khi gắng sức,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa targeted_gap_fill
+RE_069,syn_025,"Bệnh nhân nữ 65 tuổi, chẩn đoán Loãng xương.",Calcium,Loãng xương,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Cơ xương khớp
+RE_070,syn_025,"Bệnh nhân nữ 65 tuổi, chẩn đoán Loãng xương.",Vitamin D3,Loãng xương,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Cơ xương khớp
+RE_071,syn_026,"Bệnh nhân nữ 30 tuổi, chẩn đoán Cường giáp.",Cường giáp,Hồi hộp,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Nội tiết
+RE_072,syn_026,"Bệnh nhân nữ 30 tuổi, chẩn đoán Cường giáp.",Cường giáp,Run tay,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Nội tiết
+RE_073,syn_026,"Bệnh nhân nữ 30 tuổi, chẩn đoán Cường giáp.",Methimazole 5mg,Cường giáp,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Nội tiết
+RE_074,syn_026,"Bệnh nhân hồi hộp, run tay.",Methimazole 5mg,Hồi hộp,TREATS,TREATS,Chuyên khoa Nội tiết
+RE_075,syn_026,"Bệnh nhân hồi hộp, run tay.",Methimazole 5mg,Run tay,TREATS,TREATS,Chuyên khoa Nội tiết
+RE_076,syn_027,"Bệnh nhân nam 55 tuổi, tiền sử Động kinh.",Carbamazepine 200mg,Động kinh,PRESCRIBED_FOR,PRESCRIBED_FOR,Có tiền sử
+RE_077,syn_028,"Bệnh nhân nữ 25 tuổi, chẩn đoán Viêm âm đạo do nấm.",Fluconazole 150mg,Viêm âm đạo do nấm,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Sản phụ khoa
+RE_078,syn_029,"Trẻ đau họng, nuốt khó.",Viêm mũi họng cấp,Đau họng,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Nhi khoa
+RE_079,syn_029,"Trẻ đau họng, nuốt khó.",Viêm mũi họng cấp,Nuốt khó,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Nhi khoa
+RE_080,syn_030,Bệnh nhân nam 18 tuổi bị Mụn trứng cá mức độ trung bình.,Isotretinoin 10mg,Mụn trứng cá,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Da liễu
+RE_081,syn_031,"Bệnh nhân nam 45 tuổi, chẩn đoán Sỏi thận.",Sỏi thận,Đau quặn thận trái,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Tiết niệu
+RE_082,syn_031,"Bệnh nhân nam 45 tuổi, chẩn đoán Sỏi thận.",thuốc giãn cơ trơn,Sỏi thận,PRESCRIBED_FOR,uncertain,Chuyên khoa Tiết niệu
+RE_083,syn_031,Bệnh nhân đau quặn thận trái.,thuốc giãn cơ trơn,Đau quặn thận trái,TREATS,uncertain,Chuyên khoa Tiết niệu
+RE_084,syn_034,"Bệnh nhân nam 38 tuổi, chẩn đoán Hội chứng ruột kích thích.",Ruột kích thích,Đau bụng,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Tiêu hóa
+RE_085,syn_034,"Bệnh nhân nam 38 tuổi, chẩn đoán Hội chứng ruột kích thích.",Ruột kích thích,Đi ngoài phân lỏng,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Tiêu hóa
+RE_086,syn_035,"Hiện tại hắt hơi, chảy nước mũi nhiều.",Cetirizine 10mg,Hắt hơi,TREATS,TREATS,Chuyên khoa Hô hấp
+RE_087,syn_035,"Hiện tại hắt hơi, chảy nước mũi nhiều.",Cetirizine 10mg,Chảy nước mũi nhiều,TREATS,TREATS,Chuyên khoa Hô hấp
+RE_088,syn_035,Bệnh nhân nữ 40 tuổi bị Viêm mũi dị ứng.,Cetirizine 10mg,Viêm mũi dị ứng,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Hô hấp
+RE_089,syn_035,Bệnh nhân nữ 40 tuổi bị Viêm mũi dị ứng.,Viêm mũi dị ứng,Hắt hơi,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Hô hấp
+RE_090,syn_035,Bệnh nhân nữ 40 tuổi bị Viêm mũi dị ứng.,Viêm mũi dị ứng,Chảy nước mũi nhiều,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Hô hấp
+RE_091,syn_036,Bệnh nhân cứng khớp buổi sáng.,Methotrexate 10mg/tuần,Cứng khớp buổi sáng,TREATS,TREATS,Chuyên khoa Cơ xương khớp
+RE_092,syn_036,"Bệnh nhân nam 48 tuổi, chẩn đoán Viêm khớp dạng thấp.",Viêm khớp dạng thấp,Cứng khớp buổi sáng,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Cơ xương khớp
+RE_093,syn_036,"Bệnh nhân nam 48 tuổi, chẩn đoán Viêm khớp dạng thấp.",Methotrexate 10mg/tuần,Viêm khớp dạng thấp,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Cơ xương khớp
+RE_094,syn_083,"Bệnh nhân nữ 48 tuổi, chẩn đoán xác định Viêm khớp dạng thấp với các triệu chứng lâm sàng điển hình là sưng đau các khớp bàn tay đối xứng và cứng khớp buổi sáng kéo dài trên 1 giờ.",Methotrexate 10mg/tuần,Viêm khớp dạng thấp,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_095,syn_037,"Bệnh nhân nữ 45 tuổi, chẩn đoán Suy giáp.",Levothyroxine 50mcg,Suy giáp,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Nội tiết
+RE_096,syn_060,"Bệnh nhân nữ 45 tuổi vào viện với chẩn đoán xác định **Suy giáp**, biểu hiện qua triệu chứng lâm sàng nổi bật là mệt mỏi kéo dài và sợ lạnh.",Levothyroxine 50mcg,Suy giáp,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_097,syn_038,"Hiện tại liệt nhẹ nửa người trái, đang tập vật lý trị liệu.",Nhồi máu não,Liệt nhẹ nửa người trái,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Thần kinh
+RE_098,syn_038,"Bệnh nhân nam 60 tuổi, tiền sử Tai biến mạch máu não.",Tai biến mạch máu não,Liệt nhẹ nửa người trái,HAS_SYMPTOM,uncertain,Có tiền sử
+RE_099,syn_039,"Bệnh nhân nữ 32 tuổi, chẩn đoán U xơ tử cung.",U xơ tử cung,Rong kinh,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Sản phụ khoa
+RE_100,syn_064,"Bệnh nhân nữ 42 tuổi vào viện với chẩn đoán xác định u xơ tử cung, có biểu hiện lâm sàng cụ thể gồm rong kinh kéo dài và đau tức hạ vị.",U xơ tử cung,Rong kinh,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa targeted_gap_fill
+RE_101,syn_040,Trẻ đi ngoài 5 lần/ngày.,Oresol,Đi ngoài 5 lần/ngày,TREATS,TREATS,Chuyên khoa Nhi khoa
+RE_102,syn_040,Trẻ đi ngoài 5 lần/ngày.,Viêm dạ dày ruột nhiễm khuẩn,Đi ngoài 5 lần/ngày,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Nhi khoa
+RE_103,syn_040,"Đã bù Oresol, không thấy dấu hiệu mất nước.",Oresol,Viêm dạ dày ruột nhiễm khuẩn,PRESCRIBED_FOR,PRESCRIBED_FOR,Có phủ định
+RE_104,syn_082,"Bệnh nhân nữ 32 tuổi vào viện với chẩn đoán xác định **Viêm dạ dày ruột nhiễm khuẩn**, lâm sàng biểu hiện tiêu chảy cấp nhiều lần trong ngày và đau quặn bụng vùng quanh rốn.",Oresol,Viêm dạ dày ruột nhiễm khuẩn,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_105,syn_041,Bệnh nhân nam 35 tuổi bị Nấm da.,Clotrimazole,Nấm da,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Da liễu
+RE_106,syn_042,"Bệnh nhân nam 65 tuổi, chẩn đoán Phì đại lành tính tuyến tiền liệt.",Phì đại lành tính tuyến tiền liệt,Tiểu đêm,HAS_SYMPTOM,HAS_SYMPTOM,Chuyên khoa Tiết niệu
+RE_107,syn_042,Tiểu đêm 3 lần.,Tamsulosin 0.4mg,Tiểu đêm,TREATS,TREATS,Chuyên khoa Tiết niệu
+RE_108,syn_042,"Bệnh nhân nam 65 tuổi, chẩn đoán Phì đại lành tính tuyến tiền liệt.",Tamsulosin 0.4mg,Phì đại lành tính tuyến tiền liệt,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Tiết niệu
+RE_109,syn_077,Bệnh nhân nam 68 tuổi đến khám với chẩn đoán xác định **Phì đại lành tính tuyến tiền liệt**.,Tamsulosin 0.4mg,Phì đại lành tính tuyến tiền liệt,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_110,syn_043,"Bệnh nhân nam 20 tuổi, chẩn đoán Tan máu bẩm sinh (Thalassemia).",Thalassemia,Thalassemia,CAUSES,NONE,Chuyên khoa Huyết học
+RE_111,syn_044,"Bệnh nhân nữ 55 tuổi, chẩn đoán Rung nhĩ.",Warfarin 2.5mg,Rung nhĩ,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Tim mạch
+RE_112,syn_045,Đang dùng Tenofovir 300mg.,Tenofovir 300mg,Viêm gan vi-rút B mạn,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Tiêu hóa
+RE_113,syn_065,"Bệnh nhân nam 45 tuổi vào viện với chẩn đoán xác định Viêm gan vi-rút B mạn, kèm theo các triệu chứng lâm sàng cụ thể là vàng da và mệt mỏi kéo dài.",Tenofovir 300mg,Viêm gan vi-rút B mạn,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_114,syn_046,Bệnh nhân nam 25 tuổi bị Viêm phổi cộng đồng.,Augmentin,Viêm phổi,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Hô hấp
+RE_115,syn_068,"Bệnh nhân nam 45 tuổi vào viện với chẩn đoán xác định Viêm phổi, lâm sàng ghi nhận sốt cao và ho khạc đờm mủ.",Augmentin,Viêm phổi,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa targeted_gap_fill
+RE_116,syn_047,Bệnh nhân nữ 50 tuổi bị Viêm gân vai.,Corticoid,Viêm gân vai,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Cơ xương khớp
+RE_117,syn_048,"Bệnh nhân nam 35 tuổi, chẩn đoán Suy tuyến thượng thận.",Prednisolone 5mg,Suy tuyến thượng thận,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Nội tiết
+RE_118,syn_049,Đang dùng Sertraline 50mg.,Sertraline 50mg,Rối loạn lo âu lan tỏa,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Thần kinh
+RE_119,syn_049,Đang dùng Sertraline 50mg.,Sertraline 50mg,Hồi hộp,TREATS,PRESCRIBED_FOR,Chuyên khoa Thần kinh
+RE_120,syn_049,Bệnh nhân nữ 28 tuổi bị Rối loạn lo âu.,Sertraline 50mg,Rối loạn lo âu,PRESCRIBED_FOR,PRESCRIBED_FOR,Chuyên khoa Thần kinh
+    

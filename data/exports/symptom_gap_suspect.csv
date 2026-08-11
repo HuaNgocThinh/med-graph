@@ -1,0 +1,22 @@
+﻿Disease,SamplesMentioningDisease,AllSampleIDs,SamplesWithSymptoms,SamplesWithoutSymptoms
+Cao huyết áp,2,"syn_011,syn_052",syn_052,syn_011
+Hen phế quản,2,"syn_007,syn_053",syn_053,syn_007
+Loãng xương,2,"syn_025,syn_075",syn_075,syn_025
+Mụn trứng cá,2,"syn_030,syn_054",syn_054,syn_030
+Nấm da,2,"syn_041,syn_056",syn_056,syn_041
+Rung nhĩ,2,"syn_044,syn_057",syn_057,syn_044
+Rối loạn lo âu lan tỏa,2,"syn_049,syn_059",syn_059,syn_049
+Suy giáp,2,"syn_037,syn_060",syn_060,syn_037
+Suy tuyến thượng thận,2,"syn_048,syn_061",syn_061,syn_048
+Thiếu máu thiếu sắt,2,"syn_017,syn_062",syn_062,syn_017
+Thoát vị đĩa đệm cột sống thắt lưng,2,"syn_009,syn_063",syn_063,syn_009
+Viêm gan vi-rút B mạn,2,"syn_045,syn_065",syn_065,syn_045
+Viêm gân vai,2,"syn_047,syn_067",syn_067,syn_047
+Viêm phế quản cấp,2,"syn_006,syn_018",syn_018,syn_006
+Viêm phổi,5,"syn_046,syn_068,syn_080,syn_089,syn_091",syn_068,"syn_046,syn_080,syn_089,syn_091"
+Viêm âm đạo do nấm,2,"syn_028,syn_070",syn_070,syn_028
+Xơ vữa động mạch cảnh,2,"syn_090,syn_093",syn_093,syn_090
+Đa nang buồng trứng,2,"syn_050,syn_071",syn_071,syn_050
+Đái tháo đường týp 2,4,"syn_001,syn_004,syn_015,syn_072",syn_072,"syn_001,syn_004,syn_015"
+Động kinh,2,"syn_027,syn_073",syn_073,syn_027
+đau,8,"syn_014,syn_063,syn_067,syn_078,syn_080,syn_089,syn_091,syn_096",(none),"syn_014,syn_063,syn_067,syn_078,syn_080,syn_089,syn_091,syn_096"

@@ -1,0 +1,710 @@
+{
+  "_provenance": {
+    "source": "NIH RxNav REST API (https://rxnav.nlm.nih.gov/REST)",
+    "fetch_date": "2026-07-27",
+    "method": "forward lookup by name_en, then REVERSE verification of each rxcui via /rxcui/{id}/properties.json; a record is written only when the reverse name matches the drug queried.",
+    "records_verified": 47,
+    "records_needing_manual_review": 2,
+    "note": "Do NOT hand-edit rxcui values. Re-run scripts/rebuild_rxnorm_dict.py."
+  },
+  "drugs": [
+    {
+      "rxcui": "161",
+      "name_en": "acetaminophen",
+      "name_vi": "Paracetamol 500mg",
+      "synonyms": [
+        "paracetamol",
+        "acetaminophen",
+        "panadol",
+        "efferalgan",
+        "hapacol",
+        "tylenol",
+        "paracetamol 500mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "1191",
+      "name_en": "aspirin",
+      "name_vi": "Aspirin 81mg",
+      "synonyms": [
+        "aspirin",
+        "acid acetylsalicylic",
+        "aspirin 81mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "5640",
+      "name_en": "ibuprofen",
+      "name_vi": "Ibuprofen",
+      "synonyms": [
+        "ibuprofen",
+        "advil",
+        "motrin",
+        "sotret",
+        "ibuprofen 400mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "6809",
+      "name_en": "metformin",
+      "name_vi": "Metformin",
+      "synonyms": [
+        "metformin",
+        "glucophage",
+        "metformin 500mg",
+        "metformin 850mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "17767",
+      "name_en": "amlodipine",
+      "name_vi": "Amlodipine 5mg",
+      "synonyms": [
+        "amlodipine",
+        "amlor",
+        "amlodipin 5mg",
+        "amlodipin 10mg",
+        "amlodipine 5mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "29046",
+      "name_en": "lisinopril",
+      "name_vi": "Lisinopril 10mg",
+      "synonyms": [
+        "lisinopril",
+        "zestril",
+        "prinivil",
+        "lisinopril 10mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "83367",
+      "name_en": "atorvastatin",
+      "name_vi": "Atorvastatin 20mg",
+      "synonyms": [
+        "atorvastatin",
+        "lipitor",
+        "atorvastatin 10mg",
+        "atorvastatin 20mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "52175",
+      "name_en": "losartan",
+      "name_vi": "Losartan 50mg",
+      "synonyms": [
+        "losartan",
+        "cozaar",
+        "losartan potassium",
+        "losartan 50mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "723",
+      "name_en": "amoxicillin",
+      "name_vi": "Amoxicillin 500mg",
+      "synonyms": [
+        "amoxicillin",
+        "amox",
+        "amoxicillin 500mg",
+        "amoxil"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "48203",
+      "name_en": "clavulanate",
+      "name_vi": "Augmentin",
+      "synonyms": [
+        "augmentin",
+        "amoxicillin/clavulanic acid",
+        "klacid",
+        "amoxicillin/clavulanate 875mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "18631",
+      "name_en": "azithromycin",
+      "name_vi": "Azithromycin 500mg",
+      "synonyms": [
+        "azithromycin",
+        "zithromax",
+        "azithromycin 500mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "2551",
+      "name_en": "ciprofloxacin",
+      "name_vi": "Ciprofloxacin 500mg",
+      "synonyms": [
+        "ciprofloxacin",
+        "cipro",
+        "ciprofloxacin 500mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "7646",
+      "name_en": "omeprazole",
+      "name_vi": "Omeprazole 20mg",
+      "synonyms": [
+        "omeprazole",
+        "osec",
+        "losec",
+        "omeprazol 20mg",
+        "omeprazole 20mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "283742",
+      "name_en": "esomeprazole",
+      "name_vi": "Esomeprazole 40mg",
+      "synonyms": [
+        "esomeprazole",
+        "nexium",
+        "esomeprazol 40mg",
+        "esomeprazole 40mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "40790",
+      "name_en": "pantoprazole",
+      "name_vi": "Pantoprazole 40mg",
+      "synonyms": [
+        "pantoprazole",
+        "pantoloc",
+        "pantoprazol 40mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "435",
+      "name_en": "albuterol",
+      "name_vi": "Salbutamol",
+      "synonyms": [
+        "salbutamol",
+        "albuterol",
+        "ventolin",
+        "ventolin inhaler"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "RxNav name-index (INN/USAN alias, ten hien thi='albuterol')"
+    },
+    {
+      "rxcui": "8638",
+      "name_en": "prednisolone",
+      "name_vi": "Prednisolone 5mg",
+      "synonyms": [
+        "prednisolone",
+        "solu-medrol",
+        "prednisolon 5mg",
+        "prednisolone 5mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "3264",
+      "name_en": "dexamethasone",
+      "name_vi": "Dexamethasone",
+      "synonyms": [
+        "dexamethasone",
+        "dexa",
+        "dexamethason"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "253182",
+      "name_en": "insulin, regular, human",
+      "name_vi": "Insulin",
+      "synonyms": [
+        "insulin",
+        "insulin human",
+        "novorapid",
+        "lantus",
+        "humulin"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "11289",
+      "name_en": "warfarin",
+      "name_vi": "Warfarin 2.5mg",
+      "synonyms": [
+        "warfarin",
+        "coumadin",
+        "sintrom",
+        "warfarin 2.5mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "32968",
+      "name_en": "clopidogrel",
+      "name_vi": "Clopidogrel 75mg",
+      "synonyms": [
+        "clopidogrel",
+        "plavix",
+        "clopidogrel 75mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "4816",
+      "name_en": "gliclazide",
+      "name_vi": "Gliclazide",
+      "synonyms": [
+        "gliclazide",
+        "diamicron",
+        "diamicron MR"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "4603",
+      "name_en": "furosemide",
+      "name_vi": "Furosemide 40mg",
+      "synonyms": [
+        "furosemide",
+        "lasix",
+        "furosemid 40mg",
+        "furosemide 40mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "36567",
+      "name_en": "simvastatin",
+      "name_vi": "Simvastatin",
+      "synonyms": [
+        "simvastatin",
+        "zocor"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "73494",
+      "name_en": "telmisartan",
+      "name_vi": "Telmisartan 40mg",
+      "synonyms": [
+        "telmisartan",
+        "micardis",
+        "telmisartan 40mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "3355",
+      "name_en": "diclofenac",
+      "name_vi": "Diclofenac",
+      "synonyms": [
+        "diclofenac",
+        "voltaren",
+        "diclofenac 50mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "1753",
+      "name_en": "bromhexine",
+      "name_vi": "Bromhexine 8mg",
+      "synonyms": [
+        "bromhexine",
+        "bisolvon",
+        "bromhexine 8mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "24947",
+      "name_en": "ferrous sulfate",
+      "name_vi": "Ferrous sulfate",
+      "synonyms": [
+        "ferrous sulfate",
+        "sắt sulfate",
+        "viên sắt",
+        "ferrous sulfate 325mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "140587",
+      "name_en": "celecoxib",
+      "name_vi": "Celecoxib 200mg",
+      "synonyms": [
+        "celecoxib",
+        "celebrex",
+        "celecoxib 200mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "10582",
+      "name_en": "levothyroxine",
+      "name_vi": "Levothyroxine 50mcg",
+      "synonyms": [
+        "levothyroxine",
+        "berlthyrox",
+        "synthroid",
+        "levothyrox",
+        "levothyroxine 50mcg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "6835",
+      "name_en": "methimazole",
+      "name_vi": "Methimazole 5mg",
+      "synonyms": [
+        "methimazole",
+        "thiamazole",
+        "thyrozol",
+        "methimazole 5mg",
+        "methimazole 10mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "2194",
+      "name_en": "cefuroxime",
+      "name_vi": "Cefuroxime 500mg",
+      "synonyms": [
+        "cefuroxime",
+        "zinnat",
+        "cefuroxim 500mg",
+        "cefuroxime 500mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "6922",
+      "name_en": "metronidazole",
+      "name_vi": "Metronidazole 250mg",
+      "synonyms": [
+        "metronidazole",
+        "flagyl",
+        "metronidazol 250mg",
+        "metronidazole 250mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "2623",
+      "name_en": "clotrimazole",
+      "name_vi": "Clotrimazole",
+      "synonyms": [
+        "clotrimazole",
+        "canesten"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "275635",
+      "name_en": "desloratadine",
+      "name_vi": "Desloratadine 5mg",
+      "synonyms": [
+        "desloratadine",
+        "aerius",
+        "desloratadin 5mg",
+        "desloratadine 5mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "519",
+      "name_en": "allopurinol",
+      "name_vi": "Allopurinol 300mg",
+      "synonyms": [
+        "allopurinol",
+        "zyloric",
+        "allopurinol 300mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "77492",
+      "name_en": "tamsulosin",
+      "name_vi": "Tamsulosin 0.4mg",
+      "synonyms": [
+        "tamsulosin",
+        "harnal",
+        "tamsulosin 0.4mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "6064",
+      "name_en": "isotretinoin",
+      "name_vi": "Isotretinoin 10mg",
+      "synonyms": [
+        "isotretinoin",
+        "roaccutane",
+        "isotretinoin 10mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "4450",
+      "name_en": "fluconazole",
+      "name_vi": "Fluconazole 150mg",
+      "synonyms": [
+        "fluconazole",
+        "diflucan",
+        "fluconazole 150mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "36437",
+      "name_en": "sertraline",
+      "name_vi": "Sertraline 50mg",
+      "synonyms": [
+        "sertraline",
+        "zoloft",
+        "sertraline 50mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "117466",
+      "name_en": "tenofovir",
+      "name_vi": "Tenofovir 300mg",
+      "synonyms": [
+        "tenofovir",
+        "viread",
+        "tenofovir 300mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "20610",
+      "name_en": "cetirizine",
+      "name_vi": "Cetirizine 10mg",
+      "synonyms": [
+        "cetirizine",
+        "zyrtec",
+        "cetirizine 10mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "6851",
+      "name_en": "methotrexate",
+      "name_vi": "Methotrexate 10mg/tuần",
+      "synonyms": [
+        "methotrexate",
+        "trexan",
+        "methotrexate 10mg/tuần"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "2002",
+      "name_en": "carbamazepine",
+      "name_vi": "Carbamazepine 200mg",
+      "synonyms": [
+        "carbamazepine",
+        "tegretol",
+        "carbamazepine 200mg"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "6876",
+      "name_en": "methyldopa",
+      "name_vi": "Methyldopa",
+      "synonyms": [
+        "methyldopa",
+        "aldomet"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "2683",
+      "name_en": "colchicine",
+      "name_vi": "Colchicine",
+      "synonyms": [
+        "colchicine"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    },
+    {
+      "rxcui": "4845",
+      "name_en": "glucosamine",
+      "name_vi": "Glucosamine",
+      "synonyms": [
+        "glucosamine"
+      ],
+      "source": "rxnav_api",
+      "fetch_date": "2026-07-27",
+      "reverse_verified": true,
+      "verification_method": "ten khop truc tiep"
+    }
+  ],
+  "needs_manual_review": [
+    {
+      "name_vi": "Oresol",
+      "name_en": "Oral Rehydration Salts",
+      "old_rxcui": "7800",
+      "attempted_query": "Oral Rehydration Salts",
+      "reason": "CAN XU LY TAY (khong tim thay)"
+    },
+    {
+      "name_vi": "Corticoid",
+      "name_en": "Corticosteroid",
+      "old_rxcui": "2828",
+      "attempted_query": "Corticosteroid",
+      "reason": "CAN XU LY TAY (khong tim thay)"
+    }
+  ]
+}

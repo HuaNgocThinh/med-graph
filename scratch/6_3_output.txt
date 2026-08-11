@@ -1,0 +1,34 @@
+================================================================================
+6.3 KIỂM TRA THÊM TRÊN LIVE DB & QA ENGINE
+================================================================================
+
+--- CÂU HỎI 1: 'Thalassemia có điều trị gì?' ---
+Fallback Status : NODE_EXISTS_NO_RELATIONS
+Cypher Query    : MATCH (dis:DISEASE), (d)-[r:PRESCRIBED_FOR|TREATS]->(dis) WHERE toLower(dis.name) CONTAINS 'thalassemia' AND coalesce(r.negated, false) = false RETURN d.name AS Thuoc, coalesce(r.dosage, "") AS Lieu, dis.name AS Benh, r.source_sample_id AS source_sample_id
+Graph Results   : []
+Source SampleIDs: []
+Answer          :
+Cơ sở dữ liệu y tế hiện đã ghi nhận thực thể Thalassemia, nhưng chưa có dữ liệu quan hệ lâm sàng tương ứng trong Knowledge Graph.
+--------------------------------------------------------------------------------
+
+--- CÂU HỎI 2: 'Metformin điều trị bệnh gì?' ---
+Fallback Status : FOUND
+Cypher Query    : MATCH (d:DRUG)-[r:PRESCRIBED_FOR|TREATS]->(b)
+WHERE toLower(d.name) CONTAINS 'metformin' AND coalesce(r.negated, false) = false
+RETURN d.name AS Thuoc, coalesce(r.dosage, "") AS Lieu, b.name AS Benh, r.source_sample_id AS source_sample_id
+Graph Results   : [{"Thuoc": "Metformin", "Lieu": "", "Benh": "Đái tháo đường týp 2", "source_sample_id": "syn_001,syn_004,syn_015,syn_072"}, {"Thuoc": "Metformin", "Lieu": "", "Benh": "Đa nang buồng trứng", "source_sample_id": "syn_050"}]
+Source SampleIDs: ['syn_001', 'syn_004', 'syn_015', 'syn_072', 'syn_050']
+Answer          :
+Thuốc Metformin được sử dụng để điều trị các bệnh như đái tháo đường týp 2 (syn_001, syn_004, syn_015, syn_072) và đa nang buồng trứng (syn_050).
+--------------------------------------------------------------------------------
+
+--- CÂU HỎI 3: 'Triệu chứng của Bệnh không tồn tại là gì?' ---
+Fallback Status : NODE_EXISTS_NO_RELATIONS
+Cypher Query    : MATCH (dis:DISEASE)-[r:HAS_SYMPTOM]->(sym)
+WHERE toLower(dis.name) CONTAINS 'không tồn tại' AND coalesce(r.negated, false) = false
+RETURN dis.name AS Benh, sym.name AS TrieuChung, coalesce(r.dosage, "") AS Lieu, r.source_sample_id AS source_sample_id
+Graph Results   : []
+Source SampleIDs: []
+Answer          :
+Cơ sở dữ liệu y tế hiện đã ghi nhận thực thể này, nhưng chưa có dữ liệu quan hệ lâm sàng tương ứng trong Knowledge Graph.
+--------------------------------------------------------------------------------

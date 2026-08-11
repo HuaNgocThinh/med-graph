@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  neo4j:
+    image: neo4j:5-community
+    container_name: medgraph_neo4j
+    ports:
+      - "7474:7474" # HTTP Web Interface
+      - "7687:7687" # Bolt protocol
+    environment:
+      - NEO4J_AUTH=neo4j/medgraph_secret_password
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+    volumes:
+      - ~/neo4j_persistent/data:/data
+      - ~/neo4j_persistent/logs:/logs
+
