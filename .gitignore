@@ -16,3 +16,5 @@ data/annotation/
 data/exports/
 *.txt
 !requirements.txt
+*.log
+*.csv
