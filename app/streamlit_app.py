@@ -288,6 +288,9 @@ with tab1:
 
             st.markdown("**Cypher Query được sinh ra:**")
             st.code(kg_res.get("cypher_query", ""), language="cypher")
+            if kg_res.get("schema_source"):
+                st.caption(f"📐 Schema được dùng: {kg_res.get('schema_source')}")
+
             
             graph_results = kg_res.get("graph_results", [])
             fallback_status = kg_res.get("fallback_status", "OK")
@@ -327,7 +330,9 @@ with tab1:
                     "fallback_status": fallback_status,
                     "fallback_used": kg_res.get("fallback_used", False),
                     "node_existence_info": node_info,
-                    "data_source": kg_res.get("data_source")
+                    "data_source": kg_res.get("data_source"),
+                    "schema_source": kg_res.get("schema_source"),
+                    "schema_pruned": kg_res.get("schema_pruned")
                 })
 
         with col2:
@@ -385,10 +390,58 @@ with tab1:
 # ====================================================
 with tab2:
     st.subheader("Phân tích từng bước Pipeline NLP Y tế")
+
+    with st.expander("📊 Schema đồ thị hiện tại", expanded=False):
+        client_ui = Neo4jClient()
+        if client_ui.is_online():
+            try:
+                schema = client_ui.get_graph_schema()
+                ts_val = client_ui._schema_cache_time
+                ts_str = datetime.datetime.fromtimestamp(ts_val).strftime("%Y-%m-%d %H:%M:%S") if ts_val else "N/A"
+                st.write(f"🕐 Schema đọc từ Neo4j lúc: {ts_str}")
+
+
+                counts_res = client_ui.execute_query("MATCH (n) RETURN labels(n)[0] AS label, count(*) AS count")
+                count_map = {r["label"]: r["count"] for r in counts_res if r.get("label")}
+
+                node_table = []
+                for n in schema.get("nodes", []):
+                    lbl = n.get("label", "")
+                    node_table.append({
+                        "Label": lbl,
+                        "Số node": count_map.get(lbl, 0),
+                        "Thuộc tính chính": ", ".join(n.get("properties", []))
+                    })
+
+                rel_table = []
+                for r in schema.get("relationships", []):
+                    rel_table.append({
+                        "Type": r.get("type", ""),
+                        "From": r.get("from", ""),
+                        "To": r.get("to", ""),
+                        "Thuộc tính quan trọng": ", ".join(r.get("properties", []))
+                    })
+
+                st.markdown("##### Bảng 1 — Nodes")
+                st.dataframe(node_table, use_container_width=True)
+
+                st.markdown("##### Bảng 2 — Relationships")
+                st.dataframe(rel_table, use_container_width=True)
+
+                if st.button("🔄 Làm mới Schema"):
+                    client_ui.get_graph_schema(force_refresh=True)
+                    st.toast("Đã làm mới schema từ Neo4j!", icon="✅")
+                    st.rerun()
+            except Exception as e_sc:
+                st.warning(f"⚠️ Không thể đọc schema từ Neo4j: {e_sc}")
+        else:
+            st.warning("⚠️ Neo4j đang offline. Không thể hiển thị schema đồ thị động.")
+
     input_text = st.text_area(
         "Nhập văn bản y tế lâm sàng:",
         "Bệnh nhân nam 54 tuổi có tiền sử Đái tháo đường týp 2 và Cao huyết áp 3 năm nay. Hiện tại không thấy dấu hiệu Viêm phổi. Bác sĩ chỉ định Paracetamol 500mg và Metformin."
     )
+
     
     if st.button("🔬 Phân Tích Pipeline", type="secondary"):
         with st.spinner("Đang chạy 3-source NER Ensemble, ConText Negation, RE và Entity Linking..."):

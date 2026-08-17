@@ -1,7 +1,0 @@
-{
-  "_comment": "ORTHOGRAPHIC normalization only: different spellings of the SAME word. This is a separate mechanism from canonical_synonyms_vi.json, which maps different WORDS for the same concept (folk -> medical). Mixing the two was the root cause of the 'prototype' -> 'prototýp' defect: a 4-letter spelling key sat in the same alternation as multi-word medical phrases. Keys here are short and generic, so they are the ones that most need whole-word anchoring. Runs as its own step, before synonym canonicalization.",
-  "map": {
-    "type": "týp",
-    "tuýp": "týp"
-  }
-}

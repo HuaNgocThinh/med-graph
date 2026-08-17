@@ -18,3 +18,6 @@ data/exports/
 !requirements.txt
 *.log
 *.csv
+*.conll
+*.md
+*.json

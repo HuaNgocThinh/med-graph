@@ -4,6 +4,7 @@ Handles database connection, query execution, constraints, and error handling.
 """
 
 import logging
+import time
 from typing import List, Dict, Any, Optional
 from src.config import NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD
 
@@ -59,6 +60,90 @@ class Neo4jClient:
         self.password = password
         self._driver = None
         self.last_error_type: Optional[str] = None
+        self._schema_cache: Optional[Dict[str, Any]] = None
+        self._schema_cache_time: float = 0.0
+
+    def get_graph_schema(self, force_refresh: bool = False) -> Dict[str, Any]:
+        """
+        Queries Neo4j database schema for node labels, relationship types, and properties.
+        Caches results for 5 minutes (300 seconds) unless force_refresh is True.
+        Raises RuntimeError if Neo4j is offline.
+        """
+        now = time.time()
+        if not force_refresh and self._schema_cache is not None and (now - self._schema_cache_time) < 300:
+            return self._schema_cache
+
+        if not self.is_online():
+            raise RuntimeError("Neo4j is OFFLINE -- cannot fetch graph schema.")
+
+        try:
+            node_rows = self.execute_query(
+                "CALL db.schema.nodeTypeProperties() YIELD nodeType, propertyName, propertyTypes "
+                "RETURN nodeType, collect({name: propertyName, types: propertyTypes}) AS props"
+            )
+            rel_rows = self.execute_query(
+                "CALL db.schema.relTypeProperties() YIELD relType, propertyName, propertyTypes "
+                "RETURN relType, collect({name: propertyName, types: propertyTypes}) AS props"
+            )
+            vis_rows = self.execute_query(
+                "CALL db.schema.visualization() YIELD nodes, relationships RETURN nodes, relationships"
+            )
+
+            nodes = []
+            for row in node_rows:
+                raw_label = row.get("nodeType", "")
+                clean_label = raw_label.replace(":", "").replace("`", "").strip()
+                props = [p.get("name") for p in row.get("props", []) if p.get("name")]
+                nodes.append({"label": clean_label, "properties": props})
+
+            rel_props_map = {}
+            for row in rel_rows:
+                raw_type = row.get("relType", "")
+                clean_type = raw_type.replace(":", "").replace("`", "").strip()
+                props = [p.get("name") for p in row.get("props", []) if p.get("name")]
+                rel_props_map[clean_type] = props
+
+            relationships = []
+            rel_types_in_vis = set()
+
+            if vis_rows and len(vis_rows) > 0:
+                raw_rels = vis_rows[0].get("relationships", [])
+                for rel_item in raw_rels:
+                    if isinstance(rel_item, (list, tuple)) and len(rel_item) == 3:
+                        src_node, r_type, dst_node = rel_item
+                        src_label = src_node.get("name", "") if isinstance(src_node, dict) else str(src_node)
+                        dst_label = dst_node.get("name", "") if isinstance(dst_node, dict) else str(dst_node)
+                        clean_r_type = str(r_type).replace(":", "").replace("`", "").strip()
+                        props = rel_props_map.get(clean_r_type, [])
+                        relationships.append({
+                            "type": clean_r_type,
+                            "from": src_label,
+                            "to": dst_label,
+                            "properties": props
+                        })
+                        rel_types_in_vis.add(clean_r_type)
+
+            for r_type, props in rel_props_map.items():
+                if r_type not in rel_types_in_vis:
+                    relationships.append({
+                        "type": r_type,
+                        "from": "ANY",
+                        "to": "ANY",
+                        "properties": props
+                    })
+
+            schema = {
+                "nodes": nodes,
+                "relationships": relationships
+            }
+            self._schema_cache = schema
+            self._schema_cache_time = now
+            return schema
+        except Exception as e:
+            if isinstance(e, RuntimeError) and "OFFLINE" in str(e):
+                raise
+            raise RuntimeError(f"Failed to fetch schema from Neo4j: {e}") from e
+
 
     def connect(self) -> bool:
         """Establishes connection to Neo4j database instance."""

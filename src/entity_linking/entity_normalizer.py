@@ -69,6 +69,11 @@ NEVER_AN_ENTITY: Set[str] = {
     "thuốc bôi", "kem bôi", "thuốc đặt", "corticoid",
 }
 
+# Generic procedure terms -- overly broad procedure terms that are not specific procedure names
+PROCEDURE_GENERIC_TERMS: Set[str] = {
+    "xét nghiệm", "kiểm tra", "theo dõi", "đánh giá", "khám", "đo",
+}
+
 # Valid as a SYMPTOM, never as a DISEASE. 'sốt' and 'ho' are legitimate symptom nodes
 # in the graph; 'đau' as a DISEASE is not. Keeping this tier separate is what lets the
 # gate kill the bogus :DISEASE 'đau' node without destroying the real :SYMPTOM nodes.
