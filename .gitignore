@@ -21,3 +21,6 @@ data/exports/
 *.conll
 *.md
 *.json
+data/dictionaries/
+*.zip
+docker-compose.yml
