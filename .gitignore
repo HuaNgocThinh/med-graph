@@ -24,3 +24,5 @@ data/exports/
 data/dictionaries/
 *.zip
 docker-compose.yml
+*.pt 
+.DS_Store

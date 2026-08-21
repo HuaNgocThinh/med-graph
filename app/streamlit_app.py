@@ -33,6 +33,16 @@ from src.entity_linking.rxnorm_linker import RxNormLinker
 from src.entity_linking.entity_normalizer import get_canonical_name
 from evaluation.coverage_analysis import get_coverage_gaps
 
+import sys, os
+SRC_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src'))
+if SRC_DIR not in sys.path:
+    sys.path.append(SRC_DIR)
+
+from predict import extract_medical_info
+from graph_builder import MedGraphBuilder
+
+
+
 # Page configuration
 st.set_page_config(
     page_title="MedGraph-VI | Medical Knowledge Graph Demo",
@@ -132,7 +142,7 @@ if st.sidebar.button("🔄 Xóa Cache & Khởi tạo lại Engine", use_containe
     st.sidebar.success("✅ Đã xóa toàn bộ Cache Streamlit!")
     st.rerun()
 
-provider = st.sidebar.selectbox("LLM Provider", ["gemini", "openai", "anthropic", "mock"], index=0)
+provider = st.sidebar.selectbox("LLM Provider", ["local_phobert", "gemini", "openai", "anthropic", "mock"], index=0)
 api_key_input = st.sidebar.text_input("API Key (để trống nếu dùng env key hoặc Mock)", type="password")
 
 if api_key_input:
@@ -177,11 +187,12 @@ qa_engine = get_qa_engine(provider, api_key_input)
 synthetic_data_map = load_synthetic_dataset()
 
 # Main tabs
-tab1, tab2, tab3, tab4 = st.tabs([
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "💬 Hỏi Đáp Y Tế (KG-QA vs RAG)", 
     "🔍 Phân Tích Pipeline NLP (End-to-End)", 
     "📊 Coverage Dashboard", 
-    "🕸️ Trực Quan Hóa Knowledge Graph"
+    "🕸️ Trực Quan Hóa Knowledge Graph",
+    "🏥 Auto-Pipeline: Trích xuất & Nạp Neo4j"
 ])
 
 # ====================================================
@@ -621,3 +632,120 @@ with tab4:
             graph_data = client.execute_query(filter_cypher, {"nodes": selected_nodes, "rels": selected_rels})
             st.success(f"🔍 Đã tìm thấy {len(graph_data)} bộ 3 quan hệ (triples) phù hợp bộ lọc.")
             st.dataframe(graph_data, use_container_width=True)
+
+# ====================================================
+# TAB 5: Live AI Inference & Neo4j Knowledge Graph Ingestion
+# ====================================================
+with tab5:
+    st.subheader("🏥 Auto-Pipeline: Trích xuất & Nạp Neo4j")
+    st.write(
+        "Nhập văn bản bệnh án hoặc triệu chứng lâm sàng để mô hình PhoBERT AI nhận diện thực thể động, "
+        "dự đoán quan hệ và tự động nạp Bộ ba tri thức (Triplet) vào Cơ sở dữ liệu Neo4j."
+    )
+
+    sample_input = "Bác sĩ kê đơn Paracetamol để điều trị triệu chứng đau đầu cho bệnh nhân."
+    input_text = st.text_area(
+        "📝 Nhập câu bệnh án / triệu chứng lâm sàng:",
+        value=sample_input,
+        height=120,
+        help="Nhập câu tiếng Việt mô tả quá trình khám bệnh, đơn thuốc hoặc triệu chứng."
+    )
+
+    if st.button("🚀 Thực thi AI & Đẩy lên Đồ thị", type="primary", use_container_width=True):
+        if not input_text or len(input_text.strip()) < 5:
+            st.warning("⚠️ Vui lòng nhập văn bản chứa ít nhất 5 ký tự.")
+        else:
+            with st.spinner("⏳ Đang phân tích dữ liệu bằng mô hình PhoBERT AI (NER & RE)..."):
+                try:
+                    result = extract_medical_info(input_text)
+                    
+                    st.divider()
+                    st.markdown("### 📊 Kết Quả Phân Tích Từ AI Model")
+                    
+                    relation = result.get("relation", "NONE")
+                    confidence = result.get("confidence", 0.0)
+                    e1 = result.get("entity_1")
+                    e2 = result.get("entity_2")
+                    marked_text = result.get("marked_text", input_text)
+
+                    # Hiển thị văn bản gắn thẻ RE
+                    st.info(f"**Văn bản chèn thẻ RE:** `{marked_text}`")
+
+                    # Trình bày 4 cột chỉ số
+                    col1, col2, col3, col4 = st.columns(4)
+                    with col1:
+                        if e1:
+                            st.metric("Thực Thể 1 (E1)", e1['text'], f"Loại: {e1['type']}")
+                        else:
+                            st.metric("Thực Thể 1 (E1)", "Không tìm thấy")
+                    with col2:
+                        if e2:
+                            st.metric("Thực Thể 2 (E2)", e2['text'], f"Loại: {e2['type']}")
+                        else:
+                            st.metric("Thực Thể 2 (E2)", "Không tìm thấy")
+                    with col3:
+                        st.metric("Quan Hệ (Relation)", relation)
+                    with col4:
+                        st.metric("Độ Tin Cậy (Confidence)", f"{confidence * 100:.2f}%")
+
+                    # Hiển thị dữ liệu thô JSON
+                    with st.expander("🔍 Xem chi tiết dữ liệu JSON trả về", expanded=False):
+                        st.json(result)
+
+                    # Tích hợp đẩy dữ liệu lên Neo4j
+                    if relation and relation != "NONE" and e1 and e2:
+                        st.divider()
+                        st.markdown("### 🕸️ Đồng Bộ Cơ Sở Dữ Liệu Đồ Thị Neo4j")
+                        with st.spinner("⏳ Đang kết nối và nạp Triplet lên Neo4j Database..."):
+                            uri = "bolt://localhost:7687"
+                            user = "neo4j"
+                            password = os.getenv("NEO4J_PASSWORD", "medgraph_secret_password")
+                            
+                            builder = MedGraphBuilder(uri, user, password)
+                            try:
+                                builder.add_triplet(
+                                    e1["text"], e1["type"],
+                                    relation,
+                                    e2["text"], e2["type"]
+                                )
+                                st.success(
+                                    f"🎉 **ĐÃ THỰC THI AI VÀ ĐẨY THÀNH CÔNG LÊN NEO4J!**\n\n"
+                                    f"Bộ ba tri thức: **({e1['text']}:{e1['type']}) -[{relation}]-> ({e2['text']}:{e2['type']})**"
+                                )
+                            except Exception as graph_err:
+                                st.error(f"⚠️ Không thể lưu lên Neo4j: {graph_err}")
+                            finally:
+                                builder.close()
+                    else:
+                        st.warning("ℹ️ Không tìm thấy đủ thực thể hoặc quan hệ bằng 'NONE'. Bỏ qua nạp Neo4j.")
+
+                except Exception as ex:
+                    if relation and relation != "NONE" and e1 and e2:
+                        st.divider()
+                        st.markdown("### 🕸️ Đồng Bộ Cơ Sở Dữ Liệu Đồ Thị Neo4j")
+                        with st.spinner("⏳ Đang kết nối và nạp Triplet lên Neo4j Database..."):
+                            uri = "bolt://localhost:7687"
+                            user = "neo4j"
+                            password = os.getenv("NEO4J_PASSWORD", "medgraph_secret_password")
+                            
+                            builder = MedGraphBuilder(uri, user, password)
+                            try:
+                                builder.add_triplet(
+                                    e1["text"], e1["type"],
+                                    relation,
+                                    e2["text"], e2["type"]
+                                )
+                                st.success(
+                                    f"🎉 **ĐÃ NẠP THÀNH CÔNG LÊN NEO4J!**\n\n"
+                                    f"Bộ ba tri thức: **({e1['text']}:{e1['type']}) -[{relation}]-> ({e2['text']}:{e2['type']})**"
+                                )
+                            except Exception as graph_err:
+                                st.error(f"⚠️ Không thể lưu lên Neo4j: {graph_err}")
+                            finally:
+                                builder.close()
+                    else:
+                        st.warning("ℹ️ Không tìm thấy đủ thực thể hoặc quan hệ bằng 'NONE'. Bỏ qua nạp Neo4j.")
+
+                except Exception as ex:
+                    st.error(f"❌ Xảy ra lỗi trong quá trình xử lý: {ex}")
+
